@@ -18,7 +18,7 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies 📦
-        run: npm install
+        run: npm ci
 
       - name: Build site 🏗️
         run: npx @11ty/eleventy
