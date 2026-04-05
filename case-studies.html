@@ -219,8 +219,22 @@ title: Case Studies
 </section>
 
 <!-- SECTION 6: MEDIUM POSTS (AUTOMATED) -->
-<section data-s="medium" class="grid-top">
+<section data-s="writing" class="grid-top">
   <div class="sh"><span class="sh-lbl">Personal Writing (Medium Export)</span><div class="sh-line"></div></div>
   
   <div class="g3 rev">
-</content>
+    {% for post in collections.posts %}
+    <article class="case-card" data-category="writing">
+        <div class="c-header">
+            <span class="c-client">Personal Writing</span>
+            <span class="c-date">{{ post.date | date: "%b %Y" }}</span>
+        </div>
+        <h3 class="c-title">{{ post.data.title }}</h3>
+        <p class="c-desc">{{ post.templateContent | strip_html | truncate: 150 }}</p>
+        <div class="c-footer">
+            <a href="{{ post.url | url }}" class="btn-text">Read Full Piece ➔</a>
+        </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
