@@ -3,169 +3,292 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akshat Singh | Writer & Poet</title>
+    <title>Home | Akshat Singh | Content Portfolio</title>
+    
+    <!-- Premium Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@300;400;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     
-    <style>
-        /* Basic Setup */
-        body {
-            font-family: Georgia, serif;
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f1ea;
-            color: #3d3d3d;
-        }
-        .container {
-            width: 90%;
-            max-width: 800px;
-            margin: auto;
-        }
-        /* Hero Header */
-        header.hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1973&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            height: 60vh;
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        header.hero h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 3.5rem;
-            margin: 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        header.hero p {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.2rem;
-            margin-top: 10px;
-            font-weight: 400;
-        }
-        /* Navigation Bar */
-        nav {
-            background: #2c3e50;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        nav .container {
-            display: flex;
-            justify-content: center;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 1rem 1.5rem;
-            transition: background-color 0.3s ease;
-        }
-        nav a:hover {
-            background-color: #c06c41;
-        }
-        /* Main Content & Post Previews */
-        .main-content {
-            padding: 4rem 0;
-        }
-        .main-content h2.section-title {
-            text-align: center;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #2c3e50;
-        }
-        .post-preview {
-            background: #ffffff;
-            border-radius: 8px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .post-preview:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-        .post-preview h3 {
-            font-family: 'Montserrat', sans-serif;
-            margin-top: 0;
-            font-size: 1.8rem;
-        }
-        .post-preview h3 a {
-            text-decoration: none;
-            color: #2c3e50;
-            transition: color 0.3s ease;
-        }
-        .post-preview h3 a:hover {
-            color: #c06c41;
-        }
-        .post-preview a.read-more {
-            text-decoration: none;
-            color: #c06c41;
-            font-weight: bold;
-            font-family: 'Montserrat', sans-serif;
-        }
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 3rem 0;
-            margin-top: 2rem;
-            background: #2c3e50;
-            color: #bdc3c7;
-            font-size: 0.9rem;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Akshat Singh — Senior SEO Content Strategist. Delivering high-impact content for Cybersecurity, Law, and Tech sectors. built for 2026 authority.">
+    <meta name="keywords" content="SEO Content, Content Strategist, Cybersecurity Writer, Legal Content, Akshat Singh Portfolio">
+    <meta property="og:title" content="Akshat Singh | Content Portfolio">
+    <meta property="og:description" content="Strategic SEO content for High-Impact sectors. 2026 Edition.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MEASUREMENT_ID');
+    </script>
+    
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "CLARITY_PROJECT_ID"); // TODO: Replace with your Clarity Project ID
+    </script>
+
+    <!-- SEO Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "name": "Akshat Singh — Content Portfolio",
+      "author": {
+        "@type": "Person",
+        "name": "Akshat Singh",
+        "jobTitle": "SEO Content Strategist"
+      }
+    }
+    </script>
 </head>
 <body>
 
+    <!-- TOPOGRAPHIC BACKGROUND -->
+    <div class="topo">
+      <svg viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <style>
+            .tl { fill: none; stroke: rgba(140, 93, 46, 0.08); stroke-width: 1; }
+            .tl2 { fill: none; stroke: rgba(140, 93, 46, 0.04); stroke-width: 0.6; }
+          </style>
+        </defs>
+        <ellipse class="tl2" cx="180" cy="130" rx="420" ry="260"/><ellipse class="tl" cx="180" cy="130" rx="330" ry="200"/><ellipse class="tl2" cx="180" cy="130" rx="245" ry="148"/><ellipse class="tl" cx="180" cy="130" rx="165" ry="100"/><ellipse class="tl2" cx="180" cy="130" rx="95" ry="58"/><ellipse class="tl" cx="180" cy="130" rx="40" ry="24"/>
+        <ellipse class="tl2" cx="1100" cy="450" rx="500" ry="310"/><ellipse class="tl" cx="1100" cy="450" rx="400" ry="248"/><ellipse class="tl2" cx="1100" cy="450" rx="295" ry="183"/><ellipse class="tl" cx="1100" cy="450" rx="195" ry="122"/><ellipse class="tl2" cx="1100" cy="450" rx="105" ry="65"/><ellipse class="tl" cx="1100" cy="450" rx="42" ry="26"/>
+      </svg>
+    </div>
+
     <header class="hero">
-        <h1>Akshat Singh</h1>
-        <p>A Collection of Blogs, Poems, and Articles</p>
+        <div class="container">
+            <div class="lbl">Content Portfolio · SEO Strategy · 2026 Edition</div>
+            <h1>Akshat<br><em>Singh.</em></h1>
+            <p class="subhead">Strategic SEO content for High-Impact sectors. From Cybersecurity to Appellate Law, I build authority that ranks.</p>
+            
+            <div class="hstats">
+                <div class="hstat">
+                    <span class="hnum" data-count="52">0</span>
+                    <span class="hkey">Total Pieces Delivered</span>
+                </div>
+                <div class="hstat">
+                    <span class="hnum" data-sfx="K">216</span>
+                    <span class="hkey">Peak Monthly Impressions</span>
+                </div>
+                <div class="hstat">
+                    <span class="hnum" data-dec>4.2</span>
+                    <span class="hkey">Avg. Top Rank</span>
+                </div>
+                <div class="hstat">
+                    <div class="logos-track">
+                        <span class="l-lbl">Trusted By:</span>
+                        <div class="l-grid">
+                            <span>Webspero</span>
+                            <span>CCI Training</span>
+                            <span>AFI Int</span>
+                            <span>Brownstone Law</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
 
     <nav>
         <div class="container">
-            <a href="#">Home</a>
-            <a href="#">Blog</a>
-            <a href="#">Poems</a>
-            <a href="#">Articles</a>
-            <a href="#">About Me</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/case-studies">Portfolio</a>
+                <a href="/active-theory-vibe" class="vibe-link">Vibe</a>
+                <a href="/about">About</a>
+            </div>
+            <div class="nav-extra">
+                <div class="search-box">
+                    <input type="text" id="site-search" placeholder="Search projects..." aria-label="Search projects">
+                    <span class="s-icon">⌕</span>
+                </div>
+                <button id="theme-toggle" aria-label="Toggle Theme">
+                    <span class="t-icon">☼</span>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <div class="container">
-        <main class="main-content">
+    <main class="main-content">
+        <div class="container">
             
-<h2 class="section-title">My Creations</h2>
+<!-- FILTER BAR -->
+<div class="fbar">
+  <div class="ftabs">
+    <button class="ftab active" data-f="all" type="button">All Work</button>
+    <button class="ftab" data-f="blog" type="button">Blogs</button>
+    <button class="ftab" data-f="poems" type="button">Poems</button>
+    <button class="ftab" data-f="articles" type="button">Articles</button>
+  </div>
+  <span class="fmeta">Latest Updates · 2026 Edition</span>
+</div>
 
-<article class="post-preview">
-    <h3><a href="#">The Title of Your First Blog Post</a></h3>
-    <p>This is a short summary or the first few lines of your blog post. It gives the reader a taste of what the article is about, encouraging them to click and read more...</p>
-    <a href="#" class="read-more">Read More &rarr;</a>
-</article>
+<div class="g3 rev grid-top">
 
-<article class="post-preview">
-    <h3><a href="#">My Newest Poem</a></h3>
-    <p>Here you can put the first stanza of your poem, or a brief description of what inspired it. Poems often have a different feel, and the preview can reflect that...</p>
-    <a href="#" class="read-more">Read More &rarr;</a>
-</article>
-
-<article class="post-preview">
-    <h3><a href="#">An Insightful Article</a></h3>
-    <p>This is where a preview of your article would go. Maybe it's a thought-provoking piece, a research article, or a commentary on a recent event. Hook your readers here...</p>
-    <a href="#" class="read-more">Read More &rarr;</a>
-</article>
-        </main>
+  <!-- BLOG 1 -->
+  <article class="post-preview card" data-category="blog">
+    <div class="c-client">Personal Blog</div>
+    <div class="badge acc">Reader-Friendly</div>
+    <a href="#" class="c-title">The Psychology of Content Strategy</a>
+    <p class="c-desc">Exploring how emotional resonance and data-driven insights combine to create high-ranking, human-first content in the age of AI.</p>
+    <div class="sr">
+        <div class="sc"><span class="v">1.2K</span><span class="k">Readers</span></div>
     </div>
+  </article>
+
+  <!-- POEM 1 -->
+  <article class="post-preview card" data-category="poems">
+    <div class="c-client">Creative Writing</div>
+    <div class="badge grn">New</div>
+    <a href="#" class="c-title">Verses in the Machine</a>
+    <p class="c-desc">A collection of prose exploring the intersection of human creativity and algorithmic precision. The soul behind the search console.</p>
+    <div class="sr">
+        <div class="sc"><span class="v">4m</span><span class="k">Reading Time</span></div>
+    </div>
+  </article>
+
+  <!-- ARTICLE 1 -->
+  <article class="post-preview card" data-category="articles">
+    <div class="c-client">Industry Insight</div>
+    <div class="badge blu">Opinion</div>
+    <a href="#" class="c-title">Why User Intent is the Only Metric That Matters</a>
+    <p class="c-desc">Moving beyond keyword density to actual value delivery. How I helped clients achieve 200% growth by answering the right questions.</p>
+    <div class="sr">
+        <div class="sc grn"><span class="v">Top 3</span><span class="k">Rankings</span></div>
+    </div>
+  </article>
+
+</div>
+        </div>
+    </main>
 
     <footer>
-        <p>&copy; 2025 Akshat Singh. All Rights Reserved.</p>
+        <div class="container">
+            <div class="footer-cta">
+                <div class="cta-text">
+                    <span class="sh-lbl">Ready to Build Authority?</span>
+                    <h3>Let's establish your technical presence in 2026.</h3>
+                </div>
+                <div class="cta-actions">
+                    <a href="mailto:contact@akshat.com" class="btn btn-acc">Work With Me</a>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn">LN</a>
+                        <a href="#" aria-label="X / Twitter">X</a>
+                        <a href="#" aria-label="GitHub">GH</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="sh-lbl">Akshat Singh</div>
+                <p>SEO Content Architect · 2026 · Built with precision.</p>
+                <div class="legal-links" style="margin-top: 15px; font-size: 0.85rem; display: flex; gap: 15px;">
+                    <a href="/privacy.html" style="color: inherit; text-decoration: none; opacity: 0.7;">Privacy Policy</a>
+                    <a href="/terms.html" style="color: inherit; text-decoration: none; opacity: 0.7;">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        </div>
     </footer>
 
+    <!-- COOKIE CONSENT BANNER -->
+    <div id="cookie-banner" class="cookie-banner" style="display: none;">
+        <div class="container cb-flex">
+            <p>We use cookies to ensure you get the best experience on Akshat's portfolio. <a href="/privacy">Learn more</a></p>
+            <button id="accept-cookies" class="btn btn-acc btn-sm">Accept</button>
+        </div>
+    </div>
+
+    <a href="/assets/akshat-singh-resume.pdf" class="fab" target="_blank">
+        <span>Download CV</span>
+        <span style="font-size: 14px;">↓</span>
+    </a>
+
+    <script>
+    // ... (previous counter logic remains same) ...
+    // SEARCH LOGIC
+    const searchInput = document.getElementById('site-search');
+    
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+            
+            cards.forEach(card => {
+                const textContent = card.innerText.toLowerCase();
+                if (textContent.includes(term)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // if searching, override tab filters by highlighting 'all'
+            if (term.length > 0) {
+                document.querySelectorAll('.ftab').forEach(t => t.classList.remove('active'));
+                const allTab = document.querySelector('.ftab[data-f="all"]');
+                if (allTab) allTab.classList.add('active');
+            }
+        });
+    }
+
+    // FILTER LOGIC (FIXED SYNTAX)
+    const tabs = document.querySelectorAll('.ftab');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        
+        if (searchInput) searchInput.value = '';
+
+        const f = tab.dataset.f;
+        const sections = document.querySelectorAll('[data-s]');
+        const items = document.querySelectorAll('[data-category]');
+        
+        if (items.length > 0) {
+          items.forEach(item => {
+            if (f === 'all') item.style.display = 'flex';
+            else item.style.display = (item.dataset.category === f) ? 'flex' : 'none';
+          });
+        }
+        
+        if (sections.length > 0) {
+          sections.forEach(s => {
+            if (f === 'all') s.style.display = 'block';
+            else s.style.display = (s.dataset.s === f) ? 'block' : 'none';
+          });
+        }
+      });
+    });
+
+    // COOKIE BANNER LOGIC
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+    if (!localStorage.getItem('cookiesAccepted')) {
+        banner.style.display = 'block';
+    }
+    acceptBtn.addEventListener('click', () => {
+        localStorage.setItem('cookiesAccepted', 'true');
+        banner.style.display = 'none';
+    });
+
+    // TILT EFFECT ...
+    </script>
 </body>
 </html>

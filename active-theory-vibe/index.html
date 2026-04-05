@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Theory | Immersive Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- GSAP & Three.js via CDN for high-performance Vanilla setup -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.162.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.162.0/examples/jsm/"
+        }
+    }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <span class="lbl-sh">INITIALIZING SCENE</span>
+            <div class="progress-bar"><div class="progress"></div></div>
+        </div>
+    </div>
+
+    <canvas id="webgl"></canvas>
+
+    <main id="content">
+        <section class="hero h-screen">
+            <div class="container">
+                <div class="rev">
+                    <span class="lbl">Senior Creative Technologist</span>
+                    <h1>BIRD IN<br><em>SPACE.</em></h1>
+                    <p class="subhead">An immersive exploration of abstract geometry and liquid distortion.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about h-screen">
+            <div class="container">
+                <div class="rev">
+                    <span class="lbl">Phase 01 // Research</span>
+                    <h2>GLSL DISTORTION</h2>
+                    <p class="subhead">Calculating vertex positions in real-time to create an organic, fluid reaction to your presence.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="footer h-screen">
+            <div class="container">
+                <div class="rev">
+                    <span class="lbl">Connect</span>
+                    <h2>ACTIVE THEORY<br>INSPIRED.</h2>
+                    <a href="#" class="cta">ESTABLISH PRESENCE</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>

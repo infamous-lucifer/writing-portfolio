@@ -3,22 +3,50 @@ layout: layout.liquid
 title: Home
 ---
 
-<h2 class="section-title">My Creations</h2>
+<!-- FILTER BAR -->
+<div class="fbar">
+  <div class="ftabs">
+    <button class="ftab active" data-f="all" type="button">All Work</button>
+    <button class="ftab" data-f="blog" type="button">Blogs</button>
+    <button class="ftab" data-f="poems" type="button">Poems</button>
+    <button class="ftab" data-f="articles" type="button">Articles</button>
+  </div>
+  <span class="fmeta">Latest Updates · 2026 Edition</span>
+</div>
 
-<article class="post-preview">
-    <h3><a href="#">The Title of Your First Blog Post</a></h3>
-    <p>This is a short summary or the first few lines of your blog post. It gives the reader a taste of what the article is about, encouraging them to click and read more...</p>
-    <a href="#" class="read-more">Read More &rarr;</a>
-</article>
+<div class="g3 rev grid-top">
 
-<article class="post-preview">
-    <h3><a href="#">My Newest Poem</a></h3>
-    <p>Here you can put the first stanza of your poem, or a brief description of what inspired it. Poems often have a different feel, and the preview can reflect that...</p>
-    <a href="#" class="read-more">Read More &rarr;</a>
-</article>
+  <!-- BLOG 1 -->
+  <article class="post-preview card" data-category="blog">
+    <div class="c-client">Personal Blog</div>
+    <div class="badge acc">Reader-Friendly</div>
+    <a href="#" class="c-title">The Psychology of Content Strategy</a>
+    <p class="c-desc">Exploring how emotional resonance and data-driven insights combine to create high-ranking, human-first content in the age of AI.</p>
+    <div class="sr">
+        <div class="sc"><span class="v">1.2K</span><span class="k">Readers</span></div>
+    </div>
+  </article>
 
-<article class="post-preview">
-    <h3><a href="#">An Insightful Article</a></h3>
-    <p>This is where a preview of your article would go. Maybe it's a thought-provoking piece, a research article, or a commentary on a recent event. Hook your readers here...</p>
-    <a href="#" class="read-more">Read More &rarr;</a>
-</article>
+  <!-- POEM 1 -->
+  <article class="post-preview card" data-category="poems">
+    <div class="c-client">Creative Writing</div>
+    <div class="badge grn">New</div>
+    <a href="#" class="c-title">Verses in the Machine</a>
+    <p class="c-desc">A collection of prose exploring the intersection of human creativity and algorithmic precision. The soul behind the search console.</p>
+    <div class="sr">
+        <div class="sc"><span class="v">4m</span><span class="k">Reading Time</span></div>
+    </div>
+  </article>
+
+  <!-- ARTICLE 1 -->
+  <article class="post-preview card" data-category="articles">
+    <div class="c-client">Industry Insight</div>
+    <div class="badge blu">Opinion</div>
+    <a href="#" class="c-title">Why User Intent is the Only Metric That Matters</a>
+    <p class="c-desc">Moving beyond keyword density to actual value delivery. How I helped clients achieve 200% growth by answering the right questions.</p>
+    <div class="sr">
+        <div class="sc grn"><span class="v">Top 3</span><span class="k">Rankings</span></div>
+    </div>
+  </article>
+
+</div>

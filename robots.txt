@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://infamous-lucifer.github.io/writing-portfolio/sitemap.xml
