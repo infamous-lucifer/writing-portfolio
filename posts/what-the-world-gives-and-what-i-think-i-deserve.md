@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "What the World Gives, and What I Think I Deserve"
 date: 2025-07-03
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

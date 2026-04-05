@@ -4,7 +4,7 @@ title: "I agree with rest of article,
 
 Except this...."
 date: 2025-06-19
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

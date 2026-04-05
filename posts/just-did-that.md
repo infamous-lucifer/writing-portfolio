@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "just did that !!"
 date: 2025-07-09
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

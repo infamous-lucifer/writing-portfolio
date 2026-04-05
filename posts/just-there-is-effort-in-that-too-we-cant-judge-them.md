@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "Just, there is effort in that too, we can't judge them,"
 date: 2025-07-18
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

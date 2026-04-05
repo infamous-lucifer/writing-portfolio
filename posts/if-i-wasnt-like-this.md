@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "If I Wasn’t Like This"
 date: 2025-06-26
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

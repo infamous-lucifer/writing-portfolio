@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "Hi,"
 date: 2025-06-15
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

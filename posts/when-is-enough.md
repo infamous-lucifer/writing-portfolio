@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "When Is Enough?"
 date: 2025-06-17
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

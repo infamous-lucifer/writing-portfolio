@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "Am I Really the Protagonist?"
 date: 2025-06-19
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

@@ -223,15 +223,4 @@ title: Case Studies
   <div class="sh"><span class="sh-lbl">Personal Writing (Medium Export)</span><div class="sh-line"></div></div>
   
   <div class="g3 rev">
-    {% for post in collections.posts reversed %}
-    <div class="card" data-category="medium">
-        <div class="c-client">Medium Archive</div>
-        <div class="badge acc">{{ post.data.category }}</div>
-        <a href="{{ post.url | url }}" class="c-title">{{ post.data.title }}</a>
-        <div class="sr" style="margin-top: auto;">
-          <div class="sc"><span class="v">{{ post.date | date: "%Y" }}</span><span class="k">Published</span></div>
-        </div>
-    </div>
-    {% endfor %}
-  </div>
-</section>
+</content>

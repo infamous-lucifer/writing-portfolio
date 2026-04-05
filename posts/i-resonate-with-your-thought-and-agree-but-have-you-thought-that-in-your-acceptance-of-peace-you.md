@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "I resonate with your thought and agree, but have you thought that in your acceptance of peace , you…"
 date: 2025-07-18
-category: Poems
+category: Prose
 tags: ["posts"]
 ---
 

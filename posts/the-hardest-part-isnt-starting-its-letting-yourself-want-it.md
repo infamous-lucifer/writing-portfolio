@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "The Hardest Part Isn’t Starting — It’s Letting Yourself Want It"
 date: 2025-06-15
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

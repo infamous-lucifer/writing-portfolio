@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "Maybe I’m Not the Right Person for Her"
 date: 2025-06-28
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

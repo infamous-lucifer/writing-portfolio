@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "Keep Walking."
 date: 2025-10-13
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

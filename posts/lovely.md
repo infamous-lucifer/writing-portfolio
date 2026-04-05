@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "lovely 💕"
 date: 2025-06-11
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

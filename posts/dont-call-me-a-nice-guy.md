@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "Don’t Call Me a “Nice Guy”"
 date: 2025-06-29
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

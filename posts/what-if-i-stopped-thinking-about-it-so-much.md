@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "What If I Stopped Thinking About It So Much?"
 date: 2025-06-29
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

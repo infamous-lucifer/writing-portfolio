@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "Is Peace in Life or in Letting Go?"
 date: 2025-06-29
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

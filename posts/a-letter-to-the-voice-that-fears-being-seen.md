@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "A Letter to the Voice That Fears Being Seen"
 date: 2025-06-23
-category: Blogs
+category: Prose
 tags: ["posts"]
 ---
 

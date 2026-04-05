@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "I’m a happy human!"
 date: 2025-06-15
-category: Poems
+category: Prose
 tags: ["posts"]
 ---
 

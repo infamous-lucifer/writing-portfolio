@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "Today’s a Weird Day"
 date: 2025-07-06
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

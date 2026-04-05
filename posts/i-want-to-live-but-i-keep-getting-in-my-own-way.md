@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "I Want to Live, But I Keep Getting in My Own Way"
 date: 2025-07-09
-category: Blogs
+category: Prose
 tags: ["posts"]
 ---
 

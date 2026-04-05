@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "Much needed reminder, thank you 🙂"
 date: 2025-06-21
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

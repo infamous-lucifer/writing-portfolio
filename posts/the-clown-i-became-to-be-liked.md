@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "The Clown I Became to Be Liked"
 date: 2025-06-28
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "I’m in the early years of my 20s, and yet I already feel the weight of failure crashing down on me."
 date: 2025-07-06
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

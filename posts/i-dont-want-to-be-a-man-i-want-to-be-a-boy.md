@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "“I Don’t Want to Be a Man — I Want to Be a Boy”"
 date: 2025-06-22
-category: Blogs
+category: Prose
 tags: ["posts"]
 ---
 

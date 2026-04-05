@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "I am sorry for your loss 🙏, but may you find peace and no regret."
 date: 2025-07-13
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

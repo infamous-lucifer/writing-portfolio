@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "“I Want to Be Understood, Not Just Heard”"
 date: 2025-06-16
-category: Blogs
+category: Prose
 tags: ["posts"]
 ---
 

@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "Thank you, reading it felt my brain broken open in half and seen for first time, the chaos inside…"
 date: 2025-06-29
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

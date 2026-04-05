@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "Is it true? Will it never leave us? I will have deal with this my whole life?"
 date: 2025-07-30
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

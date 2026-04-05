@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "Live your life for yourself as yourself. 💫"
 date: 2025-07-27
-category: Poems
+category: Prose
 tags: ["posts"]
 ---
 

@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "These thoughts grow naturally, let's not give this a shot, don't tell that person how much I love…"
 date: 2025-06-21
-category: Poems
+category: Prose
 tags: ["posts"]
 ---
 

@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "It's true, like it's so hard to even talk about mental issues , because it's all your being lazy…"
 date: 2025-06-21
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

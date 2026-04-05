@@ -1,0 +1,66 @@
+---
+layout: layout.liquid
+title: Writing Hub · Akshat Singh
+description: A collection of personal blogs, creative poetry, and long-form prose exploring the intersection of technology and humanity.
+---
+
+<section class="portfolio-hero">
+    <div class="container">
+        <h1 class="hero-title">The Writing <span class="acc">Hub</span></h1>
+        <p class="hero-subtitle">60+ pieces of personal exploration, from algorithm-inspired verses to deep dives into content psychology.</p>
+    </div>
+</section>
+
+<section class="portfolio-grid-section">
+    <div class="container">
+        <!-- FILTER BAR -->
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All Pieces</button>
+            <button class="filter-btn" data-filter="Blogs">Personal Blogs</button>
+            <button class="filter-btn" data-filter="Poems">Poems</button>
+            <button class="filter-btn" data-filter="Prose">Prose</button>
+        </div>
+
+        <!-- WRITING GRID -->
+        <div class="case-grid" id="project-grid">
+            {% for post in collections.posts %}
+            <article class="case-card" data-category="{{ post.data.category }}">
+                <div class="c-header">
+                    <span class="c-client">{{ post.data.category }}</span>
+                    <span class="c-date">{{ post.date | date: "%b %Y" }}</span>
+                </div>
+                <h3 class="c-title">{{ post.data.title }}</h3>
+                <p class="c-desc">{{ post.templateContent | strip_html | truncate: 150 }}</p>
+                <div class="c-footer">
+                    <a href="{{ post.url | url }}" class="btn-text">Read Full Piece ➔</a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.case-card');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update active state
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.getAttribute('data-filter');
+
+            cards.forEach(card => {
+                if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+</script>

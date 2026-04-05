@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "Fascinating"
 date: 2025-07-04
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

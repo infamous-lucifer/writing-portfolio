@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "“Why am I not able to be happy?”"
 date: 2025-07-24
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

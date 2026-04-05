@@ -4,7 +4,7 @@ title: "True, like being able to say when you were rejected from one you liked ,
 
 It's…"
 date: 2025-07-29
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

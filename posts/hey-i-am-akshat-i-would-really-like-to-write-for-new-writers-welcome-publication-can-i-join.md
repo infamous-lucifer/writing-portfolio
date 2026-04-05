@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "Hey! I am Akshat, I would really like to write for New Writers Welcome publication, Can I join?"
 date: 2025-06-15
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

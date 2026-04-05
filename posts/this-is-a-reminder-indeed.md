@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "This is a reminder indeed 🥹💫"
 date: 2025-06-16
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

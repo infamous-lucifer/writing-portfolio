@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "Live for Yourself"
 date: 2025-07-27
-category: Poems
+category: Prose
 tags: ["posts"]
 ---
 

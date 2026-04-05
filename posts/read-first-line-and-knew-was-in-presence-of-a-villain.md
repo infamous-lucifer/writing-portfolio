@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "Read first line and knew was in presence of a villain 🔥"
 date: 2025-06-11
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

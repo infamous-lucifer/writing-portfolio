@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "Does this work, surely tell us ok?,"
 date: 2025-07-29
-category: Poems
+category: Blogs
 tags: ["posts"]
 ---
 

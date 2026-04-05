@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "🖋 Becoming Part of the Group"
 date: 2025-06-18
-category: Poems
+category: Prose
 tags: ["posts"]
 ---
 

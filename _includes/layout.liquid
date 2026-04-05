@@ -76,7 +76,7 @@
             
             <div class="hstats">
                 <div class="hstat">
-                    <span class="hnum" data-count="52">0</span>
+                    <span class="hnum" data-count="114">0</span>
                     <span class="hkey">Total Pieces Delivered</span>
                 </div>
                 <div class="hstat">
@@ -106,7 +106,8 @@
         <div class="container">
             <div class="nav-links">
                 <a href="{{ '/' | url }}">Home</a>
-                <a href="{{ '/case-studies' | url }}">Portfolio</a>
+                <a href="{{ '/case-studies' | url }}">Case Studies</a>
+                <a href="{{ '/writing' | url }}">Writing</a>
                 <a href="{{ '/about' | url }}">About</a>
             </div>
             <div class="nav-extra">
@@ -186,7 +187,7 @@
           if (counter.dataset.sfx) {
              counter.innerText = target + counter.dataset.sfx;
           } else if (counter.hasAttribute('data-dec')) {
-             counter.innerText = counter.getAttribute('data-dec');
+             counter.innerText = target.toFixed(1);
           } else {
              counter.innerText = target;
           }
