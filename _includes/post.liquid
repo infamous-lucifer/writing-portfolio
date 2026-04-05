@@ -1,0 +1,22 @@
+---
+layout: layout.liquid
+---
+
+<div class="sh"><span class="sh-lbl">{{ category }}</span><div class="sh-line"></div></div>
+
+<div class="g2 rev">
+  <article class="card" style="grid-column: 1 / -1; padding-bottom: 60px;">
+    <div style="margin-bottom: 2rem;">
+        <h1 class="c-title" style="font-size: 42px; line-height: 1.1; margin-bottom: 12px;">{{ title }}</h1>
+        <div class="badge acc">{{ date | date: "%B %d, %Y" }}</div>
+    </div>
+    
+    <div class="c-desc" style="font-size: 18px; line-height: 1.8;">
+      {{ content }}
+    </div>
+
+    <div class="sr mt-1" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+        <a href="{{ '/case-studies' | url }}" class="live-link">← Back to Portfolio</a>
+    </div>
+  </article>
+</div>

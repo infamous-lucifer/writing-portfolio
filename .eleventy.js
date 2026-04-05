@@ -8,10 +8,16 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("404.html");
 
+  // Create a collection for Medium posts
+  eleventyConfig.addCollection("posts", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("posts/*.md");
+  });
+
   return {
     pathPrefix: "/writing-portfolio/",
     dir: {
       input: ".",
+      hide: true, // Hide internal folders
       output: "_site"
     }
   };

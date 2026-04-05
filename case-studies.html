@@ -5,11 +5,12 @@ title: Case Studies
 
 <div class="fbar">
   <div class="ftabs">
-    <button class="ftab active" data-f="all" type="button">All Work <span class="n">(52)</span></button>
+    <button class="ftab active" data-f="all" type="button">All Work <span class="n">(100+)</span></button>
     <button class="ftab" data-f="ranked" type="button">Ranked + Live <span class="n">(12)</span></button>
     <button class="ftab" data-f="live" type="button">Live, No Data <span class="n">(4)</span></button>
     <button class="ftab" data-f="prod" type="button">In Production <span class="n">(24)</span></button>
     <button class="ftab" data-f="other" type="button">Other Clients <span class="n">(12)</span></button>
+    <button class="ftab" data-f="medium" type="button">Personal Writing <span class="n">({{ collections.posts.size }})</span></button>
   </div>
   <span class="fmeta">CCI Training · AFI International · Brownstone Law · Adorb · LB Diving</span>
 </div>
@@ -214,5 +215,23 @@ title: Case Studies
         <p class="c-desc">Guest post strategy emphasizing safety standards and instructor credentials in Thailand.</p>
         <a href="https://docs.google.com/document/d/1qd2sKZOxtN-3ysL0iAJUY87pgevb7sjC-5hcp-l92rQ/edit" target="_blank" rel="noopener noreferrer" class="doc-link" aria-label="View Google Doc for Divemaster Selection"></a>
     </div>
+  </div>
+</section>
+
+<!-- SECTION 6: MEDIUM POSTS (AUTOMATED) -->
+<section data-s="medium" class="grid-top">
+  <div class="sh"><span class="sh-lbl">Personal Writing (Medium Export)</span><div class="sh-line"></div></div>
+  
+  <div class="g3 rev">
+    {% for post in collections.posts reversed %}
+    <div class="card" data-category="medium">
+        <div class="c-client">Medium Archive</div>
+        <div class="badge acc">{{ post.data.category }}</div>
+        <a href="{{ post.url | url }}" class="c-title">{{ post.data.title }}</a>
+        <div class="sr" style="margin-top: auto;">
+          <div class="sc"><span class="v">{{ post.date | date: "%Y" }}</span><span class="k">Published</span></div>
+        </div>
+    </div>
+    {% endfor %}
   </div>
 </section>
