@@ -35,7 +35,7 @@
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "CLARITY_PROJECT_ID"); // TODO: Replace with your Clarity Project ID
+        })(window, document, "clarity", "script", "w6un2vtbtp");
     </script>
 
     <!-- SEO Schema -->
@@ -107,7 +107,6 @@
             <div class="nav-links">
                 <a href="/">Home</a>
                 <a href="/case-studies">Portfolio</a>
-                <a href="/active-theory-vibe" class="vibe-link">Vibe</a>
                 <a href="/about">About</a>
             </div>
             <div class="nav-extra">
@@ -195,8 +194,8 @@
                 <div class="sh-lbl">Akshat Singh</div>
                 <p>SEO Content Architect · 2026 · Built with precision.</p>
                 <div class="legal-links" style="margin-top: 15px; font-size: 0.85rem; display: flex; gap: 15px;">
-                    <a href="/privacy.html" style="color: inherit; text-decoration: none; opacity: 0.7;">Privacy Policy</a>
-                    <a href="/terms.html" style="color: inherit; text-decoration: none; opacity: 0.7;">Terms of Service</a>
+                    <a href="/privacy" style="color: inherit; text-decoration: none; opacity: 0.7;">Privacy Policy</a>
+                    <a href="/terms" style="color: inherit; text-decoration: none; opacity: 0.7;">Terms of Service</a>
                 </div>
             </div>
         </div>
@@ -217,7 +216,35 @@
     </a>
 
     <script>
-    // ... (previous counter logic remains same) ...
+    // COUNTER LOGIC
+    const counters = document.querySelectorAll('.hnum');
+    const speed = 200; // The lower the slower
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-count') || 0;
+        const count = +counter.innerText;
+        const inc = target / speed;
+        
+        if (count < target) {
+          counter.innerText = Math.ceil(count + inc);
+          setTimeout(updateCount, 10);
+        } else {
+          // Put the suffix/decimals back if they exist in dataset after running
+          if (counter.dataset.sfx) {
+             counter.innerText = target + counter.dataset.sfx;
+          } else if (counter.hasAttribute('data-dec')) {
+             counter.innerText = counter.getAttribute('data-dec');
+          } else {
+             counter.innerText = target;
+          }
+        }
+      };
+      
+      if (counter.getAttribute('data-count') || counter.hasAttribute('data-dec') || counter.dataset.sfx) {
+          // trigger if any custom stat logic present
+          updateCount();
+      }
+    });
     // SEARCH LOGIC
     const searchInput = document.getElementById('site-search');
     

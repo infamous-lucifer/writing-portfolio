@@ -3,16 +3,13 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("images");
   
-  // Passthrough for 3D Immersive Landing Page components
-  eleventyConfig.addPassthroughCopy("active-theory-vibe/src");
-  eleventyConfig.addPassthroughCopy("active-theory-vibe/public");
-  
   // Passthrough for static SEO and UI files
   eleventyConfig.addPassthroughCopy("favicon.ico");
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("404.html");
 
   return {
+    pathPrefix: "/writing-portfolio/",
     dir: {
       input: ".",
       output: "_site"
