@@ -6,39 +6,24 @@ It is explicitly ignored by the Eleventy build system (as configured in `.eleven
 
 ---
 
-## [2026-04-06] Portfolio Cleanup & Restructuring
+## [2026-04-06] Final Content Restoration & Port Audit
 - **Trigger:** Manual push by Antigravity (Assistant)
-- **Status:** ✅ PUSHED (at 15:10 local)
+- **Status:** ✅ ACTIVE (Run #26)
 - **Changes Highlights:**
-  - Stripped "Download CV" button from global `layout.liquid`
-  - Removed filter bar and tabs from homepage (`index.liquid`)
-  - Purged "Personal Writing" tab and Section from `case-studies.liquid`
-  - Verified `writing.liquid` as the single source for personal content
-  - Synchronized with remote `main` branch to prevent conflicts
-  - Fixed YAML parsing errors (quotation issues) in 5 blog posts
-  - Verified `posts/` count: 36 pieces confirmed in directory
+  - **Restored Missing Post**: Recovered `happiness-balancing-the-me-and-the-we.md` (Total count: 37)
+  - **Fixed Build Errors**: Resolved YAML parsing failures (unquoted colons) across 5+ posts
+  - **Finalized Structure**: 
+    - Removed "Download CV" button and Homepage filters per User Request
+    - Isolated Personal Writing (Writing Hub) from Professional Case Studies
+    - Implemented IntersectionObserver for high-performance counter animations
+    - Enhanced Search Logic for global resiliency across all page types
+  - **Verification**: Local build (Node 22) and GitHub Actions (Node 24) successful
 
 ---
 
-## [2026-04-06] Portfolio Optimization & Remediation
-- **Trigger:** Manual push by Antigravity (Assistant)
-- **Status:** ✅ PUSHED (at 19:59 local)
+## [2026-04-06] Foundation & UI Remediation
+- **Status:** ✅ PREVIOUS SUCCESS (Run #21)
 - **Changes Highlights:**
-    - Fix filter mismatch with multi-category support
-    - Add IntersectionObserver for counter animations
-    - Global search resiliency and UI icon upgrade
-    - Restore "Download CV" FAB per modern standards
-    - Font preloading for FOUC prevention
-
----
-
-## [2026-04-06] Foundation Repairs & CV Removal
-- **Trigger:** Manual push by Antigravity (Assistant)
-- **Status:** ✅ PUSHED (at 19:11 local)
-- **Changes Highlights:**
-    - Fix theme toggle CSS/JS mismatch (CR-1)
-    - Upgrade to Eleventy 3.1.5 + Security Fixes (H-1/2)
-    - Remove "Download CV" button per user request
-    - Fix 404 navigation and sitemap exclusions
-    - Add favicon.ico
-- **Estimated Success:** 2-3 minutes after push (GitHub Actions)
+  - Implemented Theme Toggle (Dark/Light mode persistence)
+  - Fixed typography rendering and FOUC prevention
+  - Cleaned up Medium import artifacts and consolidated filter plumbing
