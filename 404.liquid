@@ -2,6 +2,7 @@
 layout: layout.liquid
 title: Page Not Found
 permalink: 404.html
+eleventyExcludeFromCollections: true
 ---
 
 <div class="rev grid-top" style="text-align: center; padding: 100px 20px;">
@@ -10,7 +11,7 @@ permalink: 404.html
     <p class="subhead" style="max-width: 600px; margin: 0 auto 40px;">The logic path you followed doesn't exist. Let's get you back to the core data.</p>
     
     <div style="display: flex; gap: 20px; justify-content: center;">
-        <a href="/" class="btn btn-acc">Return Home</a>
-        <a href="/case-studies" class="btn">View Portfolio</a>
+        <a href="{{ '/' | url }}" class="btn btn-acc">Return Home</a>
+        <a href="{{ '/case-studies' | url }}" class="btn">View Portfolio</a>
     </div>
 </div>

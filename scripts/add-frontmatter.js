@@ -10,11 +10,7 @@ files.forEach(file => {
   const filePath = path.join(postsDir, file);
   let content = fs.readFileSync(filePath, 'utf8');
 
-  // Skip if already has frontmatter
-  if (content.startsWith('---')) {
-    console.log(`Skipping ${file} - already has frontmatter`);
-    return;
-  }
+  if (content.startsWith('---')) return;
 
   // Attempt to extract title from first heading
   let title = file.replace(/-/g, ' ').replace('.md', '');
@@ -33,7 +29,7 @@ files.forEach(file => {
   const date = stats.mtime.toISOString().split('T')[0];
 
   const frontmatter = `---
-layout: layout.liquid
+layout: post.liquid
 title: "${title}"
 date: ${date}
 category: Blogs
@@ -42,5 +38,4 @@ category: Blogs
 `;
 
   fs.writeFileSync(filePath, frontmatter + content);
-  console.log(`Processed ${file}`);
 });

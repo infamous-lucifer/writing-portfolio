@@ -8,7 +8,7 @@
   --f-mono: 'IBM Plex Mono', monospace;
 }
 
-body.light {
+[data-theme="light"] {
   --bg: #fdfbf7; 
   --bg-card: #ffffff; 
   --bg-hover: #f9f7f0;
@@ -27,7 +27,7 @@ body.light {
   --glass: rgba(253, 251, 247, 0.85);
 }
 
-body.dark {
+[data-theme="dark"] {
   --bg: #0c0b09; 
   --bg-card: #141210; 
   --bg-hover: #1c1a17;
@@ -216,7 +216,7 @@ h1 em {
 /* NAVIGATION */
 nav {
   border-bottom: 1px solid var(--border);
-  background: rgba(253, 251, 247, 0.85);
+  background: var(--glass);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   position: sticky;
