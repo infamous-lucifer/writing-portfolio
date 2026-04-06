@@ -8,7 +8,8 @@
     <!-- Premium Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@300;400;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@300;400;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@300;400;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
     <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
 
@@ -68,15 +69,19 @@
 
     <!-- TOPOGRAPHIC BACKGROUND -->
     <div class="topo">
-      <svg viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice">
+      <svg viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <defs>
           <style>
             .tl { fill: none; stroke: rgba(140, 93, 46, 0.08); stroke-width: 1; }
             .tl2 { fill: none; stroke: rgba(140, 93, 46, 0.04); stroke-width: 0.6; }
           </style>
         </defs>
-        <ellipse class="tl2" cx="180" cy="130" rx="420" ry="260"/><ellipse class="tl" cx="180" cy="130" rx="330" ry="200"/><ellipse class="tl2" cx="180" cy="130" rx="245" ry="148"/><ellipse class="tl" cx="180" cy="130" rx="165" ry="100"/><ellipse class="tl2" cx="180" cy="130" rx="95" ry="58"/><ellipse class="tl" cx="180" cy="130" rx="40" ry="24"/>
-        <ellipse class="tl2" cx="1100" cy="450" rx="500" ry="310"/><ellipse class="tl" cx="1100" cy="450" rx="400" ry="248"/><ellipse class="tl2" cx="1100" cy="450" rx="295" ry="183"/><ellipse class="tl" cx="1100" cy="450" rx="195" ry="122"/><ellipse class="tl2" cx="1100" cy="450" rx="105" ry="65"/><ellipse class="tl" cx="1100" cy="450" rx="42" ry="26"/>
+        <g class="topo-grp-1">
+          <ellipse class="tl2" cx="180" cy="130" rx="420" ry="260"/><ellipse class="tl" cx="180" cy="130" rx="330" ry="200"/><ellipse class="tl2" cx="180" cy="130" rx="245" ry="148"/><ellipse class="tl" cx="180" cy="130" rx="165" ry="100"/><ellipse class="tl2" cx="180" cy="130" rx="95" ry="58"/><ellipse class="tl" cx="180" cy="130" rx="40" ry="24"/>
+        </g>
+        <g class="topo-grp-2">
+          <ellipse class="tl2" cx="1100" cy="450" rx="500" ry="310"/><ellipse class="tl" cx="1100" cy="450" rx="400" ry="248"/><ellipse class="tl2" cx="1100" cy="450" rx="295" ry="183"/><ellipse class="tl" cx="1100" cy="450" rx="195" ry="122"/><ellipse class="tl2" cx="1100" cy="450" rx="105" ry="65"/><ellipse class="tl" cx="1100" cy="450" rx="42" ry="26"/>
+        </g>
       </svg>
     </div>
 
@@ -86,7 +91,7 @@
             <h1>Akshat<br><em>Singh.</em></h1>
             <p class="subhead">Strategic SEO content for High-Impact sectors. From Cybersecurity to Appellate Law, I build authority that ranks.</p>
 
-            <div class="hstats">
+            <div class="hstats" id="stats-section">
                 <div class="hstat">
                     <span class="hnum" data-count="114">0</span>
                     <span class="hkey">Total Pieces Delivered</span>
@@ -127,7 +132,13 @@
             <div class="nav-extra">
                 <div class="search-box">
                     <input type="text" id="site-search" placeholder="Search projects..." aria-label="Search projects">
-                    <span class="s-icon">⌕</span>
+                    <span class="s-icon">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </span>
+                </div>
+                <div class="nav-status">
+                    <div class="n-stat"><span>0</span></div>
+                    <div class="n-stat"><span>0</span></div>
                 </div>
                 <button id="theme-toggle" aria-label="Toggle Theme">
                     <span class="t-icon">☼</span>
@@ -141,6 +152,11 @@
             {{ content }}
         </div>
     </main>
+
+    <a href="{{ '/assets/akshat-singh-resume.pdf' | url }}" class="fab" target="_blank" aria-label="Download CV">
+        <span>Download CV</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+    </a>
 
     <footer>
         <div class="container">
@@ -180,10 +196,11 @@
 
 
     <script>
-    // COUNTER LOGIC
+    // COUNTER LOGIC - with IntersectionObserver to prevent premature animation
     const counters = document.querySelectorAll('.hnum');
     const speed = 200;
-    counters.forEach(counter => {
+
+    const startCounter = (counter) => {
       const updateCount = () => {
         const target = +counter.getAttribute('data-count') || 0;
         const count = +counter.innerText;
@@ -202,11 +219,24 @@
           }
         }
       };
-
+      
       if (counter.getAttribute('data-count') || counter.hasAttribute('data-dec') || counter.dataset.sfx) {
           updateCount();
       }
-    });
+    };
+
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const nums = entry.target.querySelectorAll('.hnum');
+          nums.forEach(n => startCounter(n));
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    const statsSection = document.getElementById('stats-section');
+    if (statsSection) statsObserver.observe(statsSection);
 
     // SEARCH LOGIC — targets .card (homepage) and .case-card (writing hub)
     const searchInput = document.getElementById('site-search');
@@ -229,7 +259,7 @@
         });
     }
 
-    // FILTER LOGIC
+    // FILTER LOGIC - supports multi-category tagging
     const tabs = document.querySelectorAll('.ftab');
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
@@ -248,13 +278,17 @@
 
         if (items.length > 0) {
           items.forEach(item => {
-            item.style.display = (f === 'all' || item.dataset.category === f) ? 'flex' : 'none';
+            const categories = item.dataset.category.toLowerCase().split(' ');
+            const filterValue = f.toLowerCase();
+            item.style.display = (f === 'all' || categories.includes(filterValue)) ? 'flex' : 'none';
           });
         }
 
         if (sections.length > 0) {
           sections.forEach(s => {
-            s.style.display = (f === 'all' || s.dataset.s === f) ? 'block' : 'none';
+            const secCats = s.dataset.s.toLowerCase().split(' ');
+            const filterValue = f.toLowerCase();
+            s.style.display = (f === 'all' || secCats.includes(filterValue)) ? 'block' : 'none';
           });
         }
       });
