@@ -11,7 +11,6 @@ description: Advanced SEO case studies and tactical breakdowns for CCI Training,
     <button class="ftab" data-f="live" type="button" aria-selected="false">Live, No Data <span class="n">(4)</span></button>
     <button class="ftab" data-f="prod" type="button" aria-selected="false">In Production <span class="n">(24)</span></button>
     <button class="ftab" data-f="other" type="button" aria-selected="false">Other Clients <span class="n">(12)</span></button>
-    <button class="ftab" data-f="writing" type="button" aria-selected="false">Personal Writing <span class="n">({{ collections.posts.size }})</span></button>
   </div>
   <span class="fmeta">CCI Training · AFI International · Brownstone Law · Adorb · LB Diving</span>
 </div>
@@ -216,26 +215,5 @@ description: Advanced SEO case studies and tactical breakdowns for CCI Training,
         <p class="c-desc">Guest post strategy emphasizing safety standards and instructor credentials in Thailand.</p>
         <a href="https://docs.google.com/document/d/1qd2sKZOxtN-3ysL0iAJUY87pgevb7sjC-5hcp-l92rQ/edit" target="_blank" rel="noopener noreferrer" class="doc-link" aria-label="View Google Doc for Divemaster Selection"></a>
     </div>
-  </div>
-</section>
-
-<!-- SECTION 6: MEDIUM POSTS (AUTOMATED) -->
-<section data-s="writing" class="grid-top">
-  <div class="sh"><span class="sh-lbl">Personal Writing (Medium Export)</span><div class="sh-line"></div></div>
-  
-  <div class="g3 rev">
-    {% for post in collections.posts %}
-    <article class="case-card" data-category="writing">
-        <div class="c-header">
-            <span class="c-client">Personal Writing</span>
-            <span class="c-date">{{ post.date | date: "%b %Y" }}</span>
-        </div>
-        <h3 class="c-title">{{ post.data.title }}</h3>
-        <p class="c-desc">{{ post.templateContent | strip_html | truncate: 150 }}</p>
-        <div class="c-footer">
-            <a href="{{ post.url | url }}" class="btn-text">Read Full Piece ➔</a>
-        </div>
-    </article>
-    {% endfor %}
   </div>
 </section>

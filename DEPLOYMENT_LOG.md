@@ -3,6 +3,19 @@
 This file tracks every manual and automated push/deployment to the live site. 
 It is explicitly ignored by the Eleventy build system (as configured in `.eleventy.js`) so it will never be accessible to public visitors.
 
+
+---
+
+## [2026-04-06] Portfolio Cleanup & Restructuring
+- **Trigger:** Manual push by Antigravity (Assistant)
+- **Status:** 🚀 COMMITTING (at 15:05 local)
+- **Changes Highlights:**
+    - Stripped "Download CV" button from global `layout.liquid`
+    - Removed filter bar and tabs from homepage (`index.liquid`)
+    - Purged "Personal Writing" tab and Section from `case-studies.liquid`
+    - Verified `writing.liquid` as the single source for personal content
+    - Synchronized with remote `main` branch to prevent conflicts
+
 ---
 
 ## [2026-04-06] Portfolio Optimization & Remediation
