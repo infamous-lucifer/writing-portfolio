@@ -13,11 +13,13 @@ description: 60+ pieces of personal exploration — from introspective essays an
 <section class="portfolio-grid-section">
     <div class="container">
         <!-- FILTER BAR -->
-        <div class="filter-bar">
-            <button class="filter-btn active" data-filter="all">All Pieces</button>
-            <button class="filter-btn" data-filter="Blogs">Personal Blogs</button>
-            <button class="filter-btn" data-filter="Poems">Poems</button>
-            <button class="filter-btn" data-filter="Prose">Prose</button>
+        <div class="fbar">
+            <div class="ftabs">
+                <button class="ftab active" data-f="all" type="button" aria-selected="true">All Pieces</button>
+                <button class="ftab" data-f="Blogs" type="button" aria-selected="false">Personal Blogs</button>
+                <button class="ftab" data-f="Poems" type="button" aria-selected="false">Poems</button>
+                <button class="ftab" data-f="Prose" type="button" aria-selected="false">Prose</button>
+            </div>
         </div>
 
         <!-- WRITING GRID -->
@@ -38,28 +40,3 @@ description: 60+ pieces of personal exploration — from introspective essays an
         </div>
     </div>
 </section>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.case-card');
-
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Update active state
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            const filter = btn.getAttribute('data-filter');
-
-            cards.forEach(card => {
-                if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    });
-});
-</script>

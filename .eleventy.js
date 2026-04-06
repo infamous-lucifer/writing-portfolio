@@ -16,6 +16,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.ignores.add("issue-verification-report.md");
   eleventyConfig.ignores.add("DEPLOYMENT_LOG.md");
   eleventyConfig.ignores.add("LICENSE");
+  eleventyConfig.ignores.add("scripts/**");
   eleventyConfig.ignores.add(".github/**");
 
   // Custom filter for clean excerpts

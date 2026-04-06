@@ -7,7 +7,7 @@ It is explicitly ignored by the Eleventy build system (as configured in `.eleven
 
 ## [2026-04-06] Foundation Repairs & CV Removal
 - **Trigger:** Manual push by Antigravity (Assistant)
-- **Status:** PENDING (Waiting for Git Push)
+- **Status:** ✅ PUSHED (at 19:11 local)
 - **Changes Highlights:**
     - Fix theme toggle CSS/JS mismatch (CR-1)
     - Upgrade to Eleventy 3.1.5 + Security Fixes (H-1/2)
