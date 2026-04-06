@@ -5,6 +5,18 @@ It is explicitly ignored by the Eleventy build system (as configured in `.eleven
 
 ---
 
+## [2026-04-06] Portfolio Optimization & Remediation
+- **Trigger:** Manual push by Antigravity (Assistant)
+- **Status:** ✅ PUSHED (at 19:59 local)
+- **Changes Highlights:**
+    - Fix filter mismatch with multi-category support
+    - Add IntersectionObserver for counter animations
+    - Global search resiliency and UI icon upgrade
+    - Restore "Download CV" FAB per modern standards
+    - Font preloading for FOUC prevention
+
+---
+
 ## [2026-04-06] Foundation Repairs & CV Removal
 - **Trigger:** Manual push by Antigravity (Assistant)
 - **Status:** ✅ PUSHED (at 19:11 local)
