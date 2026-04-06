@@ -15,7 +15,7 @@ It is explicitly ignored by the Eleventy build system (as configured in `.eleven
   - Purged "Personal Writing" tab and Section from `case-studies.liquid`
   - Verified `writing.liquid` as the single source for personal content
   - Synchronized with remote `main` branch to prevent conflicts
-  - Fixed YAML parsing error in `posts/idealism-the-power-to-shape-a-better-future.md`
+  - Fixed YAML parsing errors (quotation issues) in 5 blog posts
   - Verified `posts/` count: 36 pieces confirmed in directory
 
 ---
