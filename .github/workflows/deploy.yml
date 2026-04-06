@@ -3,6 +3,10 @@ name: Deploy Eleventy to GitHub Pages
 on:
   push:
     branches: ["main"]
+    paths-ignore:
+      - 'sitemap.xml'
+      - 'PORTFOLIO_AUDIT.md'
+      - 'README.md'
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages

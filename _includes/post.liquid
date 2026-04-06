@@ -2,21 +2,39 @@
 layout: layout.liquid
 ---
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ title }}",
+  "datePublished": "{{ date | date: '%Y-%m-%dT%H:%M:%SZ' }}",
+  "author": {
+    "@type": "Person",
+    "name": "Akshat Singh"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Akshat Singh"
+  },
+  "description": "{{ content | strip_html | truncate: 160 }}"
+}
+</script>
+
 <div class="sh"><span class="sh-lbl">{{ category }}</span><div class="sh-line"></div></div>
 
 <div class="g2 rev">
-  <article class="card" style="grid-column: 1 / -1; padding-bottom: 60px;">
-    <div style="margin-bottom: 2rem;">
-        <h1 class="c-title" style="font-size: 42px; line-height: 1.1; margin-bottom: 12px;">{{ title }}</h1>
+  <article class="card card-full" style="padding-bottom: 60px;">
+    <div class="mb-2">
+        <h1 class="c-title c-title-lg">{{ title }}</h1>
         <div class="badge acc">{{ date | date: "%B %d, %Y" }}</div>
     </div>
     
-    <div class="c-desc" style="font-size: 18px; line-height: 1.8;">
+    <div class="c-desc c-desc-lg">
       {{ content }}
     </div>
 
-    <div class="sr mt-1" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
-        <a href="{{ '/case-studies' | url }}" class="live-link">← Back to Portfolio</a>
+    <div class="sr mt-1" style="border-top: 1px solid var(--border); padding-top: 20px;">
+        <a href="{{ '/writing' | url }}" class="live-link">← Back to Writing Hub</a>
     </div>
   </article>
 </div>
