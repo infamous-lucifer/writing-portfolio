@@ -99,14 +99,14 @@
                 </div>
                 <div class="hstat">
                     <div class="logos-track">
-                        <span class="l-lbl">Trusted By:</span>
+                        <span class="l-lbl">Sectors Covered:</span>
                         <div class="l-grid">
-                            <span>Webspero</span>
-                            <span>CCI Training</span>
-                            <span>AFI International</span>
-                            <span>Brownstone Law</span>
-                            <span>Adorb</span>
-                            <span>LB Diving</span>
+                            <span>Cybersecurity</span>
+                            <span>Healthcare</span>
+                            <span>Immigration Law</span>
+                            <span>Appellate Law</span>
+                            <span>eCommerce</span>
+                            <span>Dive Tourism</span>
                         </div>
                     </div>
                 </div>
@@ -128,10 +128,6 @@
                     <span class="s-icon">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                     </span>
-                </div>
-                <div class="nav-status">
-                    <div class="n-stat"><span>0</span></div>
-                    <div class="n-stat"><span>0</span></div>
                 </div>
                 <button id="theme-toggle" aria-label="Toggle Theme">
                     <span class="t-icon">☼</span>
@@ -181,22 +177,21 @@
         </div>
     </div>
 
-
-
     <script>
-    // COUNTER LOGIC - with IntersectionObserver to prevent premature animation
+   // COUNTER LOGIC - fixed precision bug
     const counters = document.querySelectorAll('.hnum');
     const speed = 200;
 
     const startCounter = (counter) => {
-      const updateCount = () => {
-        const target = +counter.getAttribute('data-count') || 0;
-        const count = +counter.innerText;
-        const inc = target / speed;
-        const next = count + inc;
+      const target = +counter.getAttribute('data-count') || 0;
+      let current = 0; // Store the exact number in memory, not the DOM
+      const inc = target / speed;
 
-        if (next < target) {
-          counter.innerText = counter.hasAttribute('data-dec') ? next.toFixed(1) : Math.ceil(next);
+      const updateCount = () => {
+        current += inc;
+        
+        if (current < target) {
+          counter.innerText = counter.hasAttribute('data-dec') ? current.toFixed(1) : Math.ceil(current);
           setTimeout(updateCount, 10);
         } else {
           if (counter.dataset.sfx) {
@@ -227,7 +222,7 @@
     const statsSection = document.getElementById('stats-section');
     if (statsSection) statsObserver.observe(statsSection);
 
-    // SEARCH LOGIC — targets .card (homepage) and .case-card (writing hub)
+    // SEARCH LOGIC
     const searchInput = document.getElementById('site-search');
 
     if (searchInput) {
@@ -237,7 +232,7 @@
 
             cards.forEach(card => {
                 const textContent = card.innerText.toLowerCase();
-                card.style.display = textContent.includes(term) ? 'flex' : 'none';
+                card.style.display = textContent.includes(term) ? '' : 'none';
             });
 
             if (term.length > 0) {
@@ -248,7 +243,7 @@
         });
     }
 
-    // FILTER LOGIC - supports multi-category tagging
+    // FILTER LOGIC
     const tabs = document.querySelectorAll('.ftab');
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
@@ -269,7 +264,7 @@
           items.forEach(item => {
             const categories = item.dataset.category.toLowerCase().split(' ');
             const filterValue = f.toLowerCase();
-            item.style.display = (f === 'all' || categories.includes(filterValue)) ? 'flex' : 'none';
+            item.style.display = (f === 'all' || categories.includes(filterValue)) ? '' : 'none';
           });
         }
 
@@ -277,7 +272,7 @@
           sections.forEach(s => {
             const secCats = s.dataset.s.toLowerCase().split(' ');
             const filterValue = f.toLowerCase();
-            s.style.display = (f === 'all' || secCats.includes(filterValue)) ? 'block' : 'none';
+            s.style.display = (f === 'all' || secCats.includes(filterValue)) ? '' : 'none';
           });
         }
       });
@@ -294,7 +289,7 @@
         banner.style.display = 'none';
     });
 
-    // THEME TOGGLE — persists across all pages
+    // THEME TOGGLE
     const themeToggle = document.getElementById('theme-toggle');
 
     const applyTheme = (theme) => {
@@ -303,7 +298,6 @@
         themeToggle.querySelector('.t-icon').textContent = theme === 'light' ? '☽' : '☼';
     };
 
-    // Sync button icon and apply saved theme on page load
     const currentTheme = localStorage.getItem('theme') || 'dark';
     applyTheme(currentTheme);
 
