@@ -982,6 +982,19 @@ footer {
     align-items: flex-start;
   }
 
+  /* This is where the new footer rules go! */
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    text-align: left;
+  }
+
+  .legal-links {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
   /* Fix text overflow and sizing */
   .c-title {
     font-size: 20px;
@@ -1006,7 +1019,6 @@ footer {
 
   .nav-links {
     display: none;
-    /* Hidden by default on mobile */
     position: absolute;
     top: 100%;
     left: 0;
