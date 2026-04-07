@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if title %}{{ title }} | {% endif %}Akshat Singh | Content Portfolio</title>
 
-    <!-- Premium Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@300;400;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap">
@@ -13,7 +12,6 @@
 
     <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
 
-    <!-- SEO Meta Tags -->
     <meta name="description" content="{% if description %}{{ description | strip_html | truncate: 160 }}{% else %}Akshat Singh — Senior SEO Content Strategist. Delivering high-impact content for Cybersecurity, Law, and Tech sectors. Built for 2026 authority.{% endif %}">
     <meta name="keywords" content="SEO Content, Content Strategist, Cybersecurity Writer, Legal Content, Akshat Singh Portfolio">
     <meta property="og:title" content="{% if title %}{{ title }} | {% endif %}Akshat Singh | Content Portfolio">
@@ -25,7 +23,6 @@
     <link rel="canonical" href="https://infamous-lucifer.github.io/writing-portfolio{{ page.url }}">
     <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | url }}">
 
-    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQPTTN037H"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -34,7 +31,6 @@
       gtag('config', 'G-XQPTTN037H');
     </script>
 
-    <!-- Microsoft Clarity -->
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -43,7 +39,6 @@
         })(window, document, "clarity", "script", "w6un2vtbtp");
     </script>
 
-    <!-- SEO Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -57,17 +52,15 @@
     }
     </script>
 
-    <!-- Theme persistence — applied before paint to prevent FOUC -->
     <script>
       (function() {
-        const saved = localStorage.getItem('theme');
-        if (saved === 'light') document.documentElement.setAttribute('data-theme', 'light');
+        const saved = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', saved);
       })();
     </script>
 </head>
 <body>
 
-    <!-- TOPOGRAPHIC BACKGROUND -->
     <div class="topo">
       <svg viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <defs>
@@ -181,7 +174,6 @@
         </div>
     </footer>
 
-    <!-- COOKIE CONSENT BANNER -->
     <div id="cookie-banner" class="cookie-banner" style="display: none;">
         <div class="container cb-flex">
             <p>We use cookies to ensure you get the best experience on Akshat's portfolio. <a href="{{ '/privacy' | url }}">Learn more</a></p>
@@ -201,9 +193,10 @@
         const target = +counter.getAttribute('data-count') || 0;
         const count = +counter.innerText;
         const inc = target / speed;
+        const next = count + inc;
 
-        if (count < target) {
-          counter.innerText = Math.ceil(count + inc);
+        if (next < target) {
+          counter.innerText = counter.hasAttribute('data-dec') ? next.toFixed(1) : Math.ceil(next);
           setTimeout(updateCount, 10);
         } else {
           if (counter.dataset.sfx) {
@@ -310,9 +303,9 @@
         themeToggle.querySelector('.t-icon').textContent = theme === 'light' ? '☽' : '☼';
     };
 
-    // Sync button icon with saved theme on page load
+    // Sync button icon and apply saved theme on page load
     const currentTheme = localStorage.getItem('theme') || 'dark';
-    themeToggle.querySelector('.t-icon').textContent = currentTheme === 'light' ? '☽' : '☼';
+    applyTheme(currentTheme);
 
     themeToggle.addEventListener('click', () => {
         const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
