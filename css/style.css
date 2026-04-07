@@ -813,6 +813,35 @@ footer {
   box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
+/* 404 PAGE */
+.page-404 {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.page-404 .err-code {
+  font-size: 80px;
+  opacity: 0.1;
+  margin-bottom: -40px;
+  font-family: var(--f-mono);
+}
+
+.page-404 h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.page-404 .subhead {
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.page-404 .actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
 /* RESPONSIVE */
 @media (max-width: 1024px) {
   .sg, .g3, .g2 { grid-template-columns: 1fr 1fr; }
