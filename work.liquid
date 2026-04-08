@@ -1,103 +1,141 @@
 ---
 layout: layout.liquid
 title: Work
-description: 116+ pieces of SEO content across Healthcare, Cybersecurity, Immigration Law, Appellate Law, eCommerce, and more.
+description: 116+ pieces of SEO content across Healthcare, Cybersecurity, Immigration, and more.
 ---
 
-<div class="fbar">
-  <div class="ftabs" id="filter-container">
-    <button class="ftab active" data-f="all" type="button" aria-selected="true">All Work <span class="n" id="total-count">(...)</span></button>
-    <button class="ftab" data-f="health" type="button" aria-selected="false">Healthcare & Medical</button>
-    <button class="ftab" data-f="cyber" type="button" aria-selected="false">Cybersecurity & IT</button>
-    <button class="ftab" data-f="esl" type="button" aria-selected="false">ESL & Immigration</button>
-    <button class="ftab" data-f="legal" type="button" aria-selected="false">Legal</button>
-    <button class="ftab" data-f="ecom" type="button" aria-selected="false">eCommerce & Lifestyle</button>
-    <button class="ftab" data-f="dive" type="button" aria-selected="false">Dive & Travel</button>
-  </div>
+<style>
+  .guided-matrix-header { margin: 2rem 0 4rem 0; padding: 2.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; }
+  .matrix-headline { font-family: var(--f-head); font-size: 32px; font-weight: 400; line-height: 1.6; color: var(--txt-2); margin: 0; }
+  .inline-select { appearance: none; background: transparent; border: none; border-bottom: 2px dashed var(--acc); color: var(--acc); font-family: inherit; font-size: inherit; font-weight: 600; cursor: pointer; padding: 0 8px; outline: none; }
+  .inline-select:hover { background: var(--acc-s); }
+  .matrix-section { margin-bottom: 4rem; animation: fadeIn 0.5s ease-out; }
+  
+  @media (min-width: 1024px) {
+    .bento-feat { grid-column: span 2; }
+    .bento-feat .c-title { font-size: 32px; line-height: 1.2; }
+  }
+
+  .ghost-swimlane { padding: 2.5rem; border: 1px dashed var(--border-hi); border-radius: 8px; color: var(--txt-3); text-align: center; font-family: var(--f-mono); font-size: 14px; grid-column: 1 / -1; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+
+<div class="guided-matrix-header">
+  <h1 class="matrix-headline">
+    Show me 
+    <select id="type-select" class="inline-select">
+      <option value="all">all content</option>
+      <option value="blog">expert blogs</option>
+      <option value="service">service pages</option>
+      <option value="technical">technical docs</option>
+      <option value="guide">guides & checklists</option>
+    </select>
+    written for the
+    <select id="industry-select" class="inline-select">
+      <option value="all">across all industries</option>
+      <option value="health">Healthcare & Medical</option>
+      <option value="cyber">Cybersecurity & IT</option>
+      <option value="legal">Legal & Appellate</option>
+      <option value="esl">ESL & Immigration</option>
+      <option value="ecom">eCommerce & Lifestyle</option>
+      <option value="dive">Dive & Travel</option>
+    </select>
+    sector <span class="n" id="total-count" style="font-size: 0.6em; opacity: 0.5;">(...)</span>.
+  </h1>
 </div>
 
-<div id="portfolio-grid" class="g3 rev grid-top" style="margin-top: 2rem;">
-  <p id="loading-text" style="color: var(--txt-3); padding: 2rem; grid-column: 1 / -1; text-align: center;">Loading latest work directly from the database...</p>
+<div id="portfolio-matrix">
+  <p id="loading-text" style="text-align: center; padding: 3rem; color: var(--txt-3);">Syncing with database...</p>
 </div>
 
 <script>
-  // Your Google Apps Script API URL
-  const SHEET_API_URL = "https://script.google.com/macros/s/AKfycbzp7WEx-c5NvrRqz52PvPY6mb9p6gVt7uZGralaX1bfq3BkIeoAQJHSBBn4Ubte8rd25g/exec";
-
+  const SHEET_API_URL = "https://script.google.com/macros/s/AKfycbw1J7-yT2pIRKBXYNqNbKOGe8ZNFqvGTZJXd-yQ1pFmG7Ffg4xsUdcMa4ujax4WF1081g/exec"; 
   let allPortfolioData = [];
 
-  // 1. Fetch the data from Google Sheets API
   async function fetchPortfolio() {
     try {
       const response = await fetch(SHEET_API_URL);
       allPortfolioData = await response.json();
-      
-      // Hide the loading text
       document.getElementById('loading-text').style.display = 'none';
-      
-      // Update the total count on the "All Work" button
-      document.getElementById('total-count').innerText = `(${allPortfolioData.length})`;
-
-      // Render the grid
-      renderCards('all');
-    } catch (error) {
-      document.getElementById('loading-text').innerText = "Failed to load portfolio data. Please try again later.";
-      console.error("Error fetching sheet:", error);
+      renderMatrix();
+    } catch (e) {
+      document.getElementById('loading-text').innerText = "Sync Error. Please check your connection.";
+      console.error("Error fetching data:", e);
     }
   }
 
-  // 2. Build the HTML cards dynamically
-  function renderCards(filterType) {
-    const grid = document.getElementById('portfolio-grid');
-    grid.innerHTML = ''; // Clear grid before drawing
+  function renderMatrix() {
+    const indFilter = document.getElementById('industry-select').value;
+    const typeFilter = document.getElementById('type-select').value;
+    const container = document.getElementById('portfolio-matrix');
+    container.innerHTML = '';
+
+    const groups = [
+      { id: "health", title: "Healthcare & Medical", keywords: ["health", "medical", "clinic", "pharma", "diagnostics", "radiology", "endocrinology", "blood"], items: [] },
+      { id: "cyber", title: "Cybersecurity & IT", keywords: ["cyber", " it", "cloud", "security", "saas", "tech", "software", "ai", "network", "ccna"], items: [] },
+      { id: "legal", title: "Legal & Appellate", keywords: ["legal", "law", "court", "appellate", "ssdi", "attorney", "conviction", "ssi"], items: [] },
+      { id: "esl", title: "ESL & Immigration", keywords: ["esl", "immigration", "visa", "student", "education", "english", "sevis", "f-1", "opt"], items: [] },
+      { id: "ecom", title: "eCommerce & Lifestyle", keywords: ["ecom", "apparel", "home", "remodel", "wedding", "lifestyle", "shirt", "skincare", "gift", "siding", "cabinet"], items: [] },
+      { id: "dive", title: "Dive & Travel", keywords: ["dive", "travel", "scuba", "tourism", "tao", "sail rock"], items: [] },
+      { id: "other", title: "Specialized Strategy", keywords: [], items: [] }
+    ];
 
     allPortfolioData.forEach(item => {
-      // Smart categorization mapping
-      let catTag = "other";
-      let catLower = String(item.category).toLowerCase();
-      
-      if (catLower.includes("health") || catLower.includes("medical") || catLower.includes("clinical") || catLower.includes("pharmacy")) catTag = "health";
-      else if (catLower.includes("cyber") || catLower.includes("it") || catLower.includes("network")) catTag = "cyber";
-      else if (catLower.includes("esl") || catLower.includes("immigration") || catLower.includes("visa") || catLower.includes("education")) catTag = "esl";
-      else if (catLower.includes("legal") || catLower.includes("appellate") || catLower.includes("law")) catTag = "legal";
-      else if (catLower.includes("ecom") || catLower.includes("apparel") || catLower.includes("improvement") || catLower.includes("guide") || catLower.includes("product") || catLower.includes("service")) catTag = "ecom";
-      else if (catLower.includes("dive") || catLower.includes("travel")) catTag = "dive";
+      const indText = String(item.rawIndustry || "").toLowerCase();
+      const typeText = String(item.rawFormat || "").toLowerCase();
+      const titleText = item.title.toLowerCase();
+      const excerptText = item.excerpt.toLowerCase();
+      const searchBlob = titleText + " " + indText + " " + typeText + " " + excerptText;
 
-      // Draw the card if it matches the active filter
-      if (filterType === 'all' || filterType === catTag) {
-        
-        // Only render the a-tag if a URL actually exists
-        const linkHTML = item.url ? `<a href="${item.url}" target="_blank" rel="noopener noreferrer" class="doc-link" aria-label="View doc"></a>` : '';
-        
-        const cardHTML = `
-          <div class="card" data-category="${catTag}">
+      // Logic to find the lane based on keywords
+      let assignedLane = groups.find(g => g.keywords.some(k => searchBlob.includes(k))) || groups[groups.length - 1];
+      
+      // Normalize Content Type for Filtering
+      let itemType = "other";
+      if (searchBlob.match(/blog|article|post|profile/)) itemType = "blog";
+      else if (searchBlob.match(/service|landing|overview|overview/)) itemType = "service";
+      else if (searchBlob.match(/technical|clinical|analysis|diagnostics/)) itemType = "technical";
+      else if (searchBlob.match(/guide|how-to|step|checklist|requirement/)) itemType = "guide";
+
+      const matchInd = (indFilter === 'all' || indFilter === assignedLane.id);
+      const matchType = (typeFilter === 'all' || typeFilter === itemType);
+
+      if (matchInd && matchType) {
+        assignedLane.items.push(item);
+      }
+    });
+
+    let total = 0;
+    groups.filter(g => indFilter === 'all' || indFilter === g.id).forEach(g => {
+      total += g.items.length;
+      
+      let cards = "";
+      if (g.items.length > 0) {
+        cards = g.items.map((item, i) => `
+          <div class="card ${i === 0 && g.items.length > 2 ? 'bento-feat' : ''}" data-category="${g.id}">
             <div class="c-client">${item.category}</div>
             <span class="c-title">${item.title}</span>
             <p class="c-desc">${item.excerpt}</p>
-            ${linkHTML}
+            ${item.url ? `<a href="${item.url}" target="_blank" class="doc-link" aria-label="View Google Doc"></a>` : ''}
+          </div>
+        `).join('');
+      } else {
+        cards = `<div class="ghost-swimlane">No pieces currently listed under this criteria.</div>`;
+      }
+
+      // Only show the industry section if it has items OR if the user specifically requested that industry
+      if (g.items.length > 0 || indFilter === g.id) {
+        container.innerHTML += `
+          <div class="matrix-section">
+            <div class="sh"><span class="sh-lbl">${g.title} (${g.items.length})</span><div class="sh-line"></div></div>
+            <div class="g3 rev">${cards}</div>
           </div>
         `;
-        grid.innerHTML += cardHTML;
       }
     });
+    document.getElementById('total-count').innerText = `(${total} pieces)`;
   }
 
-  // 3. Attach Click Listeners to Filter Buttons
-  document.querySelectorAll('.ftab').forEach(button => {
-    button.addEventListener('click', (e) => {
-      // Ensure we grab the button even if they click the span inside it
-      const targetBtn = e.target.closest('.ftab');
-      
-      // Update UI state
-      document.querySelectorAll('.ftab').forEach(btn => btn.classList.remove('active'));
-      targetBtn.classList.add('active');
-      
-      // Re-render the grid based on the button's data-f tag
-      const filterValue = targetBtn.getAttribute('data-f');
-      renderCards(filterValue);
-    });
-  });
-
-  // Start the engine
+  document.querySelectorAll('.inline-select').forEach(s => s.addEventListener('change', renderMatrix));
   fetchPortfolio();
 </script>
