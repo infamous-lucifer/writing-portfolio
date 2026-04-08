@@ -1,0 +1,103 @@
+---
+layout: layout.liquid
+title: Work
+description: 116+ pieces of SEO content across Healthcare, Cybersecurity, Immigration Law, Appellate Law, eCommerce, and more.
+---
+
+<div class="fbar">
+  <div class="ftabs" id="filter-container">
+    <button class="ftab active" data-f="all" type="button" aria-selected="true">All Work <span class="n" id="total-count">(...)</span></button>
+    <button class="ftab" data-f="health" type="button" aria-selected="false">Healthcare & Medical</button>
+    <button class="ftab" data-f="cyber" type="button" aria-selected="false">Cybersecurity & IT</button>
+    <button class="ftab" data-f="esl" type="button" aria-selected="false">ESL & Immigration</button>
+    <button class="ftab" data-f="legal" type="button" aria-selected="false">Legal</button>
+    <button class="ftab" data-f="ecom" type="button" aria-selected="false">eCommerce & Lifestyle</button>
+    <button class="ftab" data-f="dive" type="button" aria-selected="false">Dive & Travel</button>
+  </div>
+</div>
+
+<div id="portfolio-grid" class="g3 rev grid-top" style="margin-top: 2rem;">
+  <p id="loading-text" style="color: var(--txt-3); padding: 2rem; grid-column: 1 / -1; text-align: center;">Loading latest work directly from the database...</p>
+</div>
+
+<script>
+  // Your Google Apps Script API URL
+  const SHEET_API_URL = "https://script.google.com/macros/s/AKfycbzp7WEx-c5NvrRqz52PvPY6mb9p6gVt7uZGralaX1bfq3BkIeoAQJHSBBn4Ubte8rd25g/exec";
+
+  let allPortfolioData = [];
+
+  // 1. Fetch the data from Google Sheets API
+  async function fetchPortfolio() {
+    try {
+      const response = await fetch(SHEET_API_URL);
+      allPortfolioData = await response.json();
+      
+      // Hide the loading text
+      document.getElementById('loading-text').style.display = 'none';
+      
+      // Update the total count on the "All Work" button
+      document.getElementById('total-count').innerText = `(${allPortfolioData.length})`;
+
+      // Render the grid
+      renderCards('all');
+    } catch (error) {
+      document.getElementById('loading-text').innerText = "Failed to load portfolio data. Please try again later.";
+      console.error("Error fetching sheet:", error);
+    }
+  }
+
+  // 2. Build the HTML cards dynamically
+  function renderCards(filterType) {
+    const grid = document.getElementById('portfolio-grid');
+    grid.innerHTML = ''; // Clear grid before drawing
+
+    allPortfolioData.forEach(item => {
+      // Smart categorization mapping
+      let catTag = "other";
+      let catLower = String(item.category).toLowerCase();
+      
+      if (catLower.includes("health") || catLower.includes("medical") || catLower.includes("clinical") || catLower.includes("pharmacy")) catTag = "health";
+      else if (catLower.includes("cyber") || catLower.includes("it") || catLower.includes("network")) catTag = "cyber";
+      else if (catLower.includes("esl") || catLower.includes("immigration") || catLower.includes("visa") || catLower.includes("education")) catTag = "esl";
+      else if (catLower.includes("legal") || catLower.includes("appellate") || catLower.includes("law")) catTag = "legal";
+      else if (catLower.includes("ecom") || catLower.includes("apparel") || catLower.includes("improvement") || catLower.includes("guide") || catLower.includes("product") || catLower.includes("service")) catTag = "ecom";
+      else if (catLower.includes("dive") || catLower.includes("travel")) catTag = "dive";
+
+      // Draw the card if it matches the active filter
+      if (filterType === 'all' || filterType === catTag) {
+        
+        // Only render the a-tag if a URL actually exists
+        const linkHTML = item.url ? `<a href="${item.url}" target="_blank" rel="noopener noreferrer" class="doc-link" aria-label="View doc"></a>` : '';
+        
+        const cardHTML = `
+          <div class="card" data-category="${catTag}">
+            <div class="c-client">${item.category}</div>
+            <span class="c-title">${item.title}</span>
+            <p class="c-desc">${item.excerpt}</p>
+            ${linkHTML}
+          </div>
+        `;
+        grid.innerHTML += cardHTML;
+      }
+    });
+  }
+
+  // 3. Attach Click Listeners to Filter Buttons
+  document.querySelectorAll('.ftab').forEach(button => {
+    button.addEventListener('click', (e) => {
+      // Ensure we grab the button even if they click the span inside it
+      const targetBtn = e.target.closest('.ftab');
+      
+      // Update UI state
+      document.querySelectorAll('.ftab').forEach(btn => btn.classList.remove('active'));
+      targetBtn.classList.add('active');
+      
+      // Re-render the grid based on the button's data-f tag
+      const filterValue = targetBtn.getAttribute('data-f');
+      renderCards(filterValue);
+    });
+  });
+
+  // Start the engine
+  fetchPortfolio();
+</script>
