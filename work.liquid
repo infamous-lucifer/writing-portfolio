@@ -49,6 +49,7 @@ description: 116+ pieces of SEO content across Healthcare, Cybersecurity, Immigr
 </div>
 
 <script>
+  // Updated with your verified live API URL
   const SHEET_API_URL = "https://script.google.com/macros/s/AKfycbw1J7-yT2pIRKBXYNqNbKOGe8ZNFqvGTZJXd-yQ1pFmG7Ffg4xsUdcMa4ujax4WF1081g/exec"; 
   let allPortfolioData = [];
 
@@ -59,7 +60,7 @@ description: 116+ pieces of SEO content across Healthcare, Cybersecurity, Immigr
       document.getElementById('loading-text').style.display = 'none';
       renderMatrix();
     } catch (e) {
-      document.getElementById('loading-text').innerText = "Sync Error. Please check your connection.";
+      document.getElementById('loading-text').innerText = "Sync Error. Please check connection.";
       console.error("Error fetching data:", e);
     }
   }
@@ -81,19 +82,20 @@ description: 116+ pieces of SEO content across Healthcare, Cybersecurity, Immigr
     ];
 
     allPortfolioData.forEach(item => {
-      const indText = String(item.rawIndustry || "").toLowerCase();
-      const typeText = String(item.rawFormat || "").toLowerCase();
-      const titleText = item.title.toLowerCase();
-      const excerptText = item.excerpt.toLowerCase();
+      // MAPPING TO NEW DEEP-TAG LABELS
+      const indText = String(item.gemini_industry || "").toLowerCase();
+      const typeText = String(item.gemini_content_type || "").toLowerCase();
+      const titleText = String(item.display_title || "").toLowerCase();
+      const excerptText = String(item.excerpt || "").toLowerCase();
       const searchBlob = titleText + " " + indText + " " + typeText + " " + excerptText;
 
-      // Logic to find the lane based on keywords
+      // Assign to visual swimlane
       let assignedLane = groups.find(g => g.keywords.some(k => searchBlob.includes(k))) || groups[groups.length - 1];
       
-      // Normalize Content Type for Filtering
+      // Normalize Type for filtering
       let itemType = "other";
-      if (searchBlob.match(/blog|article|post|profile/)) itemType = "blog";
-      else if (searchBlob.match(/service|landing|overview|overview/)) itemType = "service";
+      if (searchBlob.match(/blog|article|post/)) itemType = "blog";
+      else if (searchBlob.match(/service|landing|overview|profile/)) itemType = "service";
       else if (searchBlob.match(/technical|clinical|analysis|diagnostics/)) itemType = "technical";
       else if (searchBlob.match(/guide|how-to|step|checklist|requirement/)) itemType = "guide";
 
@@ -114,16 +116,15 @@ description: 116+ pieces of SEO content across Healthcare, Cybersecurity, Immigr
         cards = g.items.map((item, i) => `
           <div class="card ${i === 0 && g.items.length > 2 ? 'bento-feat' : ''}" data-category="${g.id}">
             <div class="c-client">${item.category}</div>
-            <span class="c-title">${item.title}</span>
+            <span class="c-title">${item.display_title}</span>
             <p class="c-desc">${item.excerpt}</p>
-            ${item.url ? `<a href="${item.url}" target="_blank" class="doc-link" aria-label="View Google Doc"></a>` : ''}
+            ${item.link_url ? `<a href="${item.link_url}" target="_blank" class="doc-link" aria-label="View Google Doc"></a>` : ''}
           </div>
         `).join('');
       } else {
         cards = `<div class="ghost-swimlane">No pieces currently listed under this criteria.</div>`;
       }
 
-      // Only show the industry section if it has items OR if the user specifically requested that industry
       if (g.items.length > 0 || indFilter === g.id) {
         container.innerHTML += `
           <div class="matrix-section">
