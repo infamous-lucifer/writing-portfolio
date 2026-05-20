@@ -114,7 +114,7 @@ description: 116+ pieces of SEO content across Healthcare, Cybersecurity, Immigr
       let cards = "";
       if (g.items.length > 0) {
         cards = g.items.map((item, i) => `
-          <div class="card ${i === 0 && g.items.length > 2 ? 'bento-feat' : ''}" data-category="${g.id}">
+          <div class="card ${(i % 4 === 0) && g.items.length > 2 ? 'bento-feat' : ''}" data-category="${g.id}">
             <div class="c-client">${item.category}</div>
             <span class="c-title">${item.display_title}</span>
             <p class="c-desc">${item.excerpt}</p>
