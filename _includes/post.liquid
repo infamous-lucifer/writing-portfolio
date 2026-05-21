@@ -82,8 +82,10 @@ layout: layout.liquid
   }
   .post-footer {
     margin-top: 80px;
-    padding-top: 32px;
+    padding-top: 40px;
     border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: center;
   }
 </style>
 
@@ -102,6 +104,6 @@ layout: layout.liquid
   </article>
 
   <footer class="post-footer">
-    <a href="{{ '/writing' | url }}" class="live-link" style="font-size: 11px; font-family: var(--f-mono);">← Back to Writing Hub</a>
+    <a href="{{ '/writing' | url }}" class="back-link">Back to Writing Hub</a>
   </footer>
 </div>

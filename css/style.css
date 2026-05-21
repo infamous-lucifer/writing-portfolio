@@ -481,6 +481,9 @@ nav a:hover {
   .bento-tall {
     grid-row: span 2;
   }
+  .bento-feat {
+    grid-column: span 2;
+  }
 }
 
 .card:hover,
@@ -578,6 +581,18 @@ nav a:hover {
   background: var(--acc-s);
   border-color: var(--acc-l);
   color: var(--acc);
+}
+
+.badge.blu {
+  background: var(--blu-s);
+  border-color: rgba(108, 162, 191, 0.3);
+  color: var(--blu);
+}
+
+.badge.red {
+  background: var(--red-s);
+  border-color: rgba(191, 108, 108, 0.3);
+  color: var(--red);
 }
 
 /* STATS ROW */
@@ -681,6 +696,41 @@ nav a:hover {
 
 .live-link::before {
   content: '↗ ';
+}
+
+/* Back Link (post footer, subpage navigation) */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--f-mono);
+  font-size: 13px;
+  letter-spacing: .04em;
+  color: var(--txt-2);
+  text-decoration: none;
+  padding: 12px 24px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-card);
+  transition: all var(--t);
+  width: fit-content;
+}
+
+.back-link:hover {
+  color: var(--acc);
+  border-color: var(--acc-l);
+  background: var(--acc-s);
+  transform: translateX(-4px);
+}
+
+.back-link::before {
+  content: '←';
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.back-link:hover::before {
+  transform: translateX(-4px);
 }
 
 /* REVEAL ANIMATIONS (SCROLL-DRIVEN) */
