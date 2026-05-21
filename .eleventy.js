@@ -8,6 +8,7 @@ module.exports = function(eleventyConfig) {
   // Passthrough for static SEO and UI files
   // Note: Only add these if the files actually exist to avoid empty copies
   eleventyConfig.addPassthroughCopy("robots.txt");
+  eleventyConfig.addPassthroughCopy("sitemap.xsl");
 
   // Ignore repo/meta files
   eleventyConfig.ignores.add("README.md");
