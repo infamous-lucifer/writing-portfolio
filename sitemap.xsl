@@ -53,11 +53,6 @@
             -webkit-text-fill-color: transparent;
           }
           
-          p.expl {
-            color: var(--txt-mute);
-            margin: 0;
-            font-size: 15px;
-          }
           
           a {
             color: var(--acc);
@@ -134,9 +129,6 @@
         <div class="container">
           <div class="header">
             <h1>XML Sitemap</h1>
-            <p class="expl">
-              This XML Sitemap contains <xsl:value-of select="count(sitemap:urlset/sitemap:url)"/> URLs. It is designed to be fully machine-readable by search engines and styled for human inspection.
-            </p>
           </div>
           <div class="table-container">
             <table>
