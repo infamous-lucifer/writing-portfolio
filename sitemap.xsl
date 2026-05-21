@@ -33,7 +33,7 @@
           }
           
           .container {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
           }
           
@@ -44,76 +44,156 @@
           }
           
           h1 {
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 700;
-            margin: 0 0 12px 0;
-            letter-spacing: -0.03em;
+            margin: 0 0 8px 0;
+            letter-spacing: -0.02em;
             background: linear-gradient(135deg, #ffffff 30%, #a5b4fc 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
           }
           
-          
-          a {
-            color: var(--acc);
-            text-decoration: none;
-            transition: color 0.15s ease, opacity 0.15s ease;
+          .subtitle {
+            color: var(--txt-mute);
+            margin: 0;
+            font-size: 14px;
+            font-family: monospace;
           }
           
-          a:hover {
-            opacity: 0.85;
-            text-decoration: underline;
-          }
-          
-          .table-container {
+          .tree-container {
             background-color: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 16px;
-            overflow: hidden;
+            padding: 32px;
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
           }
           
-          table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
+          .node {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            position: relative;
           }
           
-          th {
-            background-color: rgba(255, 255, 255, 0.015);
-            border-bottom: 1px solid var(--border);
-            padding: 18px 24px;
+          .icon {
+            margin-right: 10px;
+            font-size: 16px;
+            user-select: none;
+          }
+          
+          .node-title {
+            font-size: 15px;
+          }
+          
+          .root-node {
             font-weight: 600;
-            color: var(--txt);
-            text-transform: uppercase;
-            font-size: 11px;
-            letter-spacing: 0.12em;
+            font-size: 17px;
+            padding-bottom: 12px;
           }
           
-          td {
-            padding: 16px 24px;
-            border-bottom: 1px solid var(--border);
-            word-break: break-all;
+          .root-node a {
+            color: #ffffff;
           }
           
-          tr:last-child td {
-            border-bottom: none;
-          }
-          
-          tr:hover td {
-            background-color: rgba(255, 255, 255, 0.01);
-          }
-          
-          .lbl-tag {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            background-color: var(--acc-dim);
+          .root-node a:hover {
             color: var(--acc);
+            text-decoration: underline;
+          }
+          
+          .branches {
+            margin-left: 10px;
+            padding-left: 20px;
+            border-left: 1px dashed var(--border);
+            position: relative;
+          }
+          
+          .branch-group {
+            margin-top: 16px;
+            position: relative;
+          }
+          
+          .branch-node {
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 8px;
+          }
+          
+          .branch-node.clickable {
+            cursor: pointer;
+            user-select: none;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+          }
+          
+          .branch-node.clickable:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: var(--acc);
+          }
+          
+          .arrow {
+            font-size: 10px;
+            margin-right: 8px;
+            color: var(--txt-mute);
+            transition: transform 0.2s ease;
+            display: inline-block;
+          }
+          
+          .badge {
+            background: var(--acc-dim);
+            color: var(--acc);
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-left: 10px;
+            font-weight: 500;
+          }
+          
+          .leaves {
+            margin-left: 14px;
+            padding-left: 18px;
+            border-left: 1px dashed var(--border);
+          }
+          
+          .leaf-node {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 6px 0;
+            flex-wrap: wrap;
+            gap: 12px;
+          }
+          
+          .leaf-node a {
+            color: var(--txt);
+            transition: color 0.15s ease;
+          }
+          
+          .leaf-node a:hover {
+            color: var(--acc);
+            text-decoration: underline;
+          }
+          
+          .meta-info {
+            font-family: monospace;
+            font-size: 11px;
+            color: var(--txt-mute);
+          }
+          
+          /* Collapsible Transition */
+          .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+          
+          .collapsible.collapsed .collapsible-content {
+            max-height: 0;
           }
           
           .footer {
@@ -121,50 +201,146 @@
             text-align: center;
             font-size: 12px;
             color: var(--txt-mute);
-            letter-spacing: 0.02em;
           }
         </style>
       </head>
       <body>
         <div class="container">
           <div class="header">
-            <h1>XML Sitemap</h1>
+            <h1>Site Architecture Map</h1>
+            <p class="subtitle">infamous-lucifer.github.io/writing-portfolio/</p>
           </div>
-          <div class="table-container">
-            <table>
-              <thead>
-                <tr>
-                  <th width="65%">URL Location</th>
-                  <th width="15%">Frequency</th>
-                  <th width="20%">Last Modified</th>
-                </tr>
-              </thead>
-              <tbody>
-                <xsl:for-each select="sitemap:urlset/sitemap:url">
-                  <xsl:sort select="sitemap:lastmod" order="descending"/>
-                  <tr>
-                    <td>
-                      <a href="{sitemap:loc}" target="_blank">
-                        <xsl:value-of select="sitemap:loc"/>
-                      </a>
-                    </td>
-                    <td>
-                      <span class="lbl-tag">
-                        <xsl:value-of select="sitemap:changefreq"/>
+
+          <div class="tree-container">
+            <div class="tree-root">
+              <!-- Root (Homepage) -->
+              <div class="node root-node">
+                <span class="icon">🌲</span>
+                <span class="node-title">
+                  <a href="https://infamous-lucifer.github.io/writing-portfolio/">
+                    Akshat Singh Portfolio (Root)
+                  </a>
+                </span>
+              </div>
+
+              <div class="branches">
+                
+                <!-- Branch 1: Core Pages -->
+                <div class="branch-group">
+                  <div class="node branch-node">
+                    <span class="icon">🌿</span>
+                    <span class="node-title">Core Pages</span>
+                  </div>
+                  
+                  <div class="leaves">
+                    <xsl:for-each select="sitemap:urlset/sitemap:url[not(contains(sitemap:loc, '/posts/')) and sitemap:loc != 'https://infamous-lucifer.github.io/writing-portfolio/']">
+                      <div class="node leaf-node">
+                        <span class="icon">📄</span>
+                        <span class="node-title">
+                          <a href="{sitemap:loc}">
+                            <span class="core-title" data-url="{sitemap:loc}">
+                              <xsl:value-of select="sitemap:loc"/>
+                            </span>
+                          </a>
+                        </span>
+                        <span class="meta-info">Updated: <xsl:value-of select="sitemap:lastmod"/></span>
+                      </div>
+                    </xsl:for-each>
+                  </div>
+                </div>
+
+                <!-- Branch 2: Collapsible Posts -->
+                <div class="branch-group collapsible collapsed" id="posts-branch">
+                  <div class="node branch-node clickable" onclick="toggleBranch()">
+                    <span class="arrow">▶</span>
+                    <span class="icon">📁</span>
+                    <span class="node-title">
+                      Personal Essays &amp; Prose
+                      <span class="badge">
+                        <xsl:value-of select="count(sitemap:urlset/sitemap:url[contains(sitemap:loc, '/posts/')])"/> articles
                       </span>
-                    </td>
-                    <td>
-                      <xsl:value-of select="sitemap:lastmod"/>
-                    </td>
-                  </tr>
-                </xsl:for-each>
-              </tbody>
-            </table>
+                    </span>
+                  </div>
+                  
+                  <div class="leaves collapsible-content">
+                    <xsl:for-each select="sitemap:urlset/sitemap:url[contains(sitemap:loc, '/posts/')]">
+                      <xsl:sort select="sitemap:lastmod" order="descending"/>
+                      <div class="node leaf-node">
+                        <span class="icon">✍️</span>
+                        <span class="node-title">
+                          <a href="{sitemap:loc}">
+                            <span class="post-title-formatter" data-url="{sitemap:loc}">
+                              <xsl:value-of select="sitemap:loc"/>
+                            </span>
+                          </a>
+                        </span>
+                        <span class="meta-info">Updated: <xsl:value-of select="sitemap:lastmod"/></span>
+                      </div>
+                    </xsl:for-each>
+                  </div>
+                </div>
+
+              </div>
+            </div>
           </div>
+
           <div class="footer">
-            Generated automatically via Eleventy engine. Akshat Singh Portfolio © 2026.
+            Generated via Eleventy. Designed for search engines and humans. Akshat Singh © 2026.
           </div>
         </div>
+
+        <script type="text/javascript">
+          function toggleBranch() {
+            const branch = document.getElementById('posts-branch');
+            const arrow = branch.querySelector('.arrow');
+            const content = branch.querySelector('.collapsible-content');
+            
+            if (branch.classList.contains('collapsed')) {
+              branch.classList.remove('collapsed');
+              arrow.textContent = '▼';
+              // Set explicit max-height for CSS animation transition
+              content.style.maxHeight = content.scrollHeight + "px";
+            } else {
+              branch.classList.add('collapsed');
+              arrow.textContent = '▶';
+              content.style.maxHeight = null;
+            }
+          }
+
+          document.addEventListener('DOMContentLoaded', () => {
+            // Format core page titles
+            document.querySelectorAll('.core-title').forEach(el => {
+              const url = el.getAttribute('data-url');
+              let clean = url.replace('https://infamous-lucifer.github.io/writing-portfolio/', '');
+              if (clean.endsWith('/')) clean = clean.slice(0, -1);
+              
+              if (clean === 'about') el.textContent = 'About';
+              else if (clean === 'work') el.textContent = 'Work & Case Studies';
+              else if (clean === 'writing') el.textContent = 'Writing Hub';
+              else if (clean === 'privacy') el.textContent = 'Privacy Policy';
+              else if (clean === 'terms') el.textContent = 'Terms of Service';
+              else el.textContent = clean || 'Home';
+            });
+
+            // Format post slug names to clean readable title cases
+            document.querySelectorAll('.post-title-formatter').forEach(el => {
+              const url = el.getAttribute('data-url');
+              let parts = url.split('/posts/');
+              if (parts.length > 1) {
+                let slug = parts[1];
+                if (slug.endsWith('/')) slug = slug.slice(0, -1);
+                
+                let title = slug.split('-')
+                  .map(word => {
+                    // Skip small grammar words unless they're the first word
+                    return word.charAt(0).toUpperCase() + word.slice(1);
+                  })
+                  .join(' ');
+                el.textContent = title;
+              }
+            });
+          });
+        </script>
       </body>
     </html>
   </xsl:template>
