@@ -18,6 +18,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.ignores.add("LICENSE");
   eleventyConfig.ignores.add("scripts/**");
   eleventyConfig.ignores.add(".github/**");
+  eleventyConfig.ignores.add("posts_trash/**");
 
   // Custom filter for clean excerpts
   eleventyConfig.addFilter("excerpt", (post) => {
