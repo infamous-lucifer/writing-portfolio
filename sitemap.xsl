@@ -290,6 +290,7 @@
         </div>
 
         <script type="text/javascript">
+          //<![CDATA[
           function toggleBranch() {
             const branch = document.getElementById('posts-branch');
             const arrow = branch.querySelector('.arrow');
@@ -315,7 +316,7 @@
               if (clean.endsWith('/')) clean = clean.slice(0, -1);
               
               if (clean === 'about') el.textContent = 'About';
-              else if (clean === 'work') el.textContent = 'Work & Case Studies';
+              else if (clean === 'work') el.textContent = 'Work \u0026 Case Studies';
               else if (clean === 'writing') el.textContent = 'Writing Hub';
               else if (clean === 'privacy') el.textContent = 'Privacy Policy';
               else if (clean === 'terms') el.textContent = 'Terms of Service';
@@ -340,6 +341,7 @@
               }
             });
           });
+          //]]>
         </script>
       </body>
     </html>
