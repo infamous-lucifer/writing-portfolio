@@ -251,7 +251,7 @@
 
                 <!-- Branch 2: Collapsible Posts -->
                 <div class="branch-group collapsible collapsed" id="posts-branch">
-                  <div class="node branch-node clickable" onclick="toggleBranch()">
+                  <div class="node branch-node clickable">
                     <span class="arrow">▶</span>
                     <span class="icon">📁</span>
                     <span class="node-title">
@@ -291,24 +291,28 @@
 
         <script type="text/javascript">
           //<![CDATA[
-          function toggleBranch() {
-            const branch = document.getElementById('posts-branch');
-            const arrow = branch.querySelector('.arrow');
-            const content = branch.querySelector('.collapsible-content');
-            
-            if (branch.classList.contains('collapsed')) {
-              branch.classList.remove('collapsed');
-              arrow.textContent = '▼';
-              // Set explicit max-height for CSS animation transition
-              content.style.maxHeight = content.scrollHeight + "px";
-            } else {
-              branch.classList.add('collapsed');
-              arrow.textContent = '▶';
-              content.style.maxHeight = null;
-            }
-          }
-
           document.addEventListener('DOMContentLoaded', () => {
+            // Bind click event programmatically
+            const branch = document.getElementById('posts-branch');
+            const clickable = branch ? branch.querySelector('.clickable') : null;
+            
+            if (clickable) {
+              clickable.addEventListener('click', () => {
+                const arrow = branch.querySelector('.arrow');
+                const content = branch.querySelector('.collapsible-content');
+                
+                if (branch.classList.contains('collapsed')) {
+                  branch.classList.remove('collapsed');
+                  arrow.textContent = '▼';
+                  content.style.maxHeight = '2000px';
+                } else {
+                  branch.classList.add('collapsed');
+                  arrow.textContent = '▶';
+                  content.style.maxHeight = '0';
+                }
+              });
+            }
+
             // Format core page titles
             document.querySelectorAll('.core-title').forEach(el => {
               const url = el.getAttribute('data-url');
@@ -333,7 +337,6 @@
                 
                 let title = slug.split('-')
                   .map(word => {
-                    // Skip small grammar words unless they're the first word
                     return word.charAt(0).toUpperCase() + word.slice(1);
                   })
                   .join(' ');
