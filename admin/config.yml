@@ -2,6 +2,7 @@ backend:
   name: github
   repo: infamous-lucifer/writing-portfolio
   branch: main
+  base_url: https://sveltia-cms-auth.bikshat062.workers.dev
 
 media_folder: "images"
 public_folder: "/images"
