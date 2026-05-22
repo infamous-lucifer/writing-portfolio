@@ -4,6 +4,9 @@ backend:
   branch: main
   base_url: https://sveltia-cms-auth.bikshat062.workers.dev
 
+site_url: "https://infamous-lucifer.github.io/writing-portfolio"
+display_url: "https://infamous-lucifer.github.io/writing-portfolio"
+
 media_folder: "images"
 public_folder: "/images"
 
