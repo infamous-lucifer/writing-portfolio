@@ -231,11 +231,12 @@
     if (statsSection) statsObserver.observe(statsSection);
 
     // SEARCH LOGIC - Powered by Pagefind
-    if (document.getElementById("search")) {
+    if (document.getElementById("search") && typeof PagefindUI !== 'undefined') {
         new PagefindUI({ 
             element: "#search", 
             showSubResults: true,
-            resetStyles: false // Try to inherit global typography
+            resetStyles: false, // Try to inherit global typography
+            baseUrl: "/writing-portfolio/"
         });
     }
 
