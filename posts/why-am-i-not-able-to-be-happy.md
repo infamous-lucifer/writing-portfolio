@@ -8,7 +8,7 @@ description: "Why am I not able to be happy? Because I compare, but beneath comp
 ---
 
 <figure>
-<img src="https://cdn-images-1.medium.com/max/800/0*6rcf44IunpJOe8o4" alt="" loading="lazy">
+<img src="https://cdn-images-1.medium.com/max/800/0*6rcf44IunpJOe8o4" alt="" fetchpriority="high">
 <figcaption>Photo by Youshau on Unsplash</figcaption>
 </figure>
 
