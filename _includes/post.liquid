@@ -122,5 +122,34 @@ layout: layout.liquid
 
   <footer class="post-footer">
     <a href="{{ '/writing' | url }}" class="back-link">Back to Writing Hub</a>
+
+    <div class="sh mt-1" style="margin-top: 80px;"><span class="sh-lbl">More in {{ category | capitalize }}</span><div class="sh-line"></div></div>
+    <div class="g2 rev" style="margin-top: 30px;">
+      {% assign count = 0 %}
+      {% for relPost in collections.posts %}
+        {% if relPost.data.category == category and relPost.url != page.url and count < 2 %}
+          <article class="card-min post-preview card" style="text-align: left; background: var(--bg-card);">
+            <div class="c-client">{{ relPost.data.category | capitalize }} · {{ relPost.date | date: "%b %Y" }}</div>
+            <a href="{{ relPost.url | url }}" class="c-title" style="font-size: 15px; margin-top: 10px; display: block;">{{ relPost.data.title }}</a>
+          </article>
+          {% assign count = count | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+    </div>
   </footer>
 </div>
+
+<div class="progress-bar"></div>
+
+<script>
+window.addEventListener('scroll', () => {
+  const article = document.querySelector('.post-content');
+  const bar = document.querySelector('.progress-bar');
+  if (!article || !bar) return;
+  const rect = article.getBoundingClientRect();
+  const total = article.offsetHeight;
+  const scrolled = -rect.top + (window.innerHeight / 2); // fill relative to viewport center
+  const pct = Math.min(100, Math.max(0, (scrolled / total) * 100));
+  bar.style.width = pct + '%';
+});
+</script>

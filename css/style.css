@@ -23,6 +23,7 @@
   --acc-l: rgba(184, 144, 71, .15);
   --grn: #3b5e4c;
   --grn-s: rgba(59, 94, 76, .06);
+  --grn-l: rgba(59, 94, 76, .15);
   --blu: #2a4c5e;
   --blu-s: rgba(42, 76, 94, .06);
   --red: #7e3b3b;
@@ -45,6 +46,7 @@
   --acc-l: rgba(223, 186, 115, .25);
   --grn: #72a188;
   --grn-s: rgba(114, 161, 136, .1);
+  --grn-l: rgba(114, 161, 136, .25);
   --blu: #6ca2bf;
   --blu-s: rgba(108, 162, 191, .1);
   --red: #bf6c6c;
@@ -378,6 +380,8 @@ nav a:hover {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 16px;
+  position: relative;
+  overflow: hidden;
 }
 
 .ftabs {
@@ -458,6 +462,7 @@ nav a:hover {
   border: 1px solid var(--border);
   padding: 36px;
   border-radius: 16px;
+  position: relative;
   display: flex;
   flex-direction: column;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
@@ -1357,6 +1362,7 @@ img, picture img {
 }
 .card-min .c-desc { display: none; }
 .card-min .c-title { font-size: 15px; margin: 0; }
+.card-min .sr { display: none; }
 
 /* Typographic Atmosphere */
 .writing-hero-title {
@@ -1432,4 +1438,16 @@ body[data-page="work"] {
 
 .home-manifesto {
   padding: 10px 0 20px;
+}
+
+/* Reading Progress */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--acc);
+  z-index: 200;
+  transition: width 0.1s linear;
+  width: 0%;
 }

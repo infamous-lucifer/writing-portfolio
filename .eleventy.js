@@ -1,8 +1,10 @@
 const Image = require("@11ty/eleventy-img");
+const { rssPlugin } = require("@11ty/eleventy-plugin-rss");
 const cheerio = require("cheerio");
 const path = require("path");
 
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addPlugin(rssPlugin);
   eleventyConfig.addTransform("optimize-images", async function(content, outputPath) {
     if (outputPath && outputPath.endsWith(".html")) {
       const $ = cheerio.load(content);

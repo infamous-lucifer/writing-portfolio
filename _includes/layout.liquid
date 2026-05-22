@@ -43,6 +43,9 @@
         })(window, document, "clarity", "script", "w6un2vtbtp");
     </script>
 
+    <link href="{{ '/pagefind/pagefind-ui.css' | url }}" rel="stylesheet">
+    <script src="{{ '/pagefind/pagefind-ui.js' | url }}"></script>
+
     {% if page.url contains '/posts/' %}
       <!-- Specific BlogPosting/Article JSON-LD is loaded inside post.liquid template -->
     {% else %}
@@ -118,12 +121,7 @@
                 <a href="{{ '/about' | url }}">About</a>
             </div>
             <div class="nav-extra">
-                <div class="search-box">
-                    <input type="text" id="site-search" placeholder="Search projects..." aria-label="Search projects">
-                    <span class="s-icon">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    </span>
-                </div>
+                <div id="search" class="search-box"></div>
                 <button id="theme-toggle" aria-label="Toggle Theme">
                     <span class="t-icon">☼</span>
                 </button>
@@ -232,24 +230,12 @@
     const statsSection = document.getElementById('stats-section');
     if (statsSection) statsObserver.observe(statsSection);
 
-    // SEARCH LOGIC
-    const searchInput = document.getElementById('site-search');
-
-    if (searchInput) {
-        searchInput.addEventListener('input', (e) => {
-            const term = e.target.value.toLowerCase();
-            const cards = document.querySelectorAll('.card, .case-card');
-
-            cards.forEach(card => {
-                const textContent = card.innerText.toLowerCase();
-                card.style.display = textContent.includes(term) ? '' : 'none';
-            });
-
-            if (term.length > 0) {
-                document.querySelectorAll('.ftab').forEach(t => t.classList.remove('active'));
-                const allTab = document.querySelector('.ftab[data-f="all"]');
-                if (allTab) allTab.classList.add('active');
-            }
+    // SEARCH LOGIC - Powered by Pagefind
+    if (document.getElementById("search")) {
+        new PagefindUI({ 
+            element: "#search", 
+            showSubResults: true,
+            resetStyles: false // Try to inherit global typography
         });
     }
 
@@ -263,8 +249,6 @@
         });
         tab.classList.add('active');
         tab.setAttribute('aria-selected', 'true');
-
-        if (searchInput) searchInput.value = '';
 
         const f = tab.dataset.f;
         const sections = document.querySelectorAll('[data-s]');
