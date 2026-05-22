@@ -121,20 +121,25 @@ layout: layout.liquid
   {% include "newsletter.liquid" %}
 
   <footer class="post-footer">
-    <a href="{{ '/writing'}}" class="back-link">Back to Writing Hub</a>
+    <a href="/writing" class="card card-min back-card">
+      <span class="arrow">←</span>
+      <span class="lbl">BACK TO<br>WRITING HUB</span>
+    </a>
 
-    <div class="sh mt-1" style="margin-top: 80px;"><span class="sh-lbl">More in {{ category | capitalize }}</span><div class="sh-line"></div></div>
-    <div class="g2 rev" style="margin-top: 30px;">
-      {% assign count = 0 %}
-      {% for relPost in collections.posts %}
-        {% if relPost.data.category == category and relPost.url != page.url and count < 2 %}
-          <article class="card-min post-preview card" style="text-align: left; background: var(--bg-card);">
-            <div class="c-client">{{ relPost.data.category | capitalize }} · {{ relPost.date | date: "%b %Y" }}</div>
-            <a href="{{ relPost.url}}" class="c-title" style="font-size: 15px; margin-top: 10px; display: block;">{{ relPost.data.title }}</a>
-          </article>
-          {% assign count = count | plus: 1 %}
-        {% endif %}
-      {% endfor %}
+    <div class="post-footer-more">
+      <div class="sh"><span class="sh-lbl">More in {{ category | capitalize }}</span><div class="sh-line"></div></div>
+      <div class="g2 related-grid">
+        {% assign count = 0 %}
+        {% for relPost in collections.posts %}
+          {% if relPost.data.category == category and relPost.url != page.url and count < 2 %}
+            <a href="{{ relPost.url }}" class="card-min post-preview card rel-card">
+              <div class="c-client">{{ relPost.data.category | capitalize }} · {{ relPost.date | date: "%b %Y" }}</div>
+              <h3 class="c-title">{{ relPost.data.title }}</h3>
+            </a>
+            {% assign count = count | plus: 1 %}
+          {% endif %}
+        {% endfor %}
+      </div>
     </div>
   </footer>
 </div>

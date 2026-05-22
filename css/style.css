@@ -1389,12 +1389,12 @@ img, picture img {
 
 .card-min {
   padding: 24px 28px;
-  justify-content: space-between;
-  flex-direction: row;
-  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
+.card-min .c-head { margin-bottom: 12px; flex: unset; }
 .card-min .c-desc { display: none; }
-.card-min .c-title { font-size: 15px; margin: 0; }
+.card-min .c-title { font-size: 18px; margin: 0; }
 .card-min .sr { display: none; }
 
 /* Typographic Atmosphere */
@@ -1455,6 +1455,70 @@ img, picture img {
   z-index: 0;
   opacity: 0.025;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Post Footer Grid Layout */
+.post-footer {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+  gap: 30px;
+  align-items: stretch;
+}
+
+.post-footer .back-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  min-height: 200px;
+  text-align: center;
+}
+
+.post-footer .back-card .arrow {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: var(--acc);
+  transition: transform var(--t);
+}
+
+.post-footer .back-card:hover .arrow {
+  transform: translateX(-4px);
+}
+
+.post-footer .back-card .lbl {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--txt-2);
+  line-height: 1.6;
+}
+
+.post-footer-more {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-footer-more .related-grid {
+  margin-top: 30px;
+  flex: 1;
+}
+
+.post-footer-more .rel-card {
+  text-align: left;
+  text-decoration: none;
+  display: flex;
+}
+
+@media (max-width: 900px) {
+  .post-footer {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .post-footer .back-card {
+    min-height: 120px;
+  }
 }
 
 /* Page Level Semantic Enforcement */
