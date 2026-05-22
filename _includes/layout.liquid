@@ -14,12 +14,16 @@
 
     <meta name="description" content="{% if description %}{{ description | strip_html | truncate: 160 }}{% else %}Akshat Singh — Senior SEO Content Strategist. Delivering high-impact content for Cybersecurity, Law, and Tech sectors. Built for 2026 authority.{% endif %}">
     <meta name="keywords" content="SEO Content, Content Strategist, Cybersecurity Writer, Legal Content, Akshat Singh Portfolio">
-    <meta property="og:title" content="{% if title %}{{ title }} | {% endif %}Akshat Singh | Content Portfolio">
+    <meta property="og:title" content="{% if page.url == '/' or page.url == '/index.html' %}Akshat Singh | Personal Essays, Prose & SEO Content Portfolio{% elsif title %}{{ title }} | Akshat Singh{% else %}Akshat Singh | Content Portfolio{% endif %}">
     <meta property="og:description" content="{% if description %}{{ description | strip_html | truncate: 160 }}{% else %}Strategic SEO content for High-Impact sectors. 2026 Edition.{% endif %}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://infamous-lucifer.github.io/writing-portfolio{{ page.url }}">
     <meta property="og:image" content="{% if image %}{{ image | url }}{% else %}https://infamous-lucifer.github.io/writing-portfolio/images/hero.jpg{% endif %}">
-    <meta property="og:image:alt" content="{% if title %}{{ title }}{% else %}Akshat Singh | Content Portfolio Hero{% endif %}">
+    <meta property="og:image:alt" content="{% if page.url == '/' or page.url == '/index.html' %}Akshat Singh — Personal Essays, Prose & SEO Content Portfolio{% elsif title %}{{ title }}{% else %}Akshat Singh — Content Portfolio{% endif %}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% if page.url == '/' or page.url == '/index.html' %}Akshat Singh | Personal Essays, Prose & SEO Content Portfolio{% elsif title %}{{ title }} | Akshat Singh{% else %}Akshat Singh | Content Portfolio{% endif %}">
+    <meta name="twitter:description" content="{% if description %}{{ description | strip_html | truncate: 160 }}{% else %}Strategic SEO content for High-Impact sectors. 2026 Edition.{% endif %}">
+    <meta name="twitter:image" content="{% if image %}{{ image | url }}{% else %}https://infamous-lucifer.github.io/writing-portfolio/images/hero.jpg{% endif %}">
     <link rel="canonical" href="https://infamous-lucifer.github.io/writing-portfolio{{ page.url }}">
     <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | url }}">
 
@@ -105,7 +109,7 @@
     <header class="hero">
         <div class="container">
             <div class="lbl">Content Portfolio · SEO Strategy · 2026 Edition</div>
-            <h1>Akshat<br><em>Singh.</em></h1>
+            <div class="hero-name" role="presentation">Akshat<br><em>Singh.</em></div>
             <p class="subhead">Strategic SEO content for High-Impact sectors. From Cybersecurity to Appellate Law, I build authority that ranks.</p>
 
             <div class="hstats" id="stats-section">

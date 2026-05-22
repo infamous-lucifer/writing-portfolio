@@ -8,6 +8,12 @@ layout: layout.liquid
   "@type": "Article",
   "headline": "{{ title }}",
   "datePublished": "{{ date | date: '%Y-%m-%dT%H:%M:%SZ' }}",
+  "dateModified": "{{ date | date: '%Y-%m-%dT%H:%M:%SZ' }}",
+  "image": "https://infamous-lucifer.github.io/writing-portfolio/images/hero.jpg",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://infamous-lucifer.github.io/writing-portfolio{{ page.url }}"
+  },
   "author": {
     "@type": "Person",
     "name": "Akshat Singh",
