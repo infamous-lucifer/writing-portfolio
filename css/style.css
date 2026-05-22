@@ -1424,3 +1424,12 @@ body[data-page="work"] {
   --acc-l: var(--grn-l);
   --acc-s: var(--grn-s);
 }
+
+/* Structural Spacing */
+.main-content {
+  padding-top: 80px;
+}
+
+.home-manifesto {
+  padding: 60px 0 80px;
+}
