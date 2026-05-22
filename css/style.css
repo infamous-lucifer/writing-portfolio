@@ -1427,9 +1427,9 @@ body[data-page="work"] {
 
 /* Structural Spacing */
 .main-content {
-  padding-top: 80px;
+  padding-top: 40px;
 }
 
 .home-manifesto {
-  padding: 60px 0 80px;
+  padding: 10px 0 60px;
 }
