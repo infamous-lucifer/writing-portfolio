@@ -110,7 +110,7 @@ layout: layout.liquid
 
   {% if image %}
   <div class="post-cover-wrapper">
-    <img src="{{ image | url }}" alt="Cover image for {{ title }}" class="post-cover-image">
+    <img src="{{ image}}" alt="Cover image for {{ title }}" class="post-cover-image">
   </div>
   {% endif %}
   
@@ -121,7 +121,7 @@ layout: layout.liquid
   {% include "newsletter.liquid" %}
 
   <footer class="post-footer">
-    <a href="{{ '/writing' | url }}" class="back-link">Back to Writing Hub</a>
+    <a href="{{ '/writing'}}" class="back-link">Back to Writing Hub</a>
 
     <div class="sh mt-1" style="margin-top: 80px;"><span class="sh-lbl">More in {{ category | capitalize }}</span><div class="sh-line"></div></div>
     <div class="g2 rev" style="margin-top: 30px;">
@@ -130,7 +130,7 @@ layout: layout.liquid
         {% if relPost.data.category == category and relPost.url != page.url and count < 2 %}
           <article class="card-min post-preview card" style="text-align: left; background: var(--bg-card);">
             <div class="c-client">{{ relPost.data.category | capitalize }} · {{ relPost.date | date: "%b %Y" }}</div>
-            <a href="{{ relPost.url | url }}" class="c-title" style="font-size: 15px; margin-top: 10px; display: block;">{{ relPost.data.title }}</a>
+            <a href="{{ relPost.url}}" class="c-title" style="font-size: 15px; margin-top: 10px; display: block;">{{ relPost.data.title }}</a>
           </article>
           {% assign count = count | plus: 1 %}
         {% endif %}

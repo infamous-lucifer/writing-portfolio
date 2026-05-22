@@ -10,7 +10,7 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
-    <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
+    <link rel="stylesheet" href="/css/style.css">
 
     <meta name="description" content="{% if description %}{{ description | strip_html | truncate: 160 }}{% else %}Akshat Singh — Senior SEO Content Strategist. Delivering high-impact content for Cybersecurity, Law, and Tech sectors. Built for 2026 authority.{% endif %}">
     <meta name="keywords" content="SEO Content, Content Strategist, Cybersecurity Writer, Legal Content, Akshat Singh Portfolio">
@@ -18,14 +18,14 @@
     <meta property="og:description" content="{% if description %}{{ description | strip_html | truncate: 160 }}{% else %}Strategic SEO content for High-Impact sectors. 2026 Edition.{% endif %}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://infamous-lucifer.github.io/writing-portfolio{{ page.url }}">
-    <meta property="og:image" content="{% if image %}{{ image | url }}{% else %}https://infamous-lucifer.github.io/writing-portfolio/images/hero.jpg{% endif %}">
+    <meta property="og:image" content="{% if image %}{{ image}}{% else %}https://infamous-lucifer.github.io/writing-portfolio/images/hero.jpg{% endif %}">
     <meta property="og:image:alt" content="{% if page.url == '/' or page.url == '/index.html' %}Akshat Singh — Personal Essays, Prose & SEO Content Portfolio{% elsif title %}{{ title }}{% else %}Akshat Singh — Content Portfolio{% endif %}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{% if page.url == '/' or page.url == '/index.html' %}Akshat Singh | Personal Essays, Prose & SEO Content Portfolio{% elsif title %}{{ title }} | Akshat Singh{% else %}Akshat Singh | Content Portfolio{% endif %}">
     <meta name="twitter:description" content="{% if description %}{{ description | strip_html | truncate: 160 }}{% else %}Strategic SEO content for High-Impact sectors. 2026 Edition.{% endif %}">
-    <meta name="twitter:image" content="{% if image %}{{ image | url }}{% else %}https://infamous-lucifer.github.io/writing-portfolio/images/hero.jpg{% endif %}">
+    <meta name="twitter:image" content="{% if image %}{{ image}}{% else %}https://infamous-lucifer.github.io/writing-portfolio/images/hero.jpg{% endif %}">
     <link rel="canonical" href="https://infamous-lucifer.github.io/writing-portfolio{{ page.url }}">
-    <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | url }}">
+    <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico'}}">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQPTTN037H"></script>
     <script>
@@ -43,8 +43,8 @@
         })(window, document, "clarity", "script", "w6un2vtbtp");
     </script>
 
-    <link href="{{ '/pagefind/pagefind-ui.css' | url }}" rel="stylesheet">
-    <script src="{{ '/pagefind/pagefind-ui.js' | url }}"></script>
+    <link href="{{ '/pagefind/pagefind-ui.css'}}" rel="stylesheet">
+    <script src="{{ '/pagefind/pagefind-ui.js'}}"></script>
 
     {% if page.url contains '/posts/' %}
       <!-- Specific BlogPosting/Article JSON-LD is loaded inside post.liquid template -->
@@ -115,10 +115,10 @@
     <nav>
         <div class="container">
             <div class="nav-links">
-                <a href="{{ '/' | url }}">Home</a>
-                <a href="{{ '/work' | url }}">Work</a>
-                <a href="{{ '/writing' | url }}">Writing</a>
-                <a href="{{ '/about' | url }}">About</a>
+                <a href="{{ '/'}}">Home</a>
+                <a href="{{ '/work'}}">Work</a>
+                <a href="{{ '/writing'}}">Writing</a>
+                <a href="{{ '/about'}}">About</a>
             </div>
             <div class="nav-extra">
                 <div id="search" class="search-box"></div>
@@ -171,8 +171,8 @@
                 <div class="sh-lbl">Akshat Singh</div>
                 <p>SEO Content Architect · 2026 · Built with precision.</p>
                 <div class="legal-links">
-                    <a href="{{ '/privacy' | url }}">Privacy Policy</a>
-                    <a href="{{ '/terms' | url }}">Terms of Service</a>
+                    <a href="{{ '/privacy'}}">Privacy Policy</a>
+                    <a href="{{ '/terms'}}">Terms of Service</a>
                 </div>
             </div>
         </div>
@@ -180,7 +180,7 @@
 
     <div id="cookie-banner" class="cookie-banner" style="display: none;">
         <div class="cb-flex">
-            <p>We use cookies to ensure you get the best experience on Akshat's portfolio. <a href="{{ '/privacy' | url }}">Read our Privacy Policy</a></p>
+            <p>We use cookies to ensure you get the best experience on Akshat's portfolio. <a href="{{ '/privacy'}}">Read our Privacy Policy</a></p>
             <button id="accept-cookies" class="btn btn-acc btn-sm">Accept</button>
         </div>
     </div>
