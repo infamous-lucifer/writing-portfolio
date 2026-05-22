@@ -118,7 +118,7 @@
             margin-bottom: 8px;
           }
           
-          .branch-node.clickable {
+          summary.branch-node.clickable {
             cursor: pointer;
             user-select: none;
             padding: 8px 12px;
@@ -129,9 +129,15 @@
             display: inline-flex;
             align-items: center;
             width: fit-content;
+            outline: none;
+            list-style: none;
           }
           
-          .branch-node.clickable:hover {
+          summary.branch-node.clickable::-webkit-details-marker {
+            display: none;
+          }
+          
+          summary.branch-node.clickable:hover {
             background: rgba(255, 255, 255, 0.04);
             border-color: var(--acc);
           }
@@ -185,15 +191,9 @@
             color: var(--txt-mute);
           }
           
-          /* Collapsible Transition */
-          .collapsible-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          }
-          
-          .collapsible.collapsed .collapsible-content {
-            max-height: 0;
+          /* Collapsible Transition via Details/Summary */
+          details[open] .arrow {
+            transform: rotate(90deg);
           }
           
           .footer {
@@ -249,9 +249,9 @@
                   </div>
                 </div>
 
-                <!-- Branch 2: Collapsible Posts -->
-                <div class="branch-group collapsible collapsed" id="posts-branch">
-                  <div class="node branch-node clickable">
+                <!-- Branch 2: Collapsible Posts (using native details/summary for robust cross-browser support without JS dependency) -->
+                <details class="branch-group" id="posts-branch">
+                  <summary class="node branch-node clickable">
                     <span class="arrow">▶</span>
                     <span class="icon">📁</span>
                     <span class="node-title">
@@ -260,7 +260,7 @@
                         <xsl:value-of select="count(sitemap:urlset/sitemap:url[contains(sitemap:loc, '/posts/')])"/> articles
                       </span>
                     </span>
-                  </div>
+                  </summary>
                   
                   <div class="leaves collapsible-content">
                     <xsl:for-each select="sitemap:urlset/sitemap:url[contains(sitemap:loc, '/posts/')]">
@@ -278,7 +278,7 @@
                       </div>
                     </xsl:for-each>
                   </div>
-                </div>
+                </details>
 
               </div>
             </div>
@@ -291,28 +291,7 @@
 
         <script type="text/javascript">
           //<![CDATA[
-          document.addEventListener('DOMContentLoaded', () => {
-            // Bind click event programmatically
-            const branch = document.getElementById('posts-branch');
-            const clickable = branch ? branch.querySelector('.clickable') : null;
-            
-            if (clickable) {
-              clickable.addEventListener('click', () => {
-                const arrow = branch.querySelector('.arrow');
-                const content = branch.querySelector('.collapsible-content');
-                
-                if (branch.classList.contains('collapsed')) {
-                  branch.classList.remove('collapsed');
-                  arrow.textContent = '▼';
-                  content.style.maxHeight = '2000px';
-                } else {
-                  branch.classList.add('collapsed');
-                  arrow.textContent = '▶';
-                  content.style.maxHeight = '0';
-                }
-              });
-            }
-
+          function initSitemap() {
             // Format core page titles
             document.querySelectorAll('.core-title').forEach(el => {
               const url = el.getAttribute('data-url');
@@ -343,7 +322,13 @@
                 el.textContent = title;
               }
             });
-          });
+          }
+
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initSitemap);
+          } else {
+            initSitemap();
+          }
           //]]>
         </script>
       </body>
