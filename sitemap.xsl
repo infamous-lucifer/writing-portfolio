@@ -170,14 +170,28 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 6px 0;
-            flex-wrap: wrap;
-            gap: 12px;
+            padding: 8px 12px;
+            margin: 2px 0;
+            border-radius: 8px;
+            transition: background-color 0.2s ease;
+            gap: 20px;
+          }
+          
+          .leaf-node:hover {
+            background-color: rgba(255, 255, 255, 0.03);
+          }
+          
+          .leaf-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 0;
           }
           
           .leaf-node a {
             color: var(--txt);
             transition: color 0.15s ease;
+            text-decoration: none;
           }
           
           .leaf-node a:hover {
@@ -189,6 +203,8 @@
             font-family: monospace;
             font-size: 11px;
             color: var(--txt-mute);
+            white-space: nowrap;
+            flex-shrink: 0;
           }
           
           /* Collapsible Transition via Details/Summary */
@@ -235,14 +251,16 @@
                   <div class="leaves">
                     <xsl:for-each select="sitemap:urlset/sitemap:url[not(contains(sitemap:loc, '/posts/')) and sitemap:loc != 'https://infamous-lucifer.github.io/writing-portfolio/']">
                       <div class="node leaf-node">
-                        <span class="icon">📄</span>
-                        <span class="node-title">
-                          <a href="{sitemap:loc}">
-                            <span class="core-title" data-url="{sitemap:loc}">
-                              <xsl:value-of select="sitemap:loc"/>
-                            </span>
-                          </a>
-                        </span>
+                        <div class="leaf-left">
+                          <span class="icon">📄</span>
+                          <span class="node-title">
+                            <a href="{sitemap:loc}">
+                              <span class="core-title" data-url="{sitemap:loc}">
+                                <xsl:value-of select="sitemap:loc"/>
+                              </span>
+                            </a>
+                          </span>
+                        </div>
                         <span class="meta-info">Updated: <xsl:value-of select="sitemap:lastmod"/></span>
                       </div>
                     </xsl:for-each>
@@ -266,14 +284,16 @@
                     <xsl:for-each select="sitemap:urlset/sitemap:url[contains(sitemap:loc, '/posts/')]">
                       <xsl:sort select="sitemap:lastmod" order="descending"/>
                       <div class="node leaf-node">
-                        <span class="icon">✍️</span>
-                        <span class="node-title">
-                          <a href="{sitemap:loc}">
-                            <span class="post-title-formatter" data-url="{sitemap:loc}">
-                              <xsl:value-of select="sitemap:loc"/>
-                            </span>
-                          </a>
-                        </span>
+                        <div class="leaf-left">
+                          <span class="icon">✍️</span>
+                          <span class="node-title">
+                            <a href="{sitemap:loc}">
+                              <span class="post-title-formatter" data-url="{sitemap:loc}">
+                                <xsl:value-of select="sitemap:loc"/>
+                              </span>
+                            </a>
+                          </span>
+                        </div>
                         <span class="meta-info">Updated: <xsl:value-of select="sitemap:lastmod"/></span>
                       </div>
                     </xsl:for-each>
