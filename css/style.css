@@ -446,7 +446,7 @@ nav a:hover {
 }
 
 .grid-top {
-  margin-top: 48px;
+  margin-top: 24px;
 }
 
 /* CARD COMPONENTS */
@@ -1431,5 +1431,5 @@ body[data-page="work"] {
 }
 
 .home-manifesto {
-  padding: 10px 0 60px;
+  padding: 10px 0 20px;
 }
