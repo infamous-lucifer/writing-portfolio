@@ -9,6 +9,7 @@ module.exports = function(eleventyConfig) {
   // Note: Only add these if the files actually exist to avoid empty copies
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("sitemap.xsl");
+  eleventyConfig.addPassthroughCopy("admin");
 
   // Ignore repo/meta files
   eleventyConfig.ignores.add("README.md");
