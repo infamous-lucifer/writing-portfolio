@@ -79,6 +79,9 @@
             margin-right: 10px;
             font-size: 16px;
             user-select: none;
+            display: inline-block;
+            width: 20px;
+            text-align: center;
           }
           
           .node-title {
@@ -115,20 +118,22 @@
           .branch-node {
             font-weight: 600;
             color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            border: 1px solid var(--border);
             margin-bottom: 8px;
           }
           
           summary.branch-node.clickable {
             cursor: pointer;
             user-select: none;
-            padding: 8px 12px;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 8px;
-            border: 1px solid var(--border);
             transition: all 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            width: fit-content;
             outline: none;
             list-style: none;
           }
@@ -188,6 +193,12 @@
             min-width: 0;
           }
           
+          .branch-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          }
+          
           .leaf-node a {
             color: var(--txt);
             transition: color 0.15s ease;
@@ -242,13 +253,19 @@
               <div class="branches">
                 
                 <!-- Branch 1: Core Pages -->
-                <div class="branch-group">
-                  <div class="node branch-node">
-                    <span class="icon">🌿</span>
-                    <span class="node-title">Core Pages</span>
-                  </div>
+                <details class="branch-group" open="true">
+                  <summary class="node branch-node clickable">
+                    <div class="branch-left">
+                      <span class="arrow">▶</span>
+                      <span class="icon">🌿</span>
+                      <span class="node-title">Core Pages</span>
+                    </div>
+                    <span class="badge">
+                      <xsl:value-of select="count(sitemap:urlset/sitemap:url[not(contains(sitemap:loc, '/posts/')) and sitemap:loc != 'https://infamous-lucifer.github.io/writing-portfolio/'])"/> pages
+                    </span>
+                  </summary>
                   
-                  <div class="leaves">
+                  <div class="leaves collapsible-content">
                     <xsl:for-each select="sitemap:urlset/sitemap:url[not(contains(sitemap:loc, '/posts/')) and sitemap:loc != 'https://infamous-lucifer.github.io/writing-portfolio/']">
                       <div class="node leaf-node">
                         <div class="leaf-left">
@@ -265,18 +282,18 @@
                       </div>
                     </xsl:for-each>
                   </div>
-                </div>
+                </details>
 
                 <!-- Branch 2: Collapsible Posts (using native details/summary for robust cross-browser support without JS dependency) -->
-                <details class="branch-group" id="posts-branch">
+                <details class="branch-group" id="posts-branch" open="true">
                   <summary class="node branch-node clickable">
-                    <span class="arrow">▶</span>
-                    <span class="icon">📁</span>
-                    <span class="node-title">
-                      Personal Essays &amp; Prose
-                      <span class="badge">
-                        <xsl:value-of select="count(sitemap:urlset/sitemap:url[contains(sitemap:loc, '/posts/')])"/> articles
-                      </span>
+                    <div class="branch-left">
+                      <span class="arrow">▶</span>
+                      <span class="icon">📁</span>
+                      <span class="node-title">Personal Essays &amp; Prose</span>
+                    </div>
+                    <span class="badge">
+                      <xsl:value-of select="count(sitemap:urlset/sitemap:url[contains(sitemap:loc, '/posts/')])"/> articles
                     </span>
                   </summary>
                   
@@ -313,33 +330,44 @@
           //<![CDATA[
           function initSitemap() {
             // Format core page titles
-            document.querySelectorAll('.core-title').forEach(el => {
-              const url = el.getAttribute('data-url');
-              let clean = url.replace('https://infamous-lucifer.github.io/writing-portfolio/', '');
-              if (clean.endsWith('/')) clean = clean.slice(0, -1);
+            document.querySelectorAll('.core-title').forEach(function(el) {
+              var url = el.getAttribute('data-url');
+              var clean = url.replace('https://infamous-lucifer.github.io/writing-portfolio/', '');
+              if (clean.slice(-1) === '/') {
+                clean = clean.slice(0, -1);
+              }
               
-              if (clean === 'about') el.textContent = 'About';
-              else if (clean === 'work') el.textContent = 'Work \u0026 Case Studies';
-              else if (clean === 'writing') el.textContent = 'Writing Hub';
-              else if (clean === 'privacy') el.textContent = 'Privacy Policy';
-              else if (clean === 'terms') el.textContent = 'Terms of Service';
-              else el.textContent = clean || 'Home';
+              if (clean === 'about') {
+                el.textContent = 'About';
+              } else if (clean === 'work') {
+                el.textContent = 'Work \u0026 Case Studies';
+              } else if (clean === 'writing') {
+                el.textContent = 'Writing Hub';
+              } else if (clean === 'privacy') {
+                el.textContent = 'Privacy Policy';
+              } else if (clean === 'terms') {
+                el.textContent = 'Terms of Service';
+              } else {
+                el.textContent = clean || 'Home';
+              }
             });
 
             // Format post slug names to clean readable title cases
-            document.querySelectorAll('.post-title-formatter').forEach(el => {
-              const url = el.getAttribute('data-url');
-              let parts = url.split('/posts/');
-              if (parts.length > 1) {
-                let slug = parts[1];
-                if (slug.endsWith('/')) slug = slug.slice(0, -1);
+            document.querySelectorAll('.post-title-formatter').forEach(function(el) {
+              var url = el.getAttribute('data-url');
+              var parts = url.split('/posts/');
+              if (parts.length === 2) {
+                var slug = parts[1];
+                if (slug.slice(-1) === '/') {
+                  slug = slug.slice(0, -1);
+                }
                 
-                let title = slug.split('-')
-                  .map(word => {
-                    return word.charAt(0).toUpperCase() + word.slice(1);
-                  })
-                  .join(' ');
-                el.textContent = title;
+                var words = slug.split('-');
+                var titleWords = [];
+                words.forEach(function(word) {
+                  titleWords.push(word.charAt(0).toUpperCase() + word.slice(1));
+                });
+                el.textContent = titleWords.join(' ');
               }
             });
           }
