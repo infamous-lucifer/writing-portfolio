@@ -1,4 +1,62 @@
+const Image = require("@11ty/eleventy-img");
+const cheerio = require("cheerio");
+const path = require("path");
+
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addTransform("optimize-images", async function(content, outputPath) {
+    if (outputPath && outputPath.endsWith(".html")) {
+      const $ = cheerio.load(content);
+      const images = $("img");
+      let modified = false;
+
+      for (let i = 0; i < images.length; i++) {
+        const img = $(images[i]);
+        let src = img.attr("src");
+        const alt = img.attr("alt") || "";
+        const cls = img.attr("class") || "";
+
+        // Only process local images
+        if (src && !src.startsWith("http") && !src.startsWith("data:")) {
+          let fileSrc = src;
+          if (fileSrc.startsWith("/writing-portfolio/")) {
+            fileSrc = fileSrc.replace("/writing-portfolio/", "./");
+          } else if (fileSrc.startsWith("/")) {
+             fileSrc = "." + fileSrc;
+          }
+
+          try {
+            let metadata = await Image(fileSrc, {
+              widths: [400, 800, 1200],
+              formats: ["avif", "webp", "jpeg"],
+              outputDir: "./_site/img/",
+              urlPath: "/writing-portfolio/img/"
+            });
+
+            let imageAttributes = {
+              alt,
+              sizes: "(max-width: 800px) 100vw, 800px",
+              loading: "lazy",
+              decoding: "async",
+            };
+            if (cls) {
+               imageAttributes.class = cls;
+            }
+
+            let html = Image.generateHTML(metadata, imageAttributes);
+            img.replaceWith(html);
+            modified = true;
+          } catch (e) {
+            console.error("Error optimizing image", fileSrc, e);
+          }
+        }
+      }
+
+      if (modified) {
+        return $.html();
+      }
+    }
+    return content;
+  });
   // Passthrough for main assets
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("images");

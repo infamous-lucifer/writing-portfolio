@@ -24,5 +24,8 @@
     "cheerio": "^1.2.0",
     "rimraf": "^5.0.5",
     "slugify": "^1.6.9"
+  },
+  "dependencies": {
+    "@11ty/eleventy-img": "^6.0.4"
   }
 }

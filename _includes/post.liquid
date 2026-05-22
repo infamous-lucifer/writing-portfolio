@@ -108,6 +108,12 @@ layout: layout.liquid
       <span style="color: var(--txt);">{{ date | date: "%B %d, %Y" }}</span>
     </div>
   </header>
+
+  {% if image %}
+  <div class="post-cover-wrapper">
+    <img src="{{ image | url }}" alt="Cover image for {{ title }}" class="post-cover-image">
+  </div>
+  {% endif %}
   
   <article class="post-content">
     {{ content }}
