@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "The Crouching Tiger of the Jungle: Why Marvel Still Reigns Supreme"
 date: 2024-11-15
-category: Writing
+category: Blogs
 tags: ["posts"]
 description: "The Crouching Tiger of the Jungle: Why Marvel Still Reigns Supreme — How Marvel's storytelling keeps it at the top of the food chain."
 ---

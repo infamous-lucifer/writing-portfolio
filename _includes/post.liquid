@@ -8,7 +8,7 @@ layout: layout.liquid
   "@type": "Article",
   "headline": "{{ title }}",
   "datePublished": "{{ date | date: '%Y-%m-%dT%H:%M:%SZ' }}",
-  "dateModified": "{{ date | date: '%Y-%m-%dT%H:%M:%SZ' }}",
+  "dateModified": "{% if lastModified %}{{ lastModified | date: '%Y-%m-%dT%H:%M:%SZ' }}{% else %}{{ date | date: '%Y-%m-%dT%H:%M:%SZ' }}{% endif %}",
   "image": "https://infamous-lucifer.github.io/writing-portfolio/images/hero.jpg",
   "mainEntityOfPage": {
     "@type": "WebPage",

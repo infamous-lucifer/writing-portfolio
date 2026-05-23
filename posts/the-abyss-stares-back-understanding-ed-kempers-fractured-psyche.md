@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "The Abyss Stares Back: Understanding Ed Kemper’s Fractured Psyche"
 date: 2024-11-15
-category: Writing
+category: Blogs
 tags: ["posts"]
 description: "The Abyss Stares Back: Understanding Ed Kemper’s Fractured Psyche — An in-depth analysis of the psychological profile of Ed Kemper."
 ---

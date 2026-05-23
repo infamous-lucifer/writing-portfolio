@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "The Illusion of Freedom: How Society Traps Us in Legalized Labor"
 date: 2024-11-15
-category: Writing
+category: Blogs
 tags: ["posts"]
 description: "The Illusion of Freedom: How Society Traps Us in Legalized Labor — Exploring the systems that constrain modern human potential."
 ---

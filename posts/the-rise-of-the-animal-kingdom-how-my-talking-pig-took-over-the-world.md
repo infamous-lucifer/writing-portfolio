@@ -2,7 +2,7 @@
 layout: post.liquid
 title: "The Rise of the Animal Kingdom: How My Talking Pig Took Over the World"
 date: 2024-11-15
-category: Writing
+category: Blogs
 tags: ["posts"]
 description: "The Rise of the Animal Kingdom: How My Talking Pig Took Over the World — A satirical take on a porcine global takeover."
 ---
