@@ -19,8 +19,11 @@ collections:
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Category", name: "category", widget: "select", options: ["Blogs", "Prose", "Poems"], required: true}
+      - {label: "Draft", name: "draft", widget: "boolean", default: false, required: false}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Tags", name: "tags", widget: "list", default: ["essay"]}
+      - {label: "Description (SEO & Card)", name: "description", widget: "text", required: false}
+      - {label: "SEO Keywords", name: "seo_keywords", widget: "string", required: false}
+      - {label: "Tags", name: "tags", widget: "list", default: ["posts"]}
       - {label: "Cover Image", name: "image", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}

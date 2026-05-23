@@ -105,6 +105,8 @@ layout: layout.liquid
     <div class="post-meta">
       <span>Published on</span>
       <span style="color: var(--txt);">{{ date | date: "%B %d, %Y" }}</span>
+      <span style="color: var(--txt-3);">·</span>
+      <span style="color: var(--txt);">{{ content | readingTime }}</span>
     </div>
   </header>
 

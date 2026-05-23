@@ -88,9 +88,17 @@ module.exports = function(eleventyConfig) {
     return content.substr(0, 160).replace(/\r?\n|\r/g, " ").trim() + "...";
   });
 
-  // Create a collection for blog posts
+  // Custom filter for reading time
+  eleventyConfig.addFilter("readingTime", (text) => {
+    if (!text) return "1 min read";
+    const wordCount = text.split(/\s+/).length;
+    const readingTime = Math.ceil(wordCount / 225); // 225 words per minute
+    return readingTime + " min read";
+  });
+
+  // Create a collection for blog posts (excluding drafts)
   eleventyConfig.addCollection("posts", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("posts/*.md").sort((a, b) => b.date - a.date);
+    return collectionApi.getFilteredByGlob("posts/*.md").filter(item => !item.data.draft).sort((a, b) => b.date - a.date);
   });
 
   return {
