@@ -4,6 +4,7 @@ title: "Building a Fast, Privacy-First Portfolio: A Technical & Design Case Stud
 summary: "An inside look at the architecture, design system, and code optimizations behind this portfolio. From zero-bloat analytics to batched DOM rendering."
 date: 2026-06-13
 tags: ["tech", "development", "design", "case study"]
+category: blogs
 ---
 
 A portfolio should be more than just a gallery of past work—it should act as a living demonstration of how you think, design, and code. 

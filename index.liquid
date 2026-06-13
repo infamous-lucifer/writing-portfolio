@@ -15,7 +15,7 @@ title: Home
   </p>
 </div>
 
-{% assign _p1 = collections.posts | where: "fileSlug", "the-illusion-of-freedom-how-society-traps-us-in-legalized-labor" | first %}
+{% assign _p1 = collections.posts | where: "fileSlug", "case-study-building-this-portfolio" | first %}
 {% assign _p2 = collections.posts | where: "fileSlug", "the-hardest-part-isnt-starting-its-letting-yourself-want-it" | first %}
 {% assign _p3 = collections.posts | where: "fileSlug", "through-the-glass-alone" | first %}
 
@@ -25,8 +25,8 @@ title: Home
     <div class="read-time-pill">{% if _p1 %}{{ _p1.templateContent | readingTime }}{% else %}5 min read{% endif %}</div>
     <div class="c-client">Featured Piece · Personal Blog</div>
     <div class="badge acc">Deep Dive</div>
-    <a href="/posts/the-illusion-of-freedom-how-society-traps-us-in-legalized-labor/" class="c-title c-title-lg">The Illusion of Freedom: How Society Traps Us in Legalized Labor</a>
-    <p class="c-desc c-desc-md">Unpacking the invisible architecture of modern work — where freedom is marketed while compliance is enforced. A provocation for anyone who's felt the cage.</p>
+    <a href="/posts/case-study-building-this-portfolio/" class="c-title c-title-lg">Building a Fast, Privacy-First Portfolio: A Case Study</a>
+    <p class="c-desc c-desc-md">An inside look at the architecture, design system, and code optimizations behind this portfolio. From zero-bloat analytics to batched DOM rendering.</p>
   </article>
 
   <article class="post-preview card">
