@@ -1,13 +1,149 @@
 ---
-layout: post.liquid
-title: "Too Much, Too Soon"
+layout: post
+title: "Too Much, Too Soon"
 date: 2025-07-21
-category: Prose
 tags: ["posts"]
-description: Too Much, Too&nbsp;Soon(Feelings that arrive before their&nbsp;time)Photo by Leonardo Sanches on&nbsp;UnsplashI know I have a crush on someone.They’re beau...
+category: blogs
 ---
 
-<figure>
-<img src="https://cdn-images-1.medium.com/max/800/1*Aro4EqR0YvhQ0YyrX6-agw.jpeg" alt="" fetchpriority="high">
-<figcaption>Photo by Leonardo Sanches on Unsplash</figcaption>
-</figure><p>I know I have a crush on someone.<br>They’re beautiful, funny, kind — <br>and many things I don’t yet know.<br>I caught it in the imagining.</p><p>What do you do<br>when you catch feelings<br>too much,<br>too soon<br>for someone?</p><p>How do you hold<br>when a crush forms<br>before the friendship does — <br>just two, three weeks,<br>not enough to know them,<br>but enough to want them?</p><p>When you crave their presence,<br>when their absence carves<br>a hollow under your ribs,<br>heavier than it should?<br>When you fidget near them,<br>heart folding inward,<br>too shy to speak,<br>too loud to ignore?</p><p>I tried running, freezing,<br>silencing it — <br>my breath caught<br>like frost on a winter pane.</p><p>Tried killing it,<br>calling it fantasy.</p><p>Because I know<br>I caught this crush<br>in the act of imagining.</p><p>But what do you do<br>when even fantasy<br>demands a voice?<br>When you ache<br>just to sit near them,<br>to listen,<br>to watch them speak — <br>and that alone<br>feels like a kind of love?</p><p>There are two voices in me.</p><p>One says:<br><em>You like her.<br>It’s soft, it’s pure.<br>Let it be.<br>Tell her — <br>you have a crush on her.</em></p><p>The other yanks the brake:<br><em>No.<br>Too soon.<br>Too much.<br>You’ll scare her.<br>She’ll pull away.</em></p><p>And maybe — <br>maybe she doesn’t think of me that way.<br>I feel it<br>when I see her laugh with others.<br>Not quite jealousy,<br>but a reminder:<br>she might never see me like that.<br>She might already<br>be loving someone else.</p><p>So what do you do — <br>when you catch feelings<br>too much,<br>too soon,<br>for someone?</p><p>When your heart opens its hands<br>but the timing<br>doesn’t know how to hold?</p><p>What am I most afraid of losing<br>by telling her?</p><p>Is it:<br>Her interest?<br>My sense of dignity<br>if she doesn’t feel the same?<br>The fragile illusion<br>that maybe<br>it could still become something?</p><p>All.<br>I am afraid because of all.</p><p>And I don’t know what each voice<br>inside me<br>truly wants to give — <br>because I’ve never been here before.</p><p>I don’t know how to love.<br>I don’t know how to be a boyfriend.<br>How to chase,<br>how to stay,<br>how to behave inside a relationship.<br>This might be my first.<br>And that terrifies me.</p><p>Is it even presumptuous<br>to think I could be that for someone?<br>To even <em>imagine</em> it?</p><p>But maybe…</p><p>Maybe not knowing what I’m doing<br>is exactly why<br>I need to start learning.</p><p>Maybe I’ll never feel ready.<br>Maybe there is no mental rehearsal<br>that prepares you<br>for the tremble in your voice<br>when someone makes you feel this much.</p><p>So I must learn how to love<br>by trying,<br>failing,<br>repairing,<br>and daring again.</p><p>Maybe the first lesson in love is this:</p><blockquote><em>Loving someone isn’t about doing it perfectly.<br>It’s about choosing to show up<br>even when you don’t know how.</em></blockquote>
+![Photo by Leonardo Sanches on Unsplash](/assets/images/posts/1*Aro4EqR0YvhQ0YyrX6-agw.jpeg.jpg)
+
+I know I have a crush on someone.  
+They’re beautiful, funny, kind —   
+and many things I don’t yet know.  
+I caught it in the imagining.
+
+What do you do  
+when you catch feelings  
+too much,  
+too soon  
+for someone?
+
+How do you hold  
+when a crush forms  
+before the friendship does —   
+just two, three weeks,  
+not enough to know them,  
+but enough to want them?
+
+When you crave their presence,  
+when their absence carves  
+a hollow under your ribs,  
+heavier than it should?  
+When you fidget near them,  
+heart folding inward,  
+too shy to speak,  
+too loud to ignore?
+
+I tried running, freezing,  
+silencing it —   
+my breath caught  
+like frost on a winter pane.
+
+Tried killing it,  
+calling it fantasy.
+
+Because I know  
+I caught this crush  
+in the act of imagining.
+
+But what do you do  
+when even fantasy  
+demands a voice?  
+When you ache  
+just to sit near them,  
+to listen,  
+to watch them speak —   
+and that alone  
+feels like a kind of love?
+
+There are two voices in me.
+
+One says:  
+_You like her.  
+It’s soft, it’s pure.  
+Let it be.  
+Tell her —   
+you have a crush on her._
+
+The other yanks the brake:  
+_No.  
+Too soon.  
+Too much.  
+You’ll scare her.  
+She’ll pull away._
+
+And maybe —   
+maybe she doesn’t think of me that way.  
+I feel it  
+when I see her laugh with others.  
+Not quite jealousy,  
+but a reminder:  
+she might never see me like that.  
+She might already  
+be loving someone else.
+
+So what do you do —   
+when you catch feelings  
+too much,  
+too soon,  
+for someone?
+
+When your heart opens its hands  
+but the timing  
+doesn’t know how to hold?
+
+What am I most afraid of losing  
+by telling her?
+
+Is it:  
+Her interest?  
+My sense of dignity  
+if she doesn’t feel the same?  
+The fragile illusion  
+that maybe  
+it could still become something?
+
+All.  
+I am afraid because of all.
+
+And I don’t know what each voice  
+inside me  
+truly wants to give —   
+because I’ve never been here before.
+
+I don’t know how to love.  
+I don’t know how to be a boyfriend.  
+How to chase,  
+how to stay,  
+how to behave inside a relationship.  
+This might be my first.  
+And that terrifies me.
+
+Is it even presumptuous  
+to think I could be that for someone?  
+To even _imagine_ it?
+
+But maybe…
+
+Maybe not knowing what I’m doing  
+is exactly why  
+I need to start learning.
+
+Maybe I’ll never feel ready.  
+Maybe there is no mental rehearsal  
+that prepares you  
+for the tremble in your voice  
+when someone makes you feel this much.
+
+So I must learn how to love  
+by trying,  
+failing,  
+repairing,  
+and daring again.
+
+Maybe the first lesson in love is this:
+
+> _Loving someone isn’t about doing it perfectly.  
+> It’s about choosing to show up  
+> even when you don’t know how._

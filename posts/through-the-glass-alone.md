@@ -1,13 +1,96 @@
 ---
-layout: post.liquid
-title: "Through the Glass, Alone"
+layout: post
+title: "Through the Glass, Alone"
 date: 2025-07-04
-category: Prose
 tags: ["posts"]
-description: Through the Glass,&nbsp;AloneWhen everyone exists as thoughts in your world, but you never quite exist in&nbsp;theirs.Photo by Михаил Секацкий on&nbsp;Unsp...
+category: blogs
 ---
 
-<figure>
-<img src="https://cdn-images-1.medium.com/max/800/0*u4kttx9boqYv79Dl" alt="" fetchpriority="high">
-<figcaption>Photo by Михаил Секацкий on Unsplash</figcaption>
-</figure><p>A lone being in a land of familiar strangers.<br>Each smile is known.<br>Each voice memorized.<br>And yet — <br>none of them carry me in their inner world.</p><p>They pass through mine like echoes.<br>I remain untouched.<br>Not invisible.<br>Just unread.</p><p>And I wonder — <br>am I meant to be known?<br>Or just translated endlessly,<br>never spoken back to?</p><p>It’s like I live inside my head.<br>And outside it, there’s glass.<br>And beyond that — people.</p><p>I can understand what they’re feeling.<br>I can read their faces, predict their silences.<br>But they still feel like thoughts in my mind — <br>not realities I can hold.</p><p>Like lanterns glowing far off in the dark.<br>I can see the light,<br>but never feel the warmth.</p><p>And I ask myself:<br>But isn’t it true in itself?<br>Others are the thoughts of my world.<br>I know they have their own world — <br>but our realities never intersect.</p><p>I know they are human.<br>I know they have identities, emotions, entire lives.<br>But I can’t process that truth beyond the surface.<br>I don’t land in their world,<br>and they don’t land in mine.</p><p>They exist for me — <br>inside my own perception.<br>Fragments. Reflections. Not full presence.</p><p>And emotionally — <br>it feels like madness.<br>Because you can sit beside someone,<br>touch them, joke with them,<br>spend hours or years — <br>and still not know<br>if they’ve ever really held you in their thoughts<br>the way you hold them in yours.</p><p>That kind of detachment isn’t cold — <br>it’s quiet. Unbearably quiet.<br>Like you are the only real thing<br>in a room full of shadows that mimic life.</p><p>And then I wonder — <br>can I ever fall in love?</p><p>Not because I lack care or curiosity.<br>But because I cannot yet feel someone<br>the way I feel myself.</p><p>They could share everything with me — <br>their past, their fears, their softest stories — <br>and still,<br>I might not love them.</p><p>Not because they aren’t worthy,<br>but because I don’t yet have the space<br>in my cognition<br>for someone else to truly live.</p><p>Right now,<br>the only world I know how to fully inhabit<br>is my own.</p><p>And maybe…<br>maybe that’s what loneliness really is.<br>Not the absence of people — <br>but the inability<br>to let them exist<br>beyond the glass.</p>
+![Photo by Михаил Секацкий on Unsplash](/assets/images/posts/0*u4kttx9boqYv79Dl.jpg)
+
+A lone being in a land of familiar strangers.  
+Each smile is known.  
+Each voice memorized.  
+And yet —   
+none of them carry me in their inner world.
+
+They pass through mine like echoes.  
+I remain untouched.  
+Not invisible.  
+Just unread.
+
+And I wonder —   
+am I meant to be known?  
+Or just translated endlessly,  
+never spoken back to?
+
+It’s like I live inside my head.  
+And outside it, there’s glass.  
+And beyond that — people.
+
+I can understand what they’re feeling.  
+I can read their faces, predict their silences.  
+But they still feel like thoughts in my mind —   
+not realities I can hold.
+
+Like lanterns glowing far off in the dark.  
+I can see the light,  
+but never feel the warmth.
+
+And I ask myself:  
+But isn’t it true in itself?  
+Others are the thoughts of my world.  
+I know they have their own world —   
+but our realities never intersect.
+
+I know they are human.  
+I know they have identities, emotions, entire lives.  
+But I can’t process that truth beyond the surface.  
+I don’t land in their world,  
+and they don’t land in mine.
+
+They exist for me —   
+inside my own perception.  
+Fragments. Reflections. Not full presence.
+
+And emotionally —   
+it feels like madness.  
+Because you can sit beside someone,  
+touch them, joke with them,  
+spend hours or years —   
+and still not know  
+if they’ve ever really held you in their thoughts  
+the way you hold them in yours.
+
+That kind of detachment isn’t cold —   
+it’s quiet. Unbearably quiet.  
+Like you are the only real thing  
+in a room full of shadows that mimic life.
+
+And then I wonder —   
+can I ever fall in love?
+
+Not because I lack care or curiosity.  
+But because I cannot yet feel someone  
+the way I feel myself.
+
+They could share everything with me —   
+their past, their fears, their softest stories —   
+and still,  
+I might not love them.
+
+Not because they aren’t worthy,  
+but because I don’t yet have the space  
+in my cognition  
+for someone else to truly live.
+
+Right now,  
+the only world I know how to fully inhabit  
+is my own.
+
+And maybe…  
+maybe that’s what loneliness really is.  
+Not the absence of people —   
+but the inability  
+to let them exist  
+beyond the glass.

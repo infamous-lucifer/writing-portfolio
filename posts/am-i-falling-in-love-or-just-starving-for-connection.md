@@ -1,13 +1,77 @@
 ---
-layout: post.liquid
+layout: post
 title: "Am I Falling in Love, or Just Starving for Connection?"
 date: 2025-07-02
-category: Prose
 tags: ["posts"]
-description: Am I Falling in Love, or Just Starving for Connection?A confession about how I keep mistaking emotional hunger for intimacy — and the illusions I build in ...
+category: blogs
 ---
 
-<figure>
-<img src="https://cdn-images-1.medium.com/max/800/0*ekN88IAj7ZSZKGio" alt="" fetchpriority="high">
-<figcaption>Photo by Sasha Freemind on Unsplash</figcaption>
-</figure><p>Sometimes I wonder if I’ve ever actually fallen in love.<br>Not because I haven’t felt things — I’ve felt them intensely. So intensely, it scared me.<br>But when I look closely, it wasn’t the person that moved me.<br>It was what they made me feel — or rather, what I hoped they might help me feel.</p><p>The feeling of being seen.<br>The possibility of being chosen.<br>The illusion of safety in someone else’s gaze.</p><p>That’s what I chase.</p><p>It’s not wrong to want connection.<br>It’s deeply human — necessary, even.<br>But I think I confuse connection with something else.<br>With rescue. With repair. With relief.</p><p>If someone shows me even a flicker of kindness, I build an entire emotional ecosystem around it.<br>I fall in love with the version of them I create — the one who finally sees me.<br>Not the actual person.<br>I don’t even know the actual person.</p><p>It feels constructed. Not organic.<br>Even as a kid, I remember choosing who to crush on.<br>It didn’t strike me out of nowhere. I decided.<br>Because I wanted to be someone who felt love.<br>Because feeling love made me feel real.</p><p>And so I keep falling — not for people, but for the idea of mattering to someone.<br>It’s not love. It’s emotional hunger dressed up in romantic hope.</p><p>It’s everywhere in me.<br>Even when I’m writing messages to colleagues or friends, I assign them roles:<br>The office mom. The motivator. The big sister.<br>I don’t just appreciate them. I turn them into emotional symbols.</p><p>A role they never agreed to.<br>A placeholder in my inner story.</p><p>It makes things neat, manageable, emotionally structured.<br>But it also traps me. Because the moment someone steps outside their role — or never fills it the way I hoped — I feel betrayed.<br>Not by them.<br>But by my own fantasy.</p><p>That’s the core wound:<br>My craving to be known, combined with my fear of being rejected once I’m fully visible.<br>So I create people in my head instead.<br>Versions of them that can’t leave.<br>Versions of love I can control.</p><p>But the price of that is real connection.<br>And the weight of that illusion is starting to suffocate me.</p><p>I want to stop doing this.<br>Not stop needing love — <br>but stop making strangers carry the burden of my unmet needs.</p><p>I want to stop mistaking hunger for intimacy.<br>Stop turning warmth into promises it never made.<br>Stop trying to get from someone else what I’ve never learned to give myself.</p><p>I want to learn to see people as they are.<br>Not as what they could mean to me.<br>Not as characters in a script I’m unconsciously writing.</p><p>I want to learn how to love without projection.<br>To let someone remain a mystery.<br>And maybe, to become one to myself again too.</p>
+![Photo by Sasha Freemind on Unsplash](/assets/images/posts/0*ekN88IAj7ZSZKGio.jpg)
+
+Sometimes I wonder if I’ve ever actually fallen in love.  
+Not because I haven’t felt things — I’ve felt them intensely. So intensely, it scared me.  
+But when I look closely, it wasn’t the person that moved me.  
+It was what they made me feel — or rather, what I hoped they might help me feel.
+
+The feeling of being seen.  
+The possibility of being chosen.  
+The illusion of safety in someone else’s gaze.
+
+That’s what I chase.
+
+It’s not wrong to want connection.  
+It’s deeply human — necessary, even.  
+But I think I confuse connection with something else.  
+With rescue. With repair. With relief.
+
+If someone shows me even a flicker of kindness, I build an entire emotional ecosystem around it.  
+I fall in love with the version of them I create — the one who finally sees me.  
+Not the actual person.  
+I don’t even know the actual person.
+
+It feels constructed. Not organic.  
+Even as a kid, I remember choosing who to crush on.  
+It didn’t strike me out of nowhere. I decided.  
+Because I wanted to be someone who felt love.  
+Because feeling love made me feel real.
+
+And so I keep falling — not for people, but for the idea of mattering to someone.  
+It’s not love. It’s emotional hunger dressed up in romantic hope.
+
+It’s everywhere in me.  
+Even when I’m writing messages to colleagues or friends, I assign them roles:  
+The office mom. The motivator. The big sister.  
+I don’t just appreciate them. I turn them into emotional symbols.
+
+A role they never agreed to.  
+A placeholder in my inner story.
+
+It makes things neat, manageable, emotionally structured.  
+But it also traps me. Because the moment someone steps outside their role — or never fills it the way I hoped — I feel betrayed.  
+Not by them.  
+But by my own fantasy.
+
+That’s the core wound:  
+My craving to be known, combined with my fear of being rejected once I’m fully visible.  
+So I create people in my head instead.  
+Versions of them that can’t leave.  
+Versions of love I can control.
+
+But the price of that is real connection.  
+And the weight of that illusion is starting to suffocate me.
+
+I want to stop doing this.  
+Not stop needing love —   
+but stop making strangers carry the burden of my unmet needs.
+
+I want to stop mistaking hunger for intimacy.  
+Stop turning warmth into promises it never made.  
+Stop trying to get from someone else what I’ve never learned to give myself.
+
+I want to learn to see people as they are.  
+Not as what they could mean to me.  
+Not as characters in a script I’m unconsciously writing.
+
+I want to learn how to love without projection.  
+To let someone remain a mystery.  
+And maybe, to become one to myself again too.

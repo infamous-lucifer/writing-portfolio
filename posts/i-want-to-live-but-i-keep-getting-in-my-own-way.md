@@ -1,13 +1,100 @@
 ---
-layout: post.liquid
-title: "I Want to Live, But I Keep Getting in My Own Way"
+layout: post
+title: "I Want to Live, But I Keep Getting in My Own Way"
 date: 2025-07-09
-category: Prose
 tags: ["posts"]
-description: I Want to Live, But I Keep Getting in My Own&nbsp;WayA Glimpse into an Anxious&nbsp;MindPhoto by USGS on&nbsp;UnsplashI. The Question at the&nbsp;CoreWhy a...
+category: blogs
 ---
 
-<figure>
-<img src="https://cdn-images-1.medium.com/max/800/0*YuCbmA9DRsuwOPd-" alt="" fetchpriority="high">
-<figcaption>Photo by USGS on Unsplash</figcaption>
-</figure><h4 id="d6c9" class="graf graf--h4 graf-after--figure">I. The Question at the Core</h4><p>Why am I in such perpetual doubt of myself?</p><p>Even when life is quiet — <br>no sadness, no urgency — <br>I still feel like something’s wrong.</p><h4 id="d219" class="graf graf--h4 graf-after--p">II. The Pressure to Rush</h4><p>We live in a world of constant comparison.<br>Even if I try to slow down, I can’t.<br>The moment I pause, I feel behind.</p><p>So I keep trying to fast-track life — <br>as if finishing everything quickly<br>would finally make me feel free.</p><p>But I don’t want to rush.<br>I want to live.<br>Freely. Passionately. Without fear.</p><h4 id="b3ef" class="graf graf--h4 graf-after--p">III. The Restlessness Inside Me</h4><p>At the gym, I feel like everyone’s watching me — <br>judging my body, my form, my right to be there.</p><p>In conversations, I don’t know how to enter.<br>I keep trying to insert myself<br>just so I don’t disappear.</p><p>Even in public spaces, I feel like<br>I walk like I’m confident — <br> but I’m terrified someone will see I’m not.</p><h4 id="74ef" class="graf graf--h4 graf-after--p">IV. The Ache for Love</h4><p>I just want to be loved.<br>To be held without needing to earn it.<br>To be allowed to fall apart<br>in someone’s arms — <br>and still be seen as whole.</p><p>But I don’t believe I’m curable.<br>Not in the way movies promise.<br>Not in the way self-help books say.</p><h4 id="dae4" class="graf graf--h4 graf-after--p">V. The Shame Around Capabilities</h4><p>I don’t trust my abilities.<br>Reading? 15 minutes max.<br>Talking? I listen, but I have nothing to say.</p><p>Even shows I want to watch — <br>I get bored. I spiral. I return to overthinking.</p><p>Even with all this awareness — <br>I still feel stuck.</p><h4 id="b54c" class="graf graf--h4 graf-after--p">VI. The Quiet Confession</h4><p>I’m in my early 20s,<br>but it feels like I’ve already failed.</p><p>I didn’t go to that prestigious college.<br>I spent two years wandering, trying different paths.<br>Now I’m here — trying again.<br>But I’m tired. And unsure.</p><h4 id="2616" class="graf graf--h4 graf-after--p">VII. The Loop</h4><p>I see couples online.<br>I imagine love with strangers.<br>Not because I know them — <br>but because I want to feel loved by someone.</p><p>It doesn’t help.<br>It only deepens the loneliness.</p>
+![Photo by USGS on Unsplash](/assets/images/posts/0*YuCbmA9DRsuwOPd-.jpg)
+
+#### I. The Question at the Core
+
+Why am I in such perpetual doubt of myself?
+
+Even when life is quiet —   
+no sadness, no urgency —   
+I still feel like something’s wrong.
+
+#### II. The Pressure to Rush
+
+We live in a world of constant comparison.  
+Even if I try to slow down, I can’t.  
+The moment I pause, I feel behind.
+
+So I keep trying to fast-track life —   
+as if finishing everything quickly  
+would finally make me feel free.
+
+But I don’t want to rush.  
+I want to live.  
+Freely. Passionately. Without fear.
+
+#### III. The Restlessness Inside Me
+
+At the gym, I feel like everyone’s watching me —   
+judging my body, my form, my right to be there.
+
+In conversations, I don’t know how to enter.  
+I keep trying to insert myself  
+just so I don’t disappear.
+
+Even in public spaces, I feel like  
+I walk like I’m confident —   
+ but I’m terrified someone will see I’m not.
+
+#### IV. The Ache for Love
+
+I just want to be loved.  
+To be held without needing to earn it.  
+To be allowed to fall apart  
+in someone’s arms —   
+and still be seen as whole.
+
+But I don’t believe I’m curable.  
+Not in the way movies promise.  
+Not in the way self-help books say.
+
+#### V. The Shame Around Capabilities
+
+I don’t trust my abilities.  
+Reading? 15 minutes max.  
+Talking? I listen, but I have nothing to say.
+
+Even shows I want to watch —   
+I get bored. I spiral. I return to overthinking.
+
+Even with all this awareness —   
+I still feel stuck.
+
+#### VI. The Quiet Confession
+
+I’m in my early 20s,  
+but it feels like I’ve already failed.
+
+I didn’t go to that prestigious college.  
+I spent two years wandering, trying different paths.  
+Now I’m here — trying again.  
+But I’m tired. And unsure.
+
+#### VII. The Loop
+
+I see couples online.  
+I imagine love with strangers.  
+Not because I know them —   
+but because I want to feel loved by someone.
+
+It doesn’t help.  
+It only deepens the loneliness.
+
+#### No Closure ; Just Honesty
+
+I don’t know what to do with this.  
+I just know that I want more.  
+Not more success.  
+Not more followers.  
+Just more of me.
+
+Alive.  
+Unburdened.  
+Real.

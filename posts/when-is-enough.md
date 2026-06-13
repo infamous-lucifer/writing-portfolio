@@ -1,10 +1,52 @@
 ---
-layout: post.liquid
-title: "When Is Enough?"
+layout: post
+title: "When Is Enough?"
 date: 2025-06-17
-category: Blogs
 tags: ["posts"]
-description: When Is&nbsp;Enough?Photo by Mitchell Hollander on&nbsp;Unsplash...
+category: blogs
 ---
 
-<h3 id="4112" class="graf graf--h3 graf--leading graf--title"><em class="markup--em markup--h3-em">When Is&nbsp;Enough?</em><figure id="8e1a" class="graf graf--figure graf-after--h3 graf--trailing"><img class="graf-image" data-image-id="0*SVo7d9ajMlW2IK_3" data-width="5716" data-height="4000" src="https://cdn-images-1.medium.com/max/800/0*SVo7d9ajMlW2IK_3"><figcaption class="imageCaption">Photo by <a href="https://unsplash.com/@mitchures?utm_source=medium&amp;utm_medium=referral" data-href="https://unsplash.com/@mitchures?utm_source=medium&amp;utm_medium=referral" class="markup--anchor markup--figure-anchor" rel="photo-creator noopener" target="_blank">Mitchell Hollander</a> on&nbsp;<a href="https://unsplash.com/?utm_source=medium&amp;utm_medium=referral" data-href="https://unsplash.com/?utm_source=medium&amp;utm_medium=referral" class="markup--anchor markup--figure-anchor" rel="photo-source noopener" target="_blank">Unsplash</a></figcaption></figure>
+![Photo by Mitchell Hollander on Unsplash](/assets/images/posts/0*SVo7d9ajMlW2IK_3.jpg)
+
+I ask myself—
+
+When will it be enough?
+
+Yet what even is enough?
+
+Enough in this world of competition?  
+Enough in this world of capitalism?  
+Where milestones multiply like viruses,  
+And someone’s always ahead of you—  
+Even if you never signed up for the race.
+
+Is it wrong to chase enough?  
+Or foolish not to?
+
+I don’t know when I first learned  
+I wasn’t enough.  
+Maybe it was when they left.  
+Maybe when they didn’t choose me.  
+Maybe when silence said more than words ever could.
+
+Something had to have been not enough.
+
+Was it my face?  
+Was it my family?  
+Was it my finances?  
+Was it the softness I carry like a second skin?  
+Was it that I feel too much, or not in the right way?
+
+At work—am I enough?  
+At home—am I enough?  
+In love—am I enough?
+
+In this world where each one is for himself,  
+When is someone ever enough  
+For someone else?  
+And when does someone finally feel  
+Enough for themselves?
+
+I’ve rewritten myself so many times—  
+I don’t know which version  
+Was supposed to pass the test.
