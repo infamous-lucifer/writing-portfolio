@@ -10,7 +10,7 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
     <meta name="view-transition" content="same-origin" />
 
     <meta name="description" content="{% if description %}{{ description | strip_html | truncate: 160 }}{% else %}Akshat Singh — SEO content writer based in Chandigarh. Extensive published work across ESL, healthcare education, IT, and appellate law.{% endif %}">
@@ -26,26 +26,12 @@
     <meta name="twitter:description" content="{% if description %}{{ description | strip_html | truncate: 160 }}{% else %}SEO content writer — extensive published work across ESL, healthcare education, IT, and appellate law.{% endif %}">
     <meta name="twitter:image" content="{% if image %}{{ image}}{% else %}https://infamous-lucifer.github.io/writing-portfolio/images/hero.jpg{% endif %}">
     <link rel="canonical" href="https://infamous-lucifer.github.io/writing-portfolio{{ page.url }}">
-    <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico'}}">
+    <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | url }}">
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQPTTN037H"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XQPTTN037H');
-    </script>
-
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "w6un2vtbtp");
-    </script>
-
-    <link href="{{ '/pagefind/pagefind-ui.css'}}" rel="stylesheet">
-    <script src="{{ '/pagefind/pagefind-ui.js'}}"></script>
+    <link href="{{ '/pagefind/pagefind-ui.css' | url }}" rel="stylesheet">
+    <script src="{{ '/pagefind/pagefind-ui.js' | url }}" defer></script>
+    <script src="{{ '/assets/analytics.js' | url }}" defer></script>
+    <script src="{{ '/assets/site.js' | url }}" defer></script>
 
     {% if page.url contains '/posts/' %}
       <!-- Specific BlogPosting/Article JSON-LD is loaded inside post.liquid template -->
@@ -119,10 +105,10 @@
     <nav>
         <div class="container">
             <div class="nav-links">
-                <a href="{{ '/'}}">Home</a>
-                <a href="{{ '/work'}}">Work</a>
-                <a href="{{ '/writing'}}">Writing</a>
-                <a href="{{ '/about'}}">About</a>
+                <a href="{{ '/' | url }}">Home</a>
+                <a href="{{ '/work/' | url }}">Work</a>
+                <a href="{{ '/writing/' | url }}">Writing</a>
+                <a href="{{ '/about/' | url }}">About</a>
             </div>
             <div class="nav-extra">
                 <div id="search" class="search-box"></div>
@@ -152,7 +138,7 @@
                 </div>
                 <div class="cta-actions">
                     <a href="mailto:akshatsingh666@gmail.com" class="btn btn-acc">Work With Me</a>
-                    <div class="social-links" style="display: flex; gap: 16px; align-items: center;">
+                    <div class="social-links">
                         <a href="https://substack.com/@akshat007" target="_blank" rel="me noopener noreferrer" aria-label="Substack">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
                         </a>
@@ -175,8 +161,8 @@
                 <div class="sh-lbl">Akshat Singh</div>
                 <p>SEO Content Writer · Chandigarh · Built with Eleventy.</p>
                 <div class="legal-links">
-                    <a href="{{ '/privacy'}}">Privacy Policy</a>
-                    <a href="{{ '/terms'}}">Terms of Service</a>
+                    <a href="{{ '/privacy/' | url }}">Privacy Policy</a>
+                    <a href="{{ '/terms/' | url }}">Terms of Service</a>
                 </div>
             </div>
         </div>
@@ -184,136 +170,9 @@
 
     <div id="cookie-banner" class="cookie-banner" style="display: none;">
         <div class="cb-flex">
-            <p>We use cookies to ensure you get the best experience on Akshat's portfolio. <a href="{{ '/privacy'}}">Read our Privacy Policy</a></p>
+            <p>We use cookies to understand site usage and improve Akshat's portfolio. <a href="{{ '/privacy/' | url }}">Read our Privacy Policy</a></p>
             <button id="accept-cookies" class="btn btn-acc btn-sm">Accept</button>
         </div>
     </div>
-
-    <script>
-   // COUNTER LOGIC - fixed precision bug
-    const counters = document.querySelectorAll('.hnum');
-    const speed = 200;
-
-    const startCounter = (counter) => {
-      const target = +counter.getAttribute('data-count') || 0;
-      let current = 0; // Store the exact number in memory, not the DOM
-      const inc = target / speed;
-
-      const updateCount = () => {
-        current += inc;
-        
-        if (current < target) {
-          counter.innerText = counter.hasAttribute('data-dec') ? current.toFixed(1) : Math.ceil(current);
-          setTimeout(updateCount, 10);
-        } else {
-          if (counter.dataset.sfx) {
-             counter.innerText = target + counter.dataset.sfx;
-          } else if (counter.hasAttribute('data-dec')) {
-             counter.innerText = target.toFixed(1);
-          } else {
-             counter.innerText = target;
-          }
-        }
-      };
-      
-      if (counter.getAttribute('data-count') || counter.hasAttribute('data-dec') || counter.dataset.sfx) {
-          updateCount();
-      }
-    };
-
-    const statsObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const nums = entry.target.querySelectorAll('.hnum');
-          nums.forEach(n => startCounter(n));
-          statsObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    const statsSection = document.getElementById('stats-section');
-    if (statsSection) statsObserver.observe(statsSection);
-
-    // SEARCH LOGIC - Powered by Pagefind
-    if (document.getElementById("search") && typeof PagefindUI !== 'undefined') {
-        new PagefindUI({ 
-            element: "#search", 
-            showSubResults: true,
-            resetStyles: false, // Try to inherit global typography
-            baseUrl: "/writing-portfolio/"
-        });
-    }
-
-    // FILTER LOGIC
-    const tabs = document.querySelectorAll('.ftab');
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => {
-          t.classList.remove('active');
-          t.setAttribute('aria-selected', 'false');
-        });
-        tab.classList.add('active');
-        tab.setAttribute('aria-selected', 'true');
-
-        const f = tab.dataset.f;
-        const sections = document.querySelectorAll('[data-s]');
-        const items = document.querySelectorAll('[data-category]');
-
-        if (items.length > 0) {
-          items.forEach(item => {
-            const categories = item.dataset.category.toLowerCase().split(' ');
-            const filterValue = f.toLowerCase();
-            item.style.display = (f === 'all' || categories.includes(filterValue)) ? '' : 'none';
-          });
-        }
-
-        if (sections.length > 0) {
-          sections.forEach(s => {
-            const secCats = s.dataset.s.toLowerCase().split(' ');
-            const filterValue = f.toLowerCase();
-            s.style.display = (f === 'all' || secCats.includes(filterValue)) ? '' : 'none';
-          });
-        }
-      });
-    });
-
-    // COOKIE BANNER LOGIC
-    const banner = document.getElementById('cookie-banner');
-    const acceptBtn = document.getElementById('accept-cookies');
-    if (!localStorage.getItem('cookiesAccepted')) {
-        banner.style.display = 'block';
-    }
-    acceptBtn.addEventListener('click', () => {
-        localStorage.setItem('cookiesAccepted', 'true');
-        banner.style.display = 'none';
-    });
-    // MOBILE MENU LOGIC
-    const mobileBtn = document.getElementById('mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-    if (mobileBtn && navLinks) {
-        mobileBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    }
-    // THEME TOGGLE
-    const themeToggle = document.getElementById('theme-toggle');
-
-    const applyTheme = (theme) => {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-        themeToggle.querySelector('.t-icon').textContent = theme === 'light' ? '☽' : '☼';
-    };
-
-    const currentTheme = localStorage.getItem('theme') || 'dark';
-    applyTheme(currentTheme);
-
-    themeToggle.addEventListener('click', () => {
-        const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-        applyTheme(next);
-    });
-    </script>
-    <!-- Start of HubSpot Embed Code -->
-    <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/246488618.js"></script>
-    <!-- End of HubSpot Embed Code -->
 </body>
 </html>

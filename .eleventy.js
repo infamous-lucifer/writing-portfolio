@@ -2,6 +2,7 @@ const Image = require("@11ty/eleventy-img");
 const { rssPlugin } = require("@11ty/eleventy-plugin-rss");
 const cheerio = require("cheerio");
 const path = require("path");
+const writingCards = require("./_data/writingCards.json");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(rssPlugin);
@@ -99,6 +100,18 @@ module.exports = function(eleventyConfig) {
   // Create a collection for blog posts (excluding drafts)
   eleventyConfig.addCollection("posts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("posts/*.md").filter(item => !item.data.draft).sort((a, b) => b.date - a.date);
+  });
+
+  eleventyConfig.addCollection("writingPosts", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("posts/*.md")
+      .filter(item => !item.data.draft)
+      .sort((a, b) => {
+        const aSlug = path.basename(a.inputPath, ".md");
+        const bSlug = path.basename(b.inputPath, ".md");
+        const aOrder = writingCards[aSlug]?.order || 999;
+        const bOrder = writingCards[bSlug]?.order || 999;
+        return aOrder - bOrder || b.date - a.date;
+      });
   });
 
   return {

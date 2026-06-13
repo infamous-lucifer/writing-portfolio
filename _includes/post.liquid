@@ -30,74 +30,6 @@ layout: layout.liquid
 }
 </script>
 
-<style>
-  .reader-container {
-    max-width: 760px;
-    margin: 60px auto 120px;
-    animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-  .post-header {
-    text-align: center;
-    margin-bottom: 64px;
-  }
-  .post-category {
-    font-family: var(--f-mono);
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--acc);
-    margin-bottom: 20px;
-    display: block;
-  }
-  .post-title {
-    font-family: var(--f-head);
-    font-size: clamp(38px, 5vw, 64px);
-    font-weight: 600;
-    line-height: 1.15;
-    color: var(--txt);
-    margin-bottom: 24px;
-    letter-spacing: -0.02em;
-  }
-  .post-meta {
-    font-family: var(--f-mono);
-    font-size: 11px;
-    color: var(--txt-3);
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .post-content {
-    font-family: var(--f-head);
-    font-size: 21px;
-    line-height: 1.85;
-    color: var(--txt-2);
-  }
-  .post-content p {
-    margin-bottom: 32px;
-  }
-  .post-content strong {
-    color: var(--txt);
-    font-weight: 600;
-  }
-  /* Elegant Drop Cap for the first paragraph of content */
-  .post-content > p:first-of-type::first-letter {
-    font-family: var(--f-head);
-    font-size: 5.2em;
-    font-weight: 700;
-    float: left;
-    line-height: 0.75;
-    margin: 0.08em 0.1em 0 0;
-    color: var(--acc);
-  }
-  .post-footer {
-    margin-top: 80px;
-    padding-top: 40px;
-    border-top: 1px solid var(--border);
-    display: flex;
-    justify-content: center;
-  }
-</style>
-
 <div class="reader-container">
   <header class="post-header">
     <span class="post-category">{{ category }}</span>
@@ -123,7 +55,7 @@ layout: layout.liquid
   {% include "newsletter.liquid" %}
 
   <footer class="post-footer">
-    <a href="/writing" class="card card-min back-card">
+    <a href="{{ '/writing/' | url }}" class="card card-min back-card">
       <span class="arrow">←</span>
       <span class="lbl">BACK TO<br>WRITING HUB</span>
     </a>
@@ -134,7 +66,7 @@ layout: layout.liquid
         {% assign count = 0 %}
         {% for relPost in collections.posts %}
           {% if relPost.data.category == category and relPost.url != page.url and count < 2 %}
-            <a href="{{ relPost.url }}" class="card-min post-preview card rel-card">
+            <a href="{{ relPost.url | url }}" class="card-min post-preview card rel-card">
               <div class="c-client">{{ relPost.data.category | capitalize }} · {{ relPost.date | date: "%b %Y" }}</div>
               <h3 class="c-title">{{ relPost.data.title }}</h3>
             </a>
@@ -147,16 +79,3 @@ layout: layout.liquid
 </div>
 
 <div class="progress-bar"></div>
-
-<script>
-window.addEventListener('scroll', () => {
-  const article = document.querySelector('.post-content');
-  const bar = document.querySelector('.progress-bar');
-  if (!article || !bar) return;
-  const rect = article.getBoundingClientRect();
-  const total = article.offsetHeight;
-  const scrolled = -rect.top + (window.innerHeight / 2); // fill relative to viewport center
-  const pct = Math.min(100, Math.max(0, (scrolled / total) * 100));
-  bar.style.width = pct + '%';
-});
-</script>

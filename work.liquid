@@ -4,22 +4,6 @@ title: Work
 description: Extensive SEO content across Healthcare, Cybersecurity, Immigration, and more.
 ---
 
-<style>
-  .guided-matrix-header { margin: 2rem 0 4rem 0; padding: 2.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; }
-  .matrix-headline { font-family: var(--f-head); font-size: 32px; font-weight: 400; line-height: 1.6; color: var(--txt-2); margin: 0; }
-  .inline-select { appearance: none; background: transparent; border: none; border-bottom: 2px dashed var(--acc); color: var(--acc); font-family: inherit; font-size: inherit; font-weight: 600; cursor: pointer; padding: 0 8px; outline: none; }
-  .inline-select:hover { background: var(--acc-s); }
-  .matrix-section { margin-bottom: 4rem; animation: fadeIn 0.5s ease-out; }
-  
-  @media (min-width: 1024px) {
-    .bento-feat { grid-column: span 2; }
-    .bento-feat .c-title { font-size: 32px; line-height: 1.2; }
-  }
-
-  .ghost-swimlane { padding: 2.5rem; border: 1px dashed var(--border-hi); border-radius: 8px; color: var(--txt-3); text-align: center; font-family: var(--f-mono); font-size: 14px; grid-column: 1 / -1; }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-</style>
-
 <div class="guided-matrix-header">
   <h1 class="matrix-headline">
     Show me 
@@ -40,103 +24,11 @@ description: Extensive SEO content across Healthcare, Cybersecurity, Immigration
       <option value="ecom">eCommerce & Lifestyle</option>
       <option value="dive">Dive & Travel</option>
     </select>
-    sector <span class="n" id="total-count" style="font-size: 0.6em; opacity: 0.5;">(...)</span>.
+    sector <span class="n matrix-total" id="total-count">(...)</span>.
   </h1>
 </div>
 
 <div id="portfolio-matrix">
-  <p id="loading-text" style="text-align: center; padding: 3rem; color: var(--txt-3);">Syncing with database...</p>
+  <p id="loading-text" class="matrix-loading">Syncing with database...</p>
 </div>
-
-<script>
-  // Updated with your verified live API URL
-  const SHEET_API_URL = "https://script.google.com/macros/s/AKfycbw1J7-yT2pIRKBXYNqNbKOGe8ZNFqvGTZJXd-yQ1pFmG7Ffg4xsUdcMa4ujax4WF1081g/exec"; 
-  let allPortfolioData = [];
-
-  async function fetchPortfolio() {
-    try {
-      const response = await fetch(SHEET_API_URL);
-      allPortfolioData = await response.json();
-      document.getElementById('loading-text').style.display = 'none';
-      renderMatrix();
-    } catch (e) {
-      document.getElementById('loading-text').innerText = "Sync Error. Please check connection.";
-      console.error("Error fetching data:", e);
-    }
-  }
-
-  function renderMatrix() {
-    const indFilter = document.getElementById('industry-select').value;
-    const typeFilter = document.getElementById('type-select').value;
-    const container = document.getElementById('portfolio-matrix');
-    container.innerHTML = '';
-
-    const groups = [
-      { id: "health", title: "Healthcare & Medical", keywords: ["health", "medical", "clinic", "pharma", "diagnostics", "radiology", "endocrinology", "blood"], items: [] },
-      { id: "cyber", title: "Cybersecurity & IT", keywords: ["cyber", " it", "cloud", "security", "saas", "tech", "software", "ai", "network", "ccna"], items: [] },
-      { id: "legal", title: "Legal & Appellate", keywords: ["legal", "law", "court", "appellate", "ssdi", "attorney", "conviction", "ssi"], items: [] },
-      { id: "esl", title: "ESL & Immigration", keywords: ["esl", "immigration", "visa", "student", "education", "english", "sevis", "f-1", "opt"], items: [] },
-      { id: "ecom", title: "eCommerce & Lifestyle", keywords: ["ecom", "apparel", "home", "remodel", "wedding", "lifestyle", "shirt", "skincare", "gift", "siding", "cabinet"], items: [] },
-      { id: "dive", title: "Dive & Travel", keywords: ["dive", "travel", "scuba", "tourism", "tao", "sail rock"], items: [] },
-      { id: "other", title: "Specialized Strategy", keywords: [], items: [] }
-    ];
-
-    allPortfolioData.forEach(item => {
-      // MAPPING TO NEW DEEP-TAG LABELS
-      const indText = String(item.gemini_industry || "").toLowerCase();
-      const typeText = String(item.gemini_content_type || "").toLowerCase();
-      const titleText = String(item.display_title || "").toLowerCase();
-      const excerptText = String(item.excerpt || "").toLowerCase();
-      const searchBlob = titleText + " " + indText + " " + typeText + " " + excerptText;
-
-      // Assign to visual swimlane
-      let assignedLane = groups.find(g => g.keywords.some(k => searchBlob.includes(k))) || groups[groups.length - 1];
-      
-      // Normalize Type for filtering
-      let itemType = "other";
-      if (searchBlob.match(/blog|article|post/)) itemType = "blog";
-      else if (searchBlob.match(/service|landing|overview|profile/)) itemType = "service";
-      else if (searchBlob.match(/technical|clinical|analysis|diagnostics/)) itemType = "technical";
-      else if (searchBlob.match(/guide|how-to|step|checklist|requirement/)) itemType = "guide";
-
-      const matchInd = (indFilter === 'all' || indFilter === assignedLane.id);
-      const matchType = (typeFilter === 'all' || typeFilter === itemType);
-
-      if (matchInd && matchType) {
-        assignedLane.items.push(item);
-      }
-    });
-
-    let total = 0;
-    groups.filter(g => indFilter === 'all' || indFilter === g.id).forEach(g => {
-      total += g.items.length;
-      
-      let cards = "";
-      if (g.items.length > 0) {
-        cards = g.items.map((item, i) => `
-          <div class="card ${(i % 4 === 0) && g.items.length > 2 ? 'bento-feat' : ''}" data-category="${g.id}">
-            <div class="c-client">${item.category}</div>
-            <span class="c-title">${item.display_title}</span>
-            <p class="c-desc">${item.excerpt}</p>
-            ${item.link_url ? `<a href="${item.link_url}" target="_blank" class="doc-link" aria-label="View Google Doc"></a>` : ''}
-          </div>
-        `).join('');
-      } else {
-        cards = `<div class="ghost-swimlane">No pieces currently listed under this criteria.</div>`;
-      }
-
-      if (g.items.length > 0 || indFilter === g.id) {
-        container.innerHTML += `
-          <div class="matrix-section">
-            <div class="sh"><span class="sh-lbl">${g.title} (${g.items.length})</span><div class="sh-line"></div></div>
-            <div class="g3 rev">${cards}</div>
-          </div>
-        `;
-      }
-    });
-    document.getElementById('total-count').innerText = `(${total} pieces)`;
-  }
-
-  document.querySelectorAll('.inline-select').forEach(s => s.addEventListener('change', renderMatrix));
-  fetchPortfolio();
-</script>
+<script src="{{ '/assets/work.js' | url }}" defer></script>
