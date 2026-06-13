@@ -25,9 +25,9 @@ description: "{{ collections.posts.length }} pieces of personal exploration — 
       <article class="{% if variant == 'featured' %}card-feat post-preview card{% elsif variant == 'compact' %}card-min post-preview card{% else %}card post-preview{% endif %}" data-category="{{ post.data.category | downcase }}">
           <div class="read-time-pill">{{ post.templateContent | readingTime }}</div>
           <div class="c-client">{{ post.data.category | capitalize }} · {{ post.date | date: "%b %Y" }}</div>
-          <a href="{{ post.url | url }}" class="c-title">{{ post.data.title }}</a>
+          <a href="{{ post.url }}" class="c-title">{{ post.data.title }}</a>
           <p class="c-desc">{{ summary | strip_html }}</p>
-          <div class="sr"><a href="{{ post.url | url }}" class="live-link">Read Full Piece</a></div>
+          <div class="sr"><a href="{{ post.url }}" class="live-link">Read Full Piece</a></div>
       </article>
     {% endfor %}
 </div>

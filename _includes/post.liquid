@@ -55,7 +55,7 @@ layout: layout.liquid
   {% include "newsletter.liquid" %}
 
   <footer class="post-footer">
-    <a href="{{ '/writing/' | url }}" class="card card-min back-card">
+    <a href="/writing/" class="card card-min back-card">
       <span class="arrow">←</span>
       <span class="lbl">BACK TO<br>WRITING HUB</span>
     </a>
@@ -66,7 +66,7 @@ layout: layout.liquid
         {% assign count = 0 %}
         {% for relPost in collections.posts %}
           {% if relPost.data.category == category and relPost.url != page.url and count < 2 %}
-            <a href="{{ relPost.url | url }}" class="card-min post-preview card rel-card">
+            <a href="{{ relPost.url }}" class="card-min post-preview card rel-card">
               <div class="c-client">{{ relPost.data.category | capitalize }} · {{ relPost.date | date: "%b %Y" }}</div>
               <h3 class="c-title">{{ relPost.data.title }}</h3>
             </a>
