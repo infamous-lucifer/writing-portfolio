@@ -1,4 +1,9 @@
 {
+  "case-study-building-this-portfolio": {
+    "order": 0,
+    "variant": "featured",
+    "summary": "An inside look at the architecture, design system, and code optimizations behind this portfolio."
+  },
   "keep-walking": {
     "order": 1,
     "variant": "featured",
