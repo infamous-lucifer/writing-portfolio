@@ -10,7 +10,8 @@ eleventyExcludeFromCollections: true
   <url>
     <loc>https://infamous-lucifer.github.io/writing-portfolio{{ page.url }}</loc>
     <lastmod>{{ page.date | date: "%Y-%m-%d" }}</lastmod>
-    <changefreq>{% if page.data.changefreq %}{{ page.data.changefreq }}{% else %}monthly{% endif %}</changefreq>
+    <changefreq>{% if page.data.changefreq %}{{ page.data.changefreq }}{% elsif page.url contains '/posts/' %}never{% elsif page.url == '/writing-portfolio/' or page.url == '/' %}weekly{% else %}monthly{% endif %}</changefreq>
+    <priority>{% if page.url == '/writing-portfolio/' or page.url == '/' %}1.0{% elsif page.url contains '/writing/' or page.url contains '/work/' or page.url contains '/about/' %}0.8{% elsif page.url contains '/posts/' %}0.7{% else %}0.3{% endif %}</priority>
   </url>
   {%- endif %}
 {%- endfor %}

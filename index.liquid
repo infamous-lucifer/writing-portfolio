@@ -15,10 +15,14 @@ title: Home
   </p>
 </div>
 
+{% assign _p1 = collections.posts | where: "fileSlug", "the-illusion-of-freedom-how-society-traps-us-in-legalized-labor" | first %}
+{% assign _p2 = collections.posts | where: "fileSlug", "the-hardest-part-isnt-starting-its-letting-yourself-want-it" | first %}
+{% assign _p3 = collections.posts | where: "fileSlug", "through-the-glass-alone" | first %}
+
 <div class="g3 rev grid-top">
 
   <article class="post-preview card bento-wide">
-    <div class="read-time-pill">5 min read</div>
+    <div class="read-time-pill">{% if _p1 %}{{ _p1.templateContent | readingTime }}{% else %}5 min read{% endif %}</div>
     <div class="c-client">Featured Piece · Personal Blog</div>
     <div class="badge acc">Deep Dive</div>
     <a href="{{ '/posts/the-illusion-of-freedom-how-society-traps-us-in-legalized-labor/' | url }}" class="c-title c-title-lg">The Illusion of Freedom: How Society Traps Us in Legalized Labor</a>
@@ -26,7 +30,7 @@ title: Home
   </article>
 
   <article class="post-preview card">
-    <div class="read-time-pill">4 min read</div>
+    <div class="read-time-pill">{% if _p2 %}{{ _p2.templateContent | readingTime }}{% else %}4 min read{% endif %}</div>
     <div class="c-client">Personal Blog</div>
     <div class="badge grn">Introspection</div>
     <a href="{{ '/posts/the-hardest-part-isnt-starting-its-letting-yourself-want-it/' | url }}" class="c-title">The Hardest Part Isn't Starting — It's Letting Yourself Want It</a>
@@ -34,7 +38,7 @@ title: Home
   </article>
 
   <article class="post-preview card card-full">
-    <div class="read-time-pill">6 min read</div>
+    <div class="read-time-pill">{% if _p3 %}{{ _p3.templateContent | readingTime }}{% else %}6 min read{% endif %}</div>
     <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 40px; flex-wrap: wrap; width: 100%;">
       <div style="flex: 2; min-width: 280px;">
         <div class="c-client">Personal Essay</div>

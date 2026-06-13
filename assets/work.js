@@ -40,7 +40,6 @@
     const indFilter = industrySelect.value;
     const typeFilter = typeSelect.value;
     const lanes = groups.map((group) => ({ ...group, items: [] }));
-    container.innerHTML = "";
 
     allPortfolioData.forEach((item) => {
       const indText = String(item.gemini_industry || "").toLowerCase();
@@ -61,7 +60,10 @@
       }
     });
 
+    // Batch all HTML into a single string — avoids repeated DOM re-parsing from innerHTML +=
     let total = 0;
+    const htmlParts = [];
+
     lanes.filter((group) => indFilter === "all" || indFilter === group.id).forEach((group) => {
       total += group.items.length;
       const cards = group.items.length > 0
@@ -82,15 +84,17 @@
         : `<div class="ghost-swimlane">No pieces currently listed under this criteria.</div>`;
 
       if (group.items.length > 0 || indFilter === group.id) {
-        container.innerHTML += `
+        htmlParts.push(`
           <div class="matrix-section">
             <div class="sh"><span class="sh-lbl">${group.title} (${group.items.length})</span><div class="sh-line"></div></div>
             <div class="g3 rev">${cards}</div>
           </div>
-        `;
+        `);
       }
     });
 
+    // Single DOM write — replaces the entire container content at once
+    container.innerHTML = htmlParts.join("");
     totalCount.innerText = `(${total} pieces)`;
   }
 

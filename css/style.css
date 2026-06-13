@@ -1556,7 +1556,7 @@ body[data-page="work"] {
   align-items: center;
 }
 
-/* Work Matrix */
+/* WORK PAGE — GUIDED MATRIX */
 .guided-matrix-header {
   margin: 2rem 0 4rem 0;
   padding: 2.5rem;
@@ -1640,7 +1640,7 @@ body[data-page="work"] {
   }
 }
 
-/* Post Reader */
+/* POST READER */
 .reader-container {
   max-width: 760px;
   margin: 60px auto 120px;
