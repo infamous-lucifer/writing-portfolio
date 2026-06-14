@@ -4,14 +4,23 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 {%- for page in collections.all %}
-  {%- if not page.data.draft and not page.url contains "posts_trash" and page.url != "/404.html" and not page.url contains "admin" and page.url != "/feed.xml" %}
+  {%- assign is_valid = true %}
+  {%- if page.data.draft or page.data.excludeFromSitemap == true %}{% assign is_valid = false %}{% endif %}
+  {%- if page.url contains "posts_trash" or page.url contains "/admin/" or page.url contains "/assets/" or page.url == "/404.html" or page.url == "/feed.xml" or page.url contains "test-url" %}{% assign is_valid = false %}{% endif %}
+  {%- if is_valid and page.url %}
   <url>
-    <loc>https://infamous-lucifer.github.io/writing-portfolio{{ page.url }}</loc>
+    <loc>https://infamous-lucifer.github.io{{ page.url | url }}</loc>
     <lastmod>{{ page.date | date: "%Y-%m-%d" }}</lastmod>
-    <changefreq>{% if page.data.changefreq %}{{ page.data.changefreq }}{% elsif page.url contains '/posts/' %}never{% elsif page.url == '/writing-portfolio/' or page.url == '/' %}weekly{% else %}monthly{% endif %}</changefreq>
-    <priority>{% if page.url == '/writing-portfolio/' or page.url == '/' %}1.0{% elsif page.url contains '/writing/' or page.url contains '/work/' or page.url contains '/about/' %}0.8{% elsif page.url contains '/posts/' %}0.7{% else %}0.3{% endif %}</priority>
+    <changefreq>{% if page.data.changefreq %}{{ page.data.changefreq }}{% elsif page.url contains '/posts/' %}monthly{% elsif page.url == '/' or page.url == '/writing/' %}weekly{% else %}monthly{% endif %}</changefreq>
+    <priority>{% if page.url == '/' %}1.0{% elsif page.url == '/writing/' or page.url == '/work/' or page.url == '/about/' %}0.9{% elsif page.url contains '/posts/' %}0.7{% else %}0.5{% endif %}</priority>
+    {%- if page.data.image %}
+    <image:image>
+      <image:loc>https://infamous-lucifer.github.io{{ page.data.image | url }}</image:loc>
+      <image:title>{{ page.data.title | escape }}</image:title>
+    </image:image>
+    {%- endif %}
   </url>
   {%- endif %}
 {%- endfor %}
