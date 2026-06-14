@@ -1753,11 +1753,13 @@ body[data-page="work"] {
 }
 
 /* Code formatting overrides */
-code[class*="language-"], pre[class*="language-"] {
+code[class*="language-"], pre[class*="language-"],
+code, pre {
     font-family: var(--f-mono) !important;
     font-size: 0.9em !important;
+    text-shadow: none !important;
 }
-:not(pre) > code[class*="language-"], pre[class*="language-"] {
+:not(pre) > code[class*="language-"], :not(pre) > code, pre[class*="language-"], pre {
     background: var(--bg-card) !important;
     border: 1px solid var(--border) !important;
 }
