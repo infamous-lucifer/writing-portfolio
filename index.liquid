@@ -16,8 +16,10 @@ title: Home
 </section>
 
 {% assign _p1 = collections.posts | where: "fileSlug", "case-study-building-this-portfolio" | first %}
-{% assign _p2 = collections.posts | where: "fileSlug", "the-hardest-part-isn-t-starting-it-s-letting-yourself-want-it" | first %}
-{% assign _p3 = collections.posts | where: "fileSlug", "through-the-glass-alone" | first %}
+{% assign latest_writing = collections.posts | first %}
+{% if latest_writing.fileSlug == _p1.fileSlug %}
+  {% assign latest_writing = collections.posts[1] %}
+{% endif %}
 
 <section class="g3 rev grid-top">
 
@@ -29,29 +31,56 @@ title: Home
     <p class="c-desc c-desc-md">An inside look at the architecture, design system, and code optimizations behind this portfolio. From zero-bloat analytics to batched DOM rendering.</p>
   </article>
 
-  <article class="post-preview card">
-    <div class="read-time-pill">{% if _p2 %}{{ _p2.templateContent | readingTime }}{% else %}4 min read{% endif %}</div>
-    <div class="c-client">Personal Blog</div>
-    <div class="badge grn">Introspection</div>
-    <a href="/posts/the-hardest-part-isn-t-starting-it-s-letting-yourself-want-it/" class="c-title">The Hardest Part Isn't Starting — It's Letting Yourself Want It</a>
-    <p class="c-desc">On ambition, self-sabotage, and the quiet courage it takes to admit what you actually want before you've earned the right to want it.</p>
+  <article class="post-preview card" id="dynamic-work-card">
+    <div class="read-time-pill" id="dynamic-work-read">Live Sync</div>
+    <div class="c-client" id="dynamic-work-client">Latest Professional Work</div>
+    <div class="badge grn">Industry</div>
+    <a href="/work/" class="c-title" id="dynamic-work-title">Loading latest project...</a>
+    <p class="c-desc" id="dynamic-work-desc">Fetching directly from the live database.</p>
   </article>
 
   <article class="post-preview card card-full">
-    <div class="read-time-pill">{% if _p3 %}{{ _p3.templateContent | readingTime }}{% else %}6 min read{% endif %}</div>
+    <div class="read-time-pill">{% if latest_writing %}{{ latest_writing.templateContent | readingTime }}{% else %}5 min read{% endif %}</div>
     <div class="featured-card-layout">
       <div class="featured-card-content">
-        <div class="c-client">Personal Essay</div>
-        <div class="badge blu block-badge">Longform</div>
-        <a href="/posts/through-the-glass-alone/" class="c-title c-title-md">Through the Glass, Alone</a>
-        <p class="c-desc">When everyone exists as thoughts in your world, but you never quite exist in theirs. A meditation on loneliness, cognition, and what it means to be understood.</p>
+        <div class="c-client">Latest Writing · {{ latest_writing.data.category | default: "Personal" }}</div>
+        <div class="badge blu block-badge">Newest</div>
+        <a href="{{ latest_writing.url }}" class="c-title c-title-md">{{ latest_writing.data.title }}</a>
+        <p class="c-desc">{{ latest_writing.data.description }}</p>
       </div>
       <div class="featured-card-sidebar">
-        <div class="sidebar-text">An exploration into the boundary of individual consciousness and the mirror room of introspection.</div>
+        <div class="sidebar-text">The most recently published piece from the writing collection.</div>
       </div>
     </div>
   </article>
 
 </section>
+
+<script>
+  (async function() {
+    try {
+      const res = await fetch("https://script.google.com/macros/s/AKfycbw1J7-yT2pIRKBXYNqNbKOGe8ZNFqvGTZJXd-yQ1pFmG7Ffg4xsUdcMa4ujax4WF1081g/exec");
+      const data = await res.json();
+      if (data && data.length > 0) {
+        // The sheet items don't have a guaranteed date sort, but assuming row 2 is the latest since it's a live DB.
+        const latest = data[0]; 
+        document.getElementById('dynamic-work-read').innerText = "Live";
+        document.getElementById('dynamic-work-client').innerText = latest.category || "Professional SEO";
+        const titleEl = document.getElementById('dynamic-work-title');
+        titleEl.innerText = latest.display_title;
+        if (latest.link_url) {
+          titleEl.href = latest.link_url;
+          titleEl.target = "_blank";
+          titleEl.rel = "noopener noreferrer";
+        }
+        document.getElementById('dynamic-work-desc').innerText = latest.excerpt || "View this piece.";
+      }
+    } catch (e) {
+      console.error("Failed to fetch latest work", e);
+      document.getElementById('dynamic-work-title').innerText = "View All Professional Work";
+      document.getElementById('dynamic-work-desc').innerText = "Explore the full matrix of SEO content.";
+    }
+  })();
+</script>
 
 {% include "newsletter.liquid" %}

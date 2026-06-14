@@ -1,4 +1,9 @@
 {
+  "how-we-built-the-lens": {
+    "order": -1,
+    "variant": "featured",
+    "summary": "An under-the-hood look at building a wildly fast, zero-dependency philosophical AI tool using Vercel Edge Functions and Groq's Llama 3.3."
+  },
   "case-study-building-this-portfolio": {
     "order": 0,
     "variant": "featured",
