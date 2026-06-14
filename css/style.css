@@ -1751,3 +1751,13 @@ body[data-page="work"] {
   color: var(--txt-3);
   line-height: 1.5;
 }
+
+/* Code formatting overrides */
+code[class*="language-"], pre[class*="language-"] {
+    font-family: var(--f-mono) !important;
+    font-size: 0.9em !important;
+}
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border) !important;
+}
