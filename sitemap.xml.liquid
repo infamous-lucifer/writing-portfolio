@@ -6,7 +6,7 @@ eleventyExcludeFromCollections: true
 <?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {%- for page in collections.all %}
-  {%- if not page.data.draft and not page.url contains "posts_trash" %}
+  {%- if not page.data.draft and not page.url contains "posts_trash" and page.url != "/404.html" and not page.url contains "admin" and page.url != "/feed.xml" %}
   <url>
     <loc>https://infamous-lucifer.github.io/writing-portfolio{{ page.url }}</loc>
     <lastmod>{{ page.date | date: "%Y-%m-%d" }}</lastmod>

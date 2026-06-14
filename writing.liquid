@@ -16,7 +16,7 @@ description: "{{ collections.posts.length }} pieces of personal exploration — 
     </div>
 </div>
 
-<div class="g3 rev" id="project-grid">
+<section class="g3 rev" id="project-grid">
     {% for post in collections.writingPosts %}
       {% assign slug = post.inputPath | split: "/" | last | replace: ".md", "" %}
       {% assign card = writingCards[slug] %}
@@ -30,4 +30,4 @@ description: "{{ collections.posts.length }} pieces of personal exploration — 
           <div class="sr"><a href="{{ post.url }}" class="live-link">Read Full Piece</a></div>
       </article>
     {% endfor %}
-</div>
+</section>

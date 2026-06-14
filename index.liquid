@@ -3,7 +3,7 @@ layout: layout.liquid
 title: Home
 ---
 
-<div class="home-manifesto">
+<section class="home-manifesto">
   <span class="lbl">Akshat Singh · Writing & Work</span>
   <h1 class="hero-name">
     I write about <em>the things</em><br>
@@ -13,13 +13,13 @@ title: Home
     {{ collections.posts.length }} personal essays on loneliness, ambition, and what it costs 
     to stay honest. Plus professional SEO work across 6 industries.
   </p>
-</div>
+</section>
 
 {% assign _p1 = collections.posts | where: "fileSlug", "case-study-building-this-portfolio" | first %}
 {% assign _p2 = collections.posts | where: "fileSlug", "the-hardest-part-isn-t-starting-it-s-letting-yourself-want-it" | first %}
 {% assign _p3 = collections.posts | where: "fileSlug", "through-the-glass-alone" | first %}
 
-<div class="g3 rev grid-top">
+<section class="g3 rev grid-top">
 
   <article class="post-preview card bento-wide">
     <div class="read-time-pill">{% if _p1 %}{{ _p1.templateContent | readingTime }}{% else %}5 min read{% endif %}</div>
@@ -39,19 +39,19 @@ title: Home
 
   <article class="post-preview card card-full">
     <div class="read-time-pill">{% if _p3 %}{{ _p3.templateContent | readingTime }}{% else %}6 min read{% endif %}</div>
-    <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 40px; flex-wrap: wrap; width: 100%;">
-      <div style="flex: 2; min-width: 280px;">
+    <div class="featured-card-layout">
+      <div class="featured-card-content">
         <div class="c-client">Personal Essay</div>
-        <div class="badge blu" style="display: block;">Longform</div>
+        <div class="badge blu block-badge">Longform</div>
         <a href="/posts/through-the-glass-alone/" class="c-title c-title-md">Through the Glass, Alone</a>
         <p class="c-desc">When everyone exists as thoughts in your world, but you never quite exist in theirs. A meditation on loneliness, cognition, and what it means to be understood.</p>
       </div>
-      <div style="flex: 1; min-width: 200px; display: flex; flex-direction: column; gap: 16px; align-items: flex-start; justify-content: center; padding: 24px 0 24px 24px; border-left: 1px solid var(--border);">
-        <div style="font-family: var(--f-mono); font-size: 11px; color: var(--txt-3); line-height: 1.5;">An exploration into the boundary of individual consciousness and the mirror room of introspection.</div>
+      <div class="featured-card-sidebar">
+        <div class="sidebar-text">An exploration into the boundary of individual consciousness and the mirror room of introspection.</div>
       </div>
     </div>
   </article>
 
-</div>
+</section>
 
 {% include "newsletter.liquid" %}

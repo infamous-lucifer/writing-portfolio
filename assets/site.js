@@ -171,12 +171,20 @@
   }
 
   ready(() => {
-    initCounters();
-    initSearch();
-    initFilters();
-    initCookieBanner();
-    initMobileMenu();
-    initThemeToggle();
-    initReadingProgress();
+    const safeInit = (name, fn) => {
+      try {
+        fn();
+      } catch (e) {
+        console.error(`Error initializing ${name}:`, e);
+      }
+    };
+
+    safeInit("counters", initCounters);
+    safeInit("search", initSearch);
+    safeInit("filters", initFilters);
+    safeInit("cookieBanner", initCookieBanner);
+    safeInit("mobileMenu", initMobileMenu);
+    safeInit("themeToggle", initThemeToggle);
+    safeInit("readingProgress", initReadingProgress);
   });
 })();

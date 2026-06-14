@@ -30,15 +30,15 @@ layout: layout.liquid
 }
 </script>
 
-<div class="reader-container">
+<main class="reader-container">
   <header class="post-header">
     <span class="post-category">{{ category }}</span>
     <h1 class="post-title">{{ title }}</h1>
     <div class="post-meta">
       <span>Published on</span>
-      <span style="color: var(--txt);">{{ date | date: "%B %d, %Y" }}</span>
-      <span style="color: var(--txt-3);">·</span>
-      <span style="color: var(--txt);">{{ content | readingTime }}</span>
+      <span class="txt-primary">{{ date | date: "%B %d, %Y" }}</span>
+      <span class="txt-tertiary">·</span>
+      <span class="txt-primary">{{ content | readingTime }}</span>
     </div>
   </header>
 
@@ -76,6 +76,6 @@ layout: layout.liquid
       </div>
     </div>
   </footer>
-</div>
+</main>
 
 <div class="progress-bar"></div>

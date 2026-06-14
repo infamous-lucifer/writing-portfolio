@@ -822,6 +822,11 @@ nav a:hover {
   opacity: 1;
 }
 
+.acc-lbl { color: var(--acc); }
+.txt-sm { font-size: 12px; }
+.txt-primary { color: var(--txt); }
+.txt-tertiary { color: var(--txt-3); }
+
 /* UTILITIES */
 .g2 {
   display: grid;
@@ -1710,4 +1715,39 @@ body[data-page="work"] {
 .post-footer {
   padding-top: 40px;
   border-top: 1px solid var(--border);
+}
+
+/* FEATURED CARD LAYOUT */
+.featured-card-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.featured-card-content {
+  flex: 2;
+  min-width: 280px;
+}
+.block-badge {
+  display: block;
+}
+.featured-card-sidebar {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px 0 24px 24px;
+  border-left: 1px solid var(--border);
+}
+.sidebar-text {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--txt-3);
+  line-height: 1.5;
 }
