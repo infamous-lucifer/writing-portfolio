@@ -43,6 +43,15 @@ As part of our commitment to quality and accessibility, we rigorously tested the
 
 The site respects `prefers-reduced-motion` to disable animations for users who request it, and is fully navigable via keyboard.
 
+## Update: Web Standards & Dynamic Integration
+
+Following the initial launch, we fully integrated The Lens with modern web standards and our overarching portfolio infrastructure:
+
+- **SEO & PWA Boilerplate:** We added a `sitemap.xml`, `robots.txt`, and a custom `manifest.json` (with an SVG favicon) to ensure The Lens is perfectly indexable and installable as a Progressive Web App.
+- **Open Source Licensing:** We officially released the source code under the **MIT License**, empowering others to learn from our architecture.
+- **Dynamic Portfolio Syncing:** Instead of manually updating the creator's portfolio, we implemented an Eleventy (11ty) Collection fetch that automatically pulls this very blog post to the top of the portfolio's homepage. Simultaneously, the portfolio fetches the latest professional SEO work via a Google Sheets API integration.
+- **Syntax Highlighting:** We integrated Prism.js into our Markdown pipeline, ensuring all code snippets dynamically highlight syntax using our custom IBM Plex Mono and JetBrains Mono design systems.
+
 ## Conclusion
 The Lens proves that you can build deeply engaging, highly technical AI applications without complex state management or expensive infrastructure. By combining the speed of Groq, the global reach of Vercel Edge, and the simplicity of Vanilla JS, we created a tool that gets out of the way and lets the philosophy do the talking.
 

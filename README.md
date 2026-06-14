@@ -30,11 +30,11 @@ This site serves as a dual-purpose portfolio:
 
 - **Dark / Light theme** with instant toggle and `localStorage` persistence
 - **Responsive bento-grid layout** with featured card spanning and reveal-on-scroll animations
-- **Dynamic work portfolio** powered by Google Sheets for zero-friction content updates
+- **Dynamic homepage integration** — automatically syncs the latest writing via Eleventy collections and the latest SEO work via Google Sheets API fetch
 - **Filter system** — filter work by industry and content type; filter writing by category (Blogs, Poems, Prose)
 - **SEO-first** — structured data (JSON-LD), Open Graph tags, canonical URLs, and semantic HTML throughout
 - **Cookie consent** — GDPR-style floating toast banner
-- **Reading experience** — post pages with elegant drop-cap typography, responsive reader layout, and category tagging
+- **Reading experience** — elegant drop-cap typography, responsive reader layout, category tagging, and **Prism.js** syntax highlighting for technical blogs (like the breakdown of [The Lens](https://github.com/infamous-lucifer/the-lens))
 
 ## Project Structure
 
