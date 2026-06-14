@@ -39,14 +39,14 @@ title: Home
     <p class="c-desc" id="dynamic-work-desc">Fetching directly from the live database.</p>
   </article>
 
-  <article class="post-preview card card-full">
-    <div class="read-time-pill">{% if latest_writing %}{{ latest_writing.templateContent | readingTime }}{% else %}5 min read{% endif %}</div>
+  <article class="post-preview card card-full" id="dynamic-writing-card">
+    <div class="read-time-pill" id="dynamic-writing-read">{% if latest_writing %}{{ latest_writing.templateContent | readingTime }}{% else %}5 min read{% endif %}</div>
     <div class="featured-card-layout">
       <div class="featured-card-content">
-        <div class="c-client">Latest Writing · {{ latest_writing.data.category | default: "Personal" }}</div>
+        <div class="c-client" id="dynamic-writing-client">Latest Writing · {{ latest_writing.data.category | default: "Personal" }}</div>
         <div class="badge blu block-badge">Newest</div>
-        <a href="{{ latest_writing.url }}" class="c-title c-title-md">{{ latest_writing.data.title }}</a>
-        <p class="c-desc">{{ latest_writing.data.description }}</p>
+        <a href="{{ latest_writing.url }}" class="c-title c-title-md" id="dynamic-writing-title">{{ latest_writing.data.title }}</a>
+        <p class="c-desc" id="dynamic-writing-desc">{{ latest_writing.data.description }}</p>
       </div>
       <div class="featured-card-sidebar">
         <div class="sidebar-text">The most recently published piece from the writing collection.</div>
@@ -58,11 +58,11 @@ title: Home
 
 <script>
   (async function() {
+    // Fetch Latest Work
     try {
       const res = await fetch("https://script.google.com/macros/s/AKfycbw1J7-yT2pIRKBXYNqNbKOGe8ZNFqvGTZJXd-yQ1pFmG7Ffg4xsUdcMa4ujax4WF1081g/exec");
       const data = await res.json();
       if (data && data.length > 0) {
-        // The sheet items don't have a guaranteed date sort, but assuming row 2 is the latest since it's a live DB.
         const latest = data[0]; 
         document.getElementById('dynamic-work-read').innerText = "Live";
         document.getElementById('dynamic-work-client').innerText = latest.category || "Professional SEO";
@@ -79,6 +79,23 @@ title: Home
       console.error("Failed to fetch latest work", e);
       document.getElementById('dynamic-work-title').innerText = "View All Professional Work";
       document.getElementById('dynamic-work-desc').innerText = "Explore the full matrix of SEO content.";
+    }
+
+    // Fetch Latest Writing
+    try {
+      const res = await fetch("/writing-portfolio/posts.json");
+      const data = await res.json();
+      if (data && data.length > 0) {
+        const latest = data[0]; 
+        document.getElementById('dynamic-writing-read').innerText = latest.readingTime || "5 min read";
+        document.getElementById('dynamic-writing-client').innerText = `Latest Writing · ${latest.category || 'Personal'}`;
+        const titleEl = document.getElementById('dynamic-writing-title');
+        titleEl.innerText = latest.title;
+        titleEl.href = latest.url;
+        document.getElementById('dynamic-writing-desc').innerText = latest.description;
+      }
+    } catch (e) {
+      console.error("Failed to fetch latest writing", e);
     }
   })();
 </script>

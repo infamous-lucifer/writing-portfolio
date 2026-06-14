@@ -1,0 +1,15 @@
+---
+permalink: /posts.json
+eleventyExcludeFromCollections: true
+---
+[
+{%- for post in collections.writingPosts %}
+  {
+    "title": "{{ post.data.title | escape }}",
+    "url": "{{ post.url }}",
+    "description": "{{ post.data.description | escape }}",
+    "category": "{{ post.data.category | default: "Personal" | escape }}",
+    "readingTime": "{{ post.templateContent | readingTime }}"
+  }{% if not forloop.last %},{% endif %}
+{%- endfor %}
+]

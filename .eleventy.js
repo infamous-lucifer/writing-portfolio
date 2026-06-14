@@ -108,8 +108,8 @@ module.exports = function(eleventyConfig) {
       .sort((a, b) => {
         const aSlug = path.basename(a.inputPath, ".md");
         const bSlug = path.basename(b.inputPath, ".md");
-        const aOrder = writingCards[aSlug]?.order || 999;
-        const bOrder = writingCards[bSlug]?.order || 999;
+        const aOrder = writingCards[aSlug]?.order ?? 999;
+        const bOrder = writingCards[bSlug]?.order ?? 999;
         return aOrder - bOrder || b.date - a.date;
       });
   });

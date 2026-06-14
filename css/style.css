@@ -1760,6 +1760,20 @@ code, pre {
     text-shadow: none !important;
 }
 :not(pre) > code[class*="language-"], :not(pre) > code, pre[class*="language-"], pre {
-    background: var(--bg-card) !important;
     border: 1px solid var(--border) !important;
+    border-radius: var(--radius);
+}
+
+/* CONTENT LINKS */
+p a, li a {
+  color: var(--acc);
+  text-decoration: underline;
+  text-decoration-color: var(--border-hl);
+  text-underline-offset: 4px;
+  transition: all var(--t);
+}
+
+p a:hover, li a:hover {
+  color: var(--acc-l);
+  text-decoration-color: var(--acc);
 }
