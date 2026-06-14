@@ -1759,7 +1759,14 @@ code, pre {
     font-size: 0.9em !important;
     text-shadow: none !important;
 }
-:not(pre) > code[class*="language-"], :not(pre) > code, pre[class*="language-"], pre {
+:not(pre) > code[class*="language-"], :not(pre) > code {
+    background: var(--bg-card) !important;
+    color: var(--txt) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 4px;
+    padding: 0.1em 0.3em;
+}
+pre[class*="language-"], pre {
     border: 1px solid var(--border) !important;
     border-radius: var(--radius);
 }
