@@ -9,7 +9,7 @@ layout: layout.liquid
   "headline": "{{ title }}",
   "datePublished": "{{ date | date: '%Y-%m-%dT%H:%M:%SZ' }}",
   "dateModified": "{% if lastModified %}{{ lastModified | date: '%Y-%m-%dT%H:%M:%SZ' }}{% else %}{{ date | date: '%Y-%m-%dT%H:%M:%SZ' }}{% endif %}",
-  "image": "https://infamous-lucifer.github.io/writing-portfolio/images/hero.jpg",
+  "image": "{% if image %}https://infamous-lucifer.github.io/writing-portfolio{{ image }}{% else %}https://infamous-lucifer.github.io/writing-portfolio/assets/images/posts/1*KA2ivBY2GFBIWYMAfDgnQw.jpeg.jpg{% endif %}",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://infamous-lucifer.github.io/writing-portfolio{{ page.url }}"

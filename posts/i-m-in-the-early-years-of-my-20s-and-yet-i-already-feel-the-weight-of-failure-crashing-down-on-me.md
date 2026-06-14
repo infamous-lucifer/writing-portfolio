@@ -4,6 +4,7 @@ title: "I’m in the early years of my 20s, and yet I already feel the weight of
 date: 2025-07-06
 tags: ["posts"]
 category: blogs
+image: "/assets/images/posts/0*h3lxa1mXxocuTy80.jpg"
 ---
 
 I’m in the early years of my 20s, and yet I already feel the weight of failure crashing down on me. I didn’t make it into the prestigious college I once aimed for, I took two years off to rest, explore different streams, and figure things out.

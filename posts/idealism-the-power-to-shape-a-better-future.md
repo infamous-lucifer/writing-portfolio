@@ -4,9 +4,8 @@ title: "Idealism: The Power to Shape a Better Future"
 date: 2024-11-15
 tags: ["posts"]
 category: blogs
+image: "/assets/images/posts/1*KA2ivBY2GFBIWYMAfDgnQw.jpeg.jpg"
 ---
-
-Idealism: The Power to Shape a Better Future
 
 Idealism is often viewed as a distant, unattainable dream — a vision of a better world that feels disconnected from reality. However, what many overlook is the fact that idealism is the very foundation of progress. Throughout history, the most transformative changes have been driven by those who dared to imagine a world beyond the ordinary.
 
